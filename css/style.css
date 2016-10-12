@@ -1,0 +1,142 @@
+
+@font-face {
+  font-family: "CenturyGothicRegular";
+  src: url("../fonts/CenturyGothicRegular/CenturyGothicRegular.eot");
+  src: url("../fonts/CenturyGothicRegular/CenturyGothicRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/CenturyGothicRegular/CenturyGothicRegular.woff") format("woff"),
+  url("../fonts/CenturyGothicRegular/CenturyGothicRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+	font-family: "CenturyGothicRegular";
+}
+
+.wrapper {
+	position: relative;
+	height: 100%;
+	height: 100vh;
+	max-height: 100%;
+	max-height: 100vh;
+	max-width: 100%;
+}
+
+.wrapper-bg {
+	min-height: 100vh;
+	height: 100%;
+	background: url('../images/main-bg.jpg') no-repeat;
+	background-size: cover;
+}
+
+.main-menu-btn{
+	display: inline-block;
+	margin: 60px 0 0 20px;
+  border: 3px solid #fff;
+  padding: 15px 15px 15px 50px;
+  color: #fff;
+  text-transform: uppercase;
+  background: url('../images/icons/menu.png') no-repeat 10px center;
+  font-size: 24px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.main-icons-kit .main-icon {
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-icons-kit .main-logo {
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: initial;
+}
+
+
+.main-icons-kit .icon-bio {
+	left: 25%;
+	top: 20%;
+}
+
+.main-icons-kit .icon-socio {
+	right: 25%;
+	top: 20%;
+}
+
+.main-icons-kit .icon-techno {
+	left: 25%;
+	bottom: 20%;
+}
+
+.main-icons-kit .icon-person {
+	right: 25%;
+	bottom: 20%;
+}
+
+.main-icons-kit .icon-day-night {
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  background: url(../images/icons/dn.png) no-repeat;
+}
+
+.main-icons-kit .icon-phone {
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
+	width: 70px;
+  height: 70px;
+  background: url(../images/icons/phone.png) no-repeat;
+}
+
+.main-icons-kit figure {text-align: center;}
+
+.main-icons-kit figcaption {
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/*------------footer------------*/
+.footer-bg {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: 1s;
+  z-index: 11;
+}
+
+.footer-info {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+}
+
+.footer-info h2 {font-weight: normal;}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+}
