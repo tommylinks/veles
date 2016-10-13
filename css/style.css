@@ -148,7 +148,7 @@ ul {
 
 .footer-info a {
   display: inline-block;
-  font-size: 25px;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
   margin: 0 15px;
@@ -279,3 +279,9 @@ ul {
 }
 
 /*----END main menu------*/
+
+
+
+@media (max-width: 1430px) {
+  .footer-info a {margin: 0 7px;}
+}
