@@ -76,10 +76,6 @@
       ]
     });
 
-    $fm.on('afterShow', function(event) 
-    {
-      // your code here
-    });
   </script>
   <!-- show main-menu -->
   <script>
