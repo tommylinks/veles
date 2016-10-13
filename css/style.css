@@ -139,15 +139,76 @@ ul {
 }
 
 .footer-info {
-  padding: 20px;
+  position: relative;
+  padding: 10px;
   color: #fff;
   text-align: center;
   font-weight: normal;
 }
 
-.footer-info h2 {
-  font-weight: normal;
+.footer-info a {
+  display: inline-block;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
 }
+
+.footer-info .social-icons {
+  display: inline-block;
+}
+
+.footer-info .social-icons li{
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.footer-info .social-icons li a{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons/fb.png);
+}
+
+.footer-info .social-icons li .facebook{
+  background: url(../images/icons/fb.png);
+}
+
+.footer-info .social-icons li .vk{
+  background: url(../images/icons/vk.png);
+}
+
+.footer-info .social-icons li .instagram{
+  background: url(../images/icons/insta.png);
+}
+
+
+.footer-info .left-footer-menu {
+  display: inline-block;
+}
+
+.footer-info .right-footer-menu {
+  display: inline-block;
+}
+
+.footer-info .left-footer-menu .icon-play{
+  width: 50px;
+  height: 50px;
+  background: url('../images/icons/play.png');
+}
+
+.footer-info .right-footer-menu .icon-eye {
+  width: 50px;
+  height: 50px;
+  background: url('../images/icons/eye.png');
+}
+
+.footer-info .footer-text {
+  vertical-align: top;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
 
 .overlay {
   background: rgba(0, 0, 0, 0.6);

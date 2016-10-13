@@ -1,7 +1,23 @@
 
     <footer class="footer-bg">
       <div class="footer-info">
-        <h2>#FOOTER</h2>
+        <div class="left-footer-menu">
+          <a href="#" class="footer-text">Видеоролик</a>
+          <a href="#" class="icon-play"></a>
+          <a href="#" class="footer-text">Вознесенский спуск 28-30</a>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="facebook" href="#"></a></li>
+            <li><a class="vk" href="#"></a></li>
+            <li><a class="instagram" href="#"></a></li>
+          </ul>
+        </div>
+        <div class="right-footer-menu">
+          <a href="#" class="footer-text">+38 (777) 777-77-77</a>
+          <a href="#" class="icon-eye"></a>
+          <a href="#" class="footer-text">Виртуальный тур</a>
+        </div>
       </div>
     </footer>
 
