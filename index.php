@@ -18,7 +18,7 @@ require_once('header.php');
 
 <body>
   <div class="wrapper">
-    <img id="bg-img" class="main-bg" src="images/main-bg.jpg">
+    <img id="bg-img" class="main-bg" src="images/main-bg-day.jpg">
     <header>
       <button class="main-menu-btn hvr-pulse">Меню</button>
       <div class="main-icons-kit">
