@@ -31,6 +31,7 @@ $daytime = (int) date('H');
 
 <body>
   <div class="wrapper">
+    <img id="bg-img" class="main-bg" src="images/main-bg.jpg">
     <header>
       <button class="main-menu-btn hvr-pulse">Меню</button>
       <div class="main-icons-kit">
