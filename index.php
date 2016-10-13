@@ -25,25 +25,25 @@ require_once('header.php');
         <div class="main-icon main-logo">
           <img src="images/icons/logo.png" alt="logo Velec Place" />
         </div>
-        <div class="main-icon icon-bio">
+        <div class="main-icon icon-bio" data-action="show-actions-menu">
           <figure>
             <img class="hvr-pulse" class="hvr-pulse" src="images/icons/bio.png" alt="icon bio energy" />
             <figcaption>Био энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-socio">	
+        <div class="main-icon icon-socio" data-action="show-actions-menu">	
           <figure>
             <img class="hvr-pulse" src="images/icons/socio.png" alt="icon socio energy" />
             <figcaption>Социо энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-techno">
+        <div class="main-icon icon-techno" data-action="show-actions-menu">
           <figure>
             <img class="hvr-pulse" src="images/icons/techno.png" alt="icon techno energy" />
             <figcaption>Техно энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-person">
+        <div class="main-icon icon-person" data-action="show-actions-menu">
           <figure>
             <img class="hvr-pulse" src="images/icons/person.png" alt="icon person energy" />
             <figcaption>Энергия личности</figcaption>

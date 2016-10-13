@@ -23,6 +23,64 @@
     </div>
   </div><!--END wrapper -->
 
+  <!-- floating-menu tooltips-->
+  <script type="text/javascript" src="js/floating-menu.js"></script>
+  <script type="text/javascript">
+    $.floatingMenu({
+      selector: '.main-icon[data-action="show-actions-menu"]',
+      items: [
+        {
+            icon : 'ion-social-youtube',
+            title : 'Youtube',
+            action : 'https://youtube.com/',
+            blank : true, // open url in new tab (optional, defaults to false)
+            close : false, // dont close the menu after and action has happened (optional, defaults to true)
+        },
+        {
+            icon : 'ion-social-skype',
+            title : 'google',
+            action : 'https://google.com/',
+            close : false, // no effect since there is a redirect (optional)
+        },
+        {
+            icon : 'ion-social-tumblr',
+            title : 'Insert',
+            action : function(event) {
+                alert('insert');
+            },
+            blank : true, // no effect since action is not a url (optional, defaults to false)
+            close : false, // dont close the menu after and action has happened (optional, defaults to true)
+        },
+        {
+            icon : 'ion-social-javascript',
+            title : 'Edit',
+            action : function(event) 
+            {
+                alert('edit');
+            },
+        },
+        {
+            icon : 'ion-social-chrome',
+            title : 'Remove',
+            action : function(event) {
+                alert('remove');
+            },
+        },
+        {
+            icon : '',
+            title : 'Подробнее...',
+            action : function(event) {
+                alert('remove');
+            },
+        },
+      ]
+    });
+
+    $fm.on('afterShow', function(event) 
+    {
+      // your code here
+    });
+  </script>
   <!-- show main-menu -->
   <script>
     $(".main-menu-btn").click( function () {

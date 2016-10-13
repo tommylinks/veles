@@ -28,6 +28,8 @@ $daytime = (int) date('H');
   <!-- Template Basic Images End -->
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/hover-min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/floating-menu.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/ionicons.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/style.css">
   <!-- JQuety + Pjax   -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
