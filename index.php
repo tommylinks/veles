@@ -30,54 +30,92 @@ $daytime = (int) date('H');
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="wrapper-bg">
-			<header>
-				<button class="main-menu-btn hvr-pulse">Меню</button>
-				<div class="main-icons-kit">
-					<div class="main-icon main-logo">
-						<img src="images/icons/logo.png" alt="logo Velec Place" />
-					</div>
-					<div class="main-icon icon-bio">
-						<figure>
-					    <img class="hvr-pulse" class="hvr-pulse" src="images/icons/bio.png" alt="icon bio energy" />
-					    <figcaption>Био энергия</figcaption>
-					  </figure>
-					</div>
-					<div class="main-icon icon-socio">	
-						<figure>
-					    <img class="hvr-pulse" src="images/icons/socio.png" alt="icon socio energy" />
-					    <figcaption>Социо энергия</figcaption>
-					  </figure>
-					</div>
-					<div class="main-icon icon-techno">
-						<figure>
-					    <img class="hvr-pulse" src="images/icons/techno.png" alt="icon techno energy" />
-					    <figcaption>Техно энергия</figcaption>
-					  </figure>
-					</div>
-					<div class="main-icon icon-person">
-						<figure>
-					    <img class="hvr-pulse" src="images/icons/person.png" alt="icon person energy" />
-					    <figcaption>Энергия личности</figcaption>
-					  </figure>
-					</div>
-					<div class="main-icon icon-day-night">
-					</div>
-					<div class="main-icon icon-phone">
-					</div>
-				</div>
-			</header>
-			<footer class="footer-bg">
-			  <div class="footer-info">
-			   	<h2>#FOOTER</h2>
-			  </div>
-    	</footer>
-		</div>	
-	</div>
+  <div class="wrapper">
+    <div class="wrapper-bg">
+      <header>
+        <button class="main-menu-btn hvr-pulse">Меню</button>
+        <div class="main-icons-kit">
+          <div class="main-icon main-logo">
+            <img src="images/icons/logo.png" alt="logo Velec Place" />
+          </div>
+          <div class="main-icon icon-bio">
+            <figure>
+              <img class="hvr-pulse" class="hvr-pulse" src="images/icons/bio.png" alt="icon bio energy" />
+              <figcaption>Био энергия</figcaption>
+            </figure>
+          </div>
+          <div class="main-icon icon-socio">	
+            <figure>
+              <img class="hvr-pulse" src="images/icons/socio.png" alt="icon socio energy" />
+              <figcaption>Социо энергия</figcaption>
+            </figure>
+          </div>
+          <div class="main-icon icon-techno">
+            <figure>
+              <img class="hvr-pulse" src="images/icons/techno.png" alt="icon techno energy" />
+              <figcaption>Техно энергия</figcaption>
+            </figure>
+          </div>
+          <div class="main-icon icon-person">
+            <figure>
+              <img class="hvr-pulse" src="images/icons/person.png" alt="icon person energy" />
+              <figcaption>Энергия личности</figcaption>
+            </figure>
+          </div>
+          <div class="main-icon icon-day-night">
+          </div>
+          <div class="main-icon icon-phone">
+          </div>
+        </div><!--END main-icons-kit -->
+      </header>
+      <footer class="footer-bg">
+        <div class="footer-info">
+          <h2>#FOOTER</h2>
+        </div>
+      </footer>
+
+      <!-- overlay -->
+      <div class="overlay"></div>
+
+      <!-- main menu -->
+      <div class="main-menu">
+        <ul>
+          <li><a href="">item1</a></li>
+          <li><a href="">item2</a></li>
+          <li><a href="">item3</a></li>
+          <li><a href="">item4</a></li>
+          <li><a href="">item5</a></li>
+        </ul>
+        <span class="close-main-menu">  &times;</span>
+      </div>
+
+    </div><!--END wrapper-bg -->
+  </div><!--END wrapper -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.pjax.js"></script>
+  <!-- show main-menu -->
+  <script>
+    $(".main-menu-btn").click( function () {
+      $(".footer-bg").css('background','transparent');
+      $(".main-menu, .overlay").fadeIn(500);
+      $(".main-menu").animate({
+        opacity: 1,
+        left: "0",
+      }, 500, function() {
+        // Animation complete.
+      });
+    });
+
+    $(".close-main-menu, .overlay").click( function () {
+      $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500, function() {
+        // Animation complete.
+      });
+      $(".main-menu, .overlay").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+    });
+  </script>
 </body>
-
-
-
-
 </html>
