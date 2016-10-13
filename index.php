@@ -80,11 +80,13 @@ $daytime = (int) date('H');
     <!-- main menu -->
     <div class="main-menu">
       <ul>
-        <li><a href="">item1</a></li>
-        <li><a href="">item2</a></li>
-        <li><a href="">item3</a></li>
-        <li><a href="">item4</a></li>
-        <li><a href="">item5</a></li>
+        <li><a href="">Главная</a></li>
+        <li><a href="">О комплексе</a></li>
+        <li><a href="">Расположение</a></li>
+        <li><a href="">Ход строительства</a></li>
+        <li><a href="">Купить</a></li>
+        <li><a href="">Документы</a></li>
+        <li><a href="">События</a></li>
       </ul>
       <span class="close-main-menu">  &times;</span>
     </div>
@@ -95,6 +97,7 @@ $daytime = (int) date('H');
   <script>
     $(".main-menu-btn").click( function () {
       $(".footer-bg").css('background','transparent');
+      $(".main-icons-kit").fadeOut(500);
       $(".main-menu, .overlay").fadeIn(500);
       $(".main-menu").animate({
         opacity: 1,
@@ -113,6 +116,7 @@ $daytime = (int) date('H');
       });
       $(".main-menu, .overlay").fadeOut(500);
       $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-icons-kit").fadeIn(1000);
     });
   </script>
 </body>

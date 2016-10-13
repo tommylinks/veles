@@ -131,7 +131,7 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   transition: 1s;
-  z-index: 1;
+  z-index: 100;
 }
 
 .footer-info {
@@ -163,8 +163,8 @@ body {
   text-align: center;
   border: 20px solid #fff;
   border-radius: 50%;
-  height: 400px;
-  width: 400px;
+  height: 420px;
+  width: 420px;
   font-size: 32px;
   color: #fff;
   box-sizing: border-box;
