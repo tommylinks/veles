@@ -78,11 +78,8 @@ require_once('header.php');
         <div class="main-icon icon-phone">
         </div>
       </div><!--END main-icons-kit -->
+      <button class="sound-btn"></button>
     </header>
-    
-
-
-
  <!-- DENIS_NEW -->
     <script>
 
