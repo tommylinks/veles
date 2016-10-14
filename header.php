@@ -1,15 +1,21 @@
+  <!-- DENIS_NEW -->
 <?php 
 //path
 $template_path = "/beta/";
 
-// ДЕНЬ / НОЧЬ
+// day / night
 $daytime = (int) date('H');
- if ($daytime <= 17 and $daytime >= 8) { 
-  //echo "Наступает день. Город просыпается.";
+ if ($daytime >= 8 and $daytime <= 17) { 
+    $daynight = "images/day/01.jpg";
+    $daynight_back = "images/night/01.jpg";
+    $night_icon = "images/icons/night.png";
  } else { 
-  //echo "Наступает ночь. Просыпается мафия.";
+    $daynight = "images/night/01.jpg";
+    $daynight_back = "images/day/01.jpg";
+    $day_icon = "images/icons/day.png";
  }
 ?>
+  <!-- //DENIS_NEW -->
 <!DOCTYPE html>
 <html lang="ru">
 

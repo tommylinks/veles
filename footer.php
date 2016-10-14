@@ -119,5 +119,164 @@
       $(".main-icons-kit").fadeIn(1000);
     });
   </script>
+
+
+<!-- DENIS_NEW -->
+<!-- Scrolling events + Pjax -->
+
+<script>
+
+  //id`s & classes & links
+  var vidId = document.getElementById('bgvid');
+  var wrapperId = document.getElementById('bgvid-wrapper');
+  var elemId = document.getElementById('pjax-global');
+  var linkId01 = document.getElementById('bgvid-link-01');
+  var linkId02 = document.getElementById('bgvid-link-02');
+  var linkNav01 = '<?php echo $template_path; ?>';
+  var linkNav02 = '<?php echo $template_path; ?>' + 'about/';
+
+
+  // condition for path & info
+  var info = 0;
+  var path = '<? echo $_SERVER[REQUEST_URI] ?>';
+  if (path === linkNav01) {info = 0}  
+  if (path === linkNav02) {info = 40000}  
+
+  //function
+
+  function pjaxVideoContent (linkBgvid, linkNav, infoEnd) {
+
+
+    // returns duration current video 
+    var durationVideoms = +vidId.duration * 1000;
+
+    $('#bgvid-wrapper').css('display', 'block');
+    $('#bgvid-wrapper').animate({opacity: 1,}, 200);
+    
+    
+    //play video
+  
+    $('#bgvid').get(0).play();    
+
+    setTimeout (function () { 
+
+      $.pjax({
+        type       : 'POST',
+        url        : linkNav,
+        container  : '#pjax-global',
+        fragment   : '#pjax-global',
+        data       : {},
+        push       : true,
+        replace    : false,
+        "scrollTo" : false
+         });
+
+         //$('#bgimg').attr('src', linkBgimg);
+         $('#bgvid-wrapper').animate({opacity: 0,}, 200); 
+         info = +infoEnd;
+
+    } , durationVideoms);
+
+  } 
+
+  // scrolling events
+    if (elemId.addEventListener) {
+      if ('onwheel' in document) {
+        // IE9+, FF17+
+        elemId.addEventListener("wheel", onWheel);
+      } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        elemId.addEventListener("mousewheel", onWheel);
+      } else {
+        // Firefox < 17
+        elemId.addEventListener("MozMousePixelScroll", onWheel);
+      }
+    } else { // IE8-
+      elemId.attachEvent("onmousewheel", onWheel);
+    }
+
+    // Это решение предусматривает поддержку IE8-
+    function onWheel(e) {
+      e = e || window.event;
+
+      // deltaY, detail содержат пиксели
+      // wheelDelta не дает возможность узнать количество пикселей
+      // onwheel || MozMousePixelScroll || onmousewheel
+      var delta = e.deltaY || e.detail || e.wheelDelta;
+
+    //debugger for delta different scroll speed
+      if (delta < 0) {
+        delta = -100;
+      } else if (delta > 0) {
+        delta = 100;
+      } else {
+        delta = 100;
+      }
+
+
+
+      info = +info + delta;
+
+      e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+      
+      // conditions for scrolling
+
+      if (info < 0) {
+
+        info = 0;
+
+      }
+     
+      if (info === 500 || info === 600 || info === 700 || info === 800 || info === 900) {
+
+        info = 20000;
+        
+        pjaxVideoContent(linkBgvid02, linkNav02, 40000);    
+          
+      }
+
+      if (info === 39500 || info === 39400 || info === 39300 || info === 39200 || info === 39100) {
+
+        info = 20000;
+
+        pjaxVideoContent(linkBgvid01, linkNav01, 0);
+          
+      }
+    
+      if (info > 40000) {
+
+        info = 40000;
+
+      }
+
+      console.log (info);
+    }
+
+ </script>
+  
+<!-- Click events + Pjax  --> 
+ <script>
+
+$('#pjax-global').on('click', '#bgvid-link-02', function () {
+
+  info = 20000;
+
+  pjaxVideoContent(linkBgvid02, linkNav02, 40000);  
+
+});
+  
+  
+$('#pjax-global').on('click', '#bgvid-link-01', function () {
+
+  info = 20000;
+
+  pjaxVideoContent(linkBgvid01, linkNav01, 0);
+
+});
+
+  </script>
+
+<!-- //DENIS_NEW -->
+  
 </body>
 </html>
