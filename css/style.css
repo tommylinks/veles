@@ -126,6 +126,18 @@ ul {
   color: #fff;
 }
 
+.sound-btn{
+  display: inline-block;
+  position: absolute;
+  bottom: 120px;
+  left: 20px;
+  outline: none;
+  width: 70px;
+  height: 70px;
+  border: none;
+  background:url('../images/icons/sound.png') no-repeat;
+}
+
 
 /*------------footer------------*/
 

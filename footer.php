@@ -41,6 +41,33 @@
 
   <!-- floating-menu tooltips-->
   <script type="text/javascript" src="js/floating-menu.js"></script>
+  <script type="text/javascript" src="js/howler.js"></script>
+
+  <!-- init music -->
+  <script>
+  	var sound = new Howl({
+	  src: ['1.mp3']
+	});
+
+	sound.play();
+
+	$('.sound-btn').click(function() {
+		if($('.sound-btn').hasClass('pause')) {
+			$('.sound-btn').removeClass('pause');
+      $('.sound-btn').width('60');
+      sound.play();
+		} else {
+      $('.sound-btn').addClass('pause');
+      $('.sound-btn').width(30);
+      sound.pause();
+    }
+
+	});
+	
+  </script>
+  <!--END init music -->
+
+  <!-- floating tooltips -->
   <script type="text/javascript">
     $.floatingMenu({
       selector: '.main-icon[data-action="show-actions-menu"]',
@@ -93,6 +120,7 @@
     });
 
   </script>
+   <!--END floating tooltips -->
   <!-- show main-menu -->
   <script>
     $(".main-menu-btn").click( function () {
