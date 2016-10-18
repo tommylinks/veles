@@ -20,16 +20,16 @@
         </div>
       </div>
     </footer>
-  </div><!--END wrapper -->
+ </div><!--END wrapper -->  
 
   <!-- floating-menu tooltips-->
-  <script type="text/javascript" src="js/floating-menu.js"></script>
-  <script type="text/javascript" src="js/howler.js"></script>
+  <script type="text/javascript" src="<?php echo $template_path; ?>js/floating-menu.js"></script>
+  <script type="text/javascript" src="<?php echo $template_path; ?>js/howler.js"></script>
 
   <!-- init music -->
   <script>
   	var sound = new Howl({
-	  src: ['1.mp3']
+	  src: ['/beta/1.mp3']
 	});
 
 	sound.play();
@@ -143,8 +143,8 @@
   var elemId = document.getElementById('pjax-global');
   var linkId01 = document.getElementById('bgvid-link-01');
   var linkId02 = document.getElementById('bgvid-link-02');
-  var linkNav01 = '<?php echo $template_path; ?>';
-  var linkNav02 = '<?php echo $template_path; ?>' + 'about/';
+  var linkNav01 = '/beta/';
+  var linkNav02 = '/beta/about/';
 
 
   // condition for path & info

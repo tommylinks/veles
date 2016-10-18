@@ -11,49 +11,83 @@ require_once('header.php');
 
 <body>
   <div class="wrapper">
-    <!-- DENIS_NEW -->
-    <div id = 'pjax-global'>
-      <style> #bgimg-back {z-index: -2;} </style>
+
+    
+      <style> #bgimg-back {z-index: -2;}
+
+       </style>
       <img id='bgimg' class='main-bg' src='<? echo $daynight;?>' style = '<? echo $daynight_style;?>'>
       <img id='bgimg-back' class='main-bg' src='<? echo $daynight_back;?>' style = "opacity: 1;">
-        
-        <div id='bgvid-wrapper' style ='display:none;'>
+     <div id = 'pjax-global'>      
+        <div id='bgvid-wrapper' style ='position: absolute; display:none;'>
           <video id='bgvid' preload='auto'>
             <source type='video/webm'>
           </video>
         </div>
-  <!-- //DENIS_NEW -->    
+
+
     <header>
       <button class="main-menu-btn hvr-pulse">Меню</button>
       <div class="main-icons-kit">
         <div class="main-icon main-logo">
-          <img src="images/icons/logo.png" alt="logo Velec Place" />
+          <img src="/beta/images/icons/logo.png" alt="logo Velec Place" />
         </div>
         <div class="main-icon icon-bio" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" class="hvr-pulse" src="images/icons/bio.png" alt="icon bio energy" />
+            <img class="hvr-pulse" class="hvr-pulse" src="/beta/images/icons/bio.png" alt="icon bio energy" />
             <figcaption>Био энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-socio" data-action="show-actions-menu">	
           <figure>
-            <img class="hvr-pulse" src="images/icons/socio.png" alt="icon socio energy" />
+            <img class="hvr-pulse" src="/beta/images/icons/socio.png" alt="icon socio energy" />
             <figcaption>Социо энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-techno" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" src="images/icons/techno.png" alt="icon techno energy" />
+            <img class="hvr-pulse" src="/beta/images/icons/techno.png" alt="icon techno energy" />
             <figcaption>Техно энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-person" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" src="images/icons/person.png" alt="icon person energy" />
+            <img class="hvr-pulse" src="/beta/images/icons/person.png" alt="icon person energy" />
             <figcaption>Энергия личности</figcaption>
           </figure>
         </div>
-        <!-- DENIS_NEW -->
+        <div class="main-icon icon-phone">
+        </div>
+      </div><!--END main-icons-kit -->
+      <button class="sound-btn"></button>
+    </header>
+
+      <!-- overlay -->
+  <div class="overlay"></div>
+
+  <!-- main menu -->
+  <div class="main-menu">
+  <style> .snt-link { cursor: pointer; }</style>
+    <ul>
+      <li><div id="bgvid-link-01" class="snt-link">Главная</div></li>
+      <li><div id="bgvid-link-02" class="snt-link">О комплексе</div></li>
+      <li><div>Расположение</div></li>
+      <li><div>Ход строительства</div></li>
+      <li><div href="">Купить</div></li>
+      <li><div href="">Документы</div></li>
+      <li><div href="">События</div></li>
+    </ul>
+    <span class="close-main-menu">  &times;</span>
+  </div>
+
+
+</div> <!--END pjax-global -->    
+
+
+
+
+
+ <!-- DENIS_NEW -->
             <div class='main-icon daynight' style='
                   top: 50%;
                   left: 10%;
@@ -63,18 +97,26 @@ require_once('header.php');
                   border-radius: 50%;
                   -webkit-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
                   -moz-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-                  box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);'>
+                  box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
+				display: inline-block;
+			    position: absolute;
+			    cursor: pointer;
+			    -webkit-touch-callout: none;
+			    -webkit-user-select: none;
+			    -khtml-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;'>
 
                 <img id='bgvid-link-day' class='snt-link' src = '<? echo $day_icon; ?>'  style = '<? echo $day_icon_style;?>position: absolute;' />
                 <img id='bgvid-link-night' class='snt-link' src = '<? echo $night_icon; ?>'  style = '<? echo $night_icon_style;?> position: absolute;' />     
             </div>
-            <!-- //DENIS_NEW -->
-        <div class="main-icon icon-phone">
-        </div>
-      </div><!--END main-icons-kit -->
-      <button class="sound-btn"></button>
-    </header>
- <!-- DENIS_NEW -->
+<!-- //DENIS_NEW -->
+
+
+
+
+<!-- DENIS_NEW -->
     <script>
 
   //   pathes
@@ -167,30 +209,16 @@ $('#bgvid-link-night').click(function(){
   }
 */
 
-  $('#bgvid-link-01').css('display','none');
-  $('#bgvid-link-02').css('display','block');
+  //$('#bgvid-link-01').css('display','none');
+  //$('#bgvid-link-02').css('display','block');
   var info = 0;
 </script>
 
-<!-- overlay -->
-<div class="overlay"></div>
 
-<!-- main menu -->
-<div class="main-menu">
-  <ul>
-    <li><a href="<?php echo $template_path; ?>">Главная</a></li>
-    <li><a href="<?php echo $template_path; ?>about/">О комплексе</a></li>
-    <li><a href="">Расположение</a></li>
-    <li><a href="">Ход строительства</a></li>
-    <li><a href="">Купить</a></li>
-    <li><a href="">Документы</a></li>
-    <li><a href="">События</a></li>
-  </ul>
-  <span class="close-main-menu">  &times;</span>
-</div>
 
-</div> <!--END pjax-global -->
-  <!-- //DENIS_NEW -->
+
+
+
 
 <?
 require_once('footer.php');

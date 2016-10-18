@@ -4,18 +4,17 @@
 $template_path = "/beta/";
 
 // day / night
-//$daytime = (int) date('H');
-$daytime = 18;
+$daytime = (int) date('H');
  if ($daytime >= 8 and $daytime <= 17) { 
-    $daynight = "images/day/01.jpg";
+    $daynight = $template_path . "images/day/01.jpg";
     $daynight_style = "opacity: 1";
-    $daynight_back = "images/night/01.jpg";
-    $night_icon = "images/icons/night.png";
+    $daynight_back = $template_path . "images/night/01.jpg";
+    $night_icon = $template_path . "images/icons/night.png";
  } else { 
-    $daynight = "images/day/01.jpg";
+    $daynight = $template_path . "images/day/01.jpg";
     $daynight_style = "opacity: 0";
-    $daynight_back = "images/night/01.jpg";
-    $day_icon = "images/icons/day.png";
+    $daynight_back = $template_path . "images/night/01.jpg";
+    $day_icon = $template_path . "images/icons/day.png";
  }
 ?>
   <!-- //DENIS_NEW -->
@@ -43,4 +42,7 @@ $daytime = 18;
   <!-- JQuety + Pjax   -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.pjax.js"></script>
+
+  
+
 </head>
