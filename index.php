@@ -1,11 +1,4 @@
 <?php 
-// ДЕНЬ / НОЧЬ
-$daytime = (int) date('H');
- if ($daytime <= 17 and $daytime >= 8) { 
- 	//echo "Наступает день. Город просыпается.";
- } else { 
- 	//echo "Наступает ночь. Просыпается мафия.";
- }
 
 // meta tags
 $title = "INDEX";
@@ -20,9 +13,10 @@ require_once('header.php');
   <div class="wrapper">
     <!-- DENIS_NEW -->
     <div id = 'pjax-global'>
-      <img id='bgimg-back' class='main-bg' src='<? echo $daynight_back;?>'>
-      <img id='bgimg' class='main-bg' src='<? echo $daynight;?>'>
-
+      <style> #bgimg-back {z-index: -2;} </style>
+      <img id='bgimg' class='main-bg' src='<? echo $daynight;?>' style = '<? echo $daynight_style;?>'>
+      <img id='bgimg-back' class='main-bg' src='<? echo $daynight_back;?>' style = "opacity: 1;">
+        
         <div id='bgvid-wrapper' style ='display:none;'>
           <video id='bgvid' preload='auto'>
             <source type='video/webm'>
@@ -115,10 +109,10 @@ $('#bgvid-link-day').click(function(){
   var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
 
   
-    $('#bgvid').attr('src', pathVidDay01);
-    $('#bgimg').attr('src', pathImgNight01);
-    $('#bgimg-back').attr('src', pathImgDay01);
-    $('#bgimg').animate({ opacity: 0 }, 1000);
+    //$('#bgvid').attr('src', pathVidDay01);
+    $('#bgimg').attr('src', pathImgDay01);
+    $('#bgimg-back').attr('src', pathImgNight01);
+    $('#bgimg').animate({ opacity: 1 }, 1000);
     $('#bgimg_back').animate({ opacity: 0 }, 1000);
     $('#bgvid-link-night').attr('src', pathIconNight);
     $('#bgvid-link-day').attr('src', pathIconDay);
@@ -136,10 +130,11 @@ $('#bgvid-link-night').click(function(){
   var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidNight02);
   var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgNight02);
 
-    $('#bgvid').attr('src', pathVidNight01);
-    $('#bgimg').attr('src', pathImgNight01);
-    $('#bgimg-back').attr('src', pathImgDay01);
-    $('#bgimg').animate({ opacity: 1 }, 1000);
+    //$('#bgvid').attr('src', pathVidNight01);
+    $('#bgimg').attr('src', pathImgDay01);
+    $('#bgimg-back').attr('src', pathImgNight01);
+    $('#bgimg').animate({ opacity: 0 }, 1000);
+    $('#bgimg_back').animate({ opacity: 1 }, 1000);
     $('#bgvid-link-night').attr('src', pathIconNight);
     $('#bgvid-link-day').attr('src', pathIconDay);
     $('#bgvid-link-night').css('display','none');

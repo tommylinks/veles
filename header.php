@@ -4,14 +4,17 @@
 $template_path = "/beta/";
 
 // day / night
-$daytime = (int) date('H');
+//$daytime = (int) date('H');
+$daytime = 18;
  if ($daytime >= 8 and $daytime <= 17) { 
     $daynight = "images/day/01.jpg";
+    $daynight_style = "opacity: 1";
     $daynight_back = "images/night/01.jpg";
     $night_icon = "images/icons/night.png";
  } else { 
-    $daynight = "images/night/01.jpg";
-    $daynight_back = "images/day/01.jpg";
+    $daynight = "images/day/01.jpg";
+    $daynight_style = "opacity: 0";
+    $daynight_back = "images/night/01.jpg";
     $day_icon = "images/icons/day.png";
  }
 ?>
