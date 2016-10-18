@@ -177,6 +177,23 @@ $('#bgvid-link-night').click(function(){
   var info = 0;
 </script>
 
+<!-- overlay -->
+<div class="overlay"></div>
+
+<!-- main menu -->
+<div class="main-menu">
+  <ul>
+    <li><a href="<?php echo $template_path; ?>">Главная</a></li>
+    <li><a href="<?php echo $template_path; ?>about/">О комплексе</a></li>
+    <li><a href="">Расположение</a></li>
+    <li><a href="">Ход строительства</a></li>
+    <li><a href="">Купить</a></li>
+    <li><a href="">Документы</a></li>
+    <li><a href="">События</a></li>
+  </ul>
+  <span class="close-main-menu">  &times;</span>
+</div>
+
 </div> <!--END pjax-global -->
   <!-- //DENIS_NEW -->
 
