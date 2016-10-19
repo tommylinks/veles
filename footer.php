@@ -239,25 +239,69 @@
 
  </script>
   
+
+  
+   <!-- show main-menu DENIS-->
+  <script>
+    $('#pjax-global').on('click', '.main-menu-btn', function () {
+      $(".footer-bg ").css('background','rgba(0,0,0,0)');
+      $(".main-icons-kit").fadeOut(500);
+      $(".main-menu, .overlay").fadeIn(500);
+      $(".main-menu").animate({
+        opacity: 1,
+        left: "0",
+      }, 500, function() {
+        //
+      });
+    });
+
+
+      $('#pjax-global').on('click', '.close-main-menu, .overlay, .main-menu li', function () {
+      
+      
+      
+      $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500, function() {
+        //
+      });
+      $(".main-icons-kit").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-menu, .overlay").fadeIn(1000);
+    });
+  </script>
+   
+
+
+
+
+
 <!-- Click events + Pjax  --> 
  <script>
 
-$('#pjax-global').on('click', '#bgvid-link-02', function () {
+setTimeout (function () {
+  $('#pjax-global').on('click', '#bgvid-link-02', function () {
 
-  info = 20000;
+    info = 20000;
 
-  pjaxVideoContent(linkBgvid02, linkNav02, 40000);  
+    pjaxVideoContent(linkBgvid02, linkNav02, 40000);  
 
-});
+  });
+}, 2000);
+
+
   
-  
-$('#pjax-global').on('click', '#bgvid-link-01', function () {
+setTimeout (function () {
+
+  $('#pjax-global').on('click', '#bgvid-link-01', function () {
 
   info = 20000;
 
   pjaxVideoContent(linkBgvid01, linkNav01, 0);
 
-});
+  });
+  }, 2000);
 
   </script>
 
@@ -295,34 +339,11 @@ $('#pjax-global').on('click', '#bgvid-link-01', function () {
     });*/
   </script>
   
-  
-  
-      <!-- show main-menu DENIS-->
-  <script>
-    $('#pjax-global').on('click', '.main-menu-btn', function () {
-      $(".footer-bg").css('background','transparent');
-      $(".main-icons-kit").fadeOut(500);
-      $(".main-menu, .overlay").fadeIn(500);
-      $(".main-menu").animate({
-        opacity: 1,
-        left: "0",
-      }, 500, function() {
-        // Animation complete.
-      });
-    });
 
-    $('#pjax-global').on('click', '.close-main-menu, .overlay', function () {
-      $(".main-menu").animate({
-        opacity: 0,
-        left: "-100",
-      }, 500, function() {
-        // Animation complete.
-      });
-      $(".main-menu, .overlay").fadeOut(500);
-      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
-      $(".main-icons-kit").fadeIn(1000);
-    });
-  </script>
   
+  
+
+
+
 </body>
 </html>
