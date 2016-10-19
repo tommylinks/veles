@@ -13,12 +13,11 @@ require_once('header.php');
   <div class="wrapper">
 
     
-      <style> #bgimg-back {z-index: -2;}
-
-       </style>
+      <style> #bgimg-back {z-index: -2;}</style>
       <img id='bgimg' class='main-bg' src='<? echo $daynight;?>' style = '<? echo $daynight_style;?>'>
       <img id='bgimg-back' class='main-bg' src='<? echo $daynight_back;?>' style = "opacity: 1;">
-     <div id = 'pjax-global'>      
+     
+	 <div id = 'pjax-global'>      
         <div id='bgvid-wrapper' style ='position: absolute; display:none;'>
           <video id='bgvid' preload='auto'>
             <source type='video/webm'>
@@ -73,9 +72,9 @@ require_once('header.php');
       <li><div id="bgvid-link-02" class="snt-link">О комплексе</div></li>
       <li><div>Расположение</div></li>
       <li><div>Ход строительства</div></li>
-      <li><div href="">Купить</div></li>
-      <li><div href="">Документы</div></li>
-      <li><div href="">События</div></li>
+      <li><div>Купить</div></li>
+      <li><div>Документы</div></li>
+      <li><div>События</div></li>
     </ul>
     <span class="close-main-menu">  &times;</span>
   </div>

@@ -1,4 +1,3 @@
-
     <footer class="footer-bg">
       <div class="footer-info">
         <div class="left-footer-menu">
@@ -104,32 +103,7 @@
 
   </script>
    <!--END floating tooltips -->
-  <!-- show main-menu -->
-  <script>
-    $(".main-menu-btn").click( function () {
-      $(".footer-bg").css('background','transparent');
-      $(".main-icons-kit").fadeOut(500);
-      $(".main-menu, .overlay").fadeIn(500);
-      $(".main-menu").animate({
-        opacity: 1,
-        left: "0",
-      }, 500, function() {
-        // Animation complete.
-      });
-    });
 
-    $(".close-main-menu, .overlay").click( function () {
-      $(".main-menu").animate({
-        opacity: 0,
-        left: "-100",
-      }, 500, function() {
-        // Animation complete.
-      });
-      $(".main-menu, .overlay").fadeOut(500);
-      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
-      $(".main-icons-kit").fadeIn(1000);
-    });
-  </script>
 
 
 <!-- DENIS_NEW -->
@@ -288,6 +262,67 @@ $('#pjax-global').on('click', '#bgvid-link-01', function () {
   </script>
 
 <!-- //DENIS_NEW -->
+  
+  
+  
+  
+  
+  
+    <!-- show main-menu DIMA-->
+  <script>
+   /* $(".main-menu-btn").click( function () {
+      $(".footer-bg").css('background','transparent');
+      $(".main-icons-kit").fadeOut(500);
+      $(".main-menu, .overlay").fadeIn(500);
+      $(".main-menu").animate({
+        opacity: 1,
+        left: "0",
+      }, 500, function() {
+        // Animation complete.
+      });
+    });
+
+    $(".close-main-menu, .overlay").click( function () {
+      $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500, function() {
+        // Animation complete.
+      });
+      $(".main-menu, .overlay").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-icons-kit").fadeIn(1000);
+    });*/
+  </script>
+  
+  
+  
+      <!-- show main-menu DENIS-->
+  <script>
+    $('#pjax-global').on('click', '.main-menu-btn', function () {
+      $(".footer-bg").css('background','transparent');
+      $(".main-icons-kit").fadeOut(500);
+      $(".main-menu, .overlay").fadeIn(500);
+      $(".main-menu").animate({
+        opacity: 1,
+        left: "0",
+      }, 500, function() {
+        // Animation complete.
+      });
+    });
+
+    $('#pjax-global').on('click', '.close-main-menu, .overlay', function () {
+      $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500, function() {
+        // Animation complete.
+      });
+      $(".main-menu, .overlay").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-icons-kit").fadeIn(1000);
+    });
+  </script>
   
 </body>
 </html>
