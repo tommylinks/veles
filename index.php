@@ -192,14 +192,14 @@ $('#bgvid-link-night').click(function(){
 
 
 
-/*
+
   if (linkBgvid01 === undefined) {
     $('#bgvid').attr('src', pathVidNight01)  
   } else {
     $('#bgvid').attr('src', linkBgvid01)
   }
 
-
+/*
   if (linkBgimg01 === undefined) {
     $('#bgimg').attr('src', pathImgNight01)
   }
