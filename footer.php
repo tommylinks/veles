@@ -257,18 +257,21 @@
 
 
       $('#pjax-global').on('click', '.close-main-menu, .overlay, .main-menu li', function () {
-      
+
       
       
       $(".main-menu").animate({
         opacity: 0,
         left: "-100",
       }, 500, function() {
-        //
+        
+
+        
       });
-      $(".main-icons-kit").fadeOut(500);
+
+      $(".main-menu, .overlay").fadeOut(500);
       $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
-      $(".main-menu, .overlay").fadeIn(1000);
+      $(".main-icons-kit").fadeIn(1000);
     });
   </script>
    
