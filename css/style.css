@@ -59,6 +59,7 @@ ul {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: .5s linear;
 }
 
 .main-icons-kit .main-logo {
@@ -138,6 +139,10 @@ ul {
   background:url('../images/icons/sound.png') no-repeat;
 }
 
+.main-icons-kit .hide-main-icon {
+  transform: translateY(-150%);
+  opacity: 0;
+ }
 
 /*------------footer------------*/
 
