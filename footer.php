@@ -256,22 +256,16 @@
     });
 
 
-      $('#pjax-global').on('click', '.close-main-menu, .overlay, .main-menu li', function () {
-
-      
-      
+    $('#pjax-global').on('click', '.close-main-menu, .overlay', function () {
       $(".main-menu").animate({
         opacity: 0,
         left: "-100",
       }, 500, function() {
-        
-
-        
+        //
       });
-
       $(".main-menu, .overlay").fadeOut(500);
       $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
-      $(".main-icons-kit").fadeIn(1000);
+      $(".main-icons-kit").fadeIn(500);
     });
   </script>
    
@@ -283,28 +277,38 @@
 <!-- Click events + Pjax  --> 
  <script>
 
-setTimeout (function () {
+  $('#pjax-global').on('click', '#bgvid-link-01', function () {
+
+    info = 20000;
+
+
+    $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500);
+      $(".main-menu, .overlay").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-icons-kit").fadeIn(500);
+
+    setTimeout(function() { pjaxVideoContent(linkBgvid01, linkNav01, 0) }, 500); 
+
+  });
+
   $('#pjax-global').on('click', '#bgvid-link-02', function () {
 
     info = 20000;
 
-    pjaxVideoContent(linkBgvid02, linkNav02, 40000);  
+    $(".main-menu").animate({
+        opacity: 0,
+        left: "-100",
+      }, 500);
+      $(".main-menu, .overlay").fadeOut(500);
+      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
+      $(".main-icons-kit").fadeIn(500);
+
+    setTimeout(function() { pjaxVideoContent(linkBgvid02, linkNav02, 40000) }, 500); 
 
   });
-}, 2000);
-
-
-  
-setTimeout (function () {
-
-  $('#pjax-global').on('click', '#bgvid-link-01', function () {
-
-  info = 20000;
-
-  pjaxVideoContent(linkBgvid01, linkNav01, 0);
-
-  });
-  }, 2000);
 
   </script>
 
