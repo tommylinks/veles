@@ -245,7 +245,20 @@
   <script>
     $('#pjax-global').on('click', '.main-menu-btn', function () {
       $(".footer-bg ").css('background','rgba(0,0,0,0)');
-      $(".main-icon").addClass('hide-main-icon');
+
+      //main icons hide animation
+      $(".main-logo").animate({
+        opacity: 0
+      }, 100, function() {
+        //
+      });
+
+      // left
+      $(".icon-bio, .icon-techno, .daynight, .sound-btn").toggleClass('hide-main-icon-left');
+
+      //right
+      $(".icon-socio, .icon-person, .icon-phone").toggleClass('hide-main-icon-right');
+
       $(".main-menu, .overlay").fadeIn(500);
       $(".main-menu").animate({
         opacity: 1,
@@ -264,8 +277,22 @@
         //
       });
       $(".main-menu, .overlay").fadeOut(500);
-      $(".footer-bg ").css('background','rgba(0,0,0,0.6)');
-      $(".main-icon").removeClass('hide-main-icon');
+      $(".footer-bg ").css('background','rgba(0,0,0,0.5)');
+      
+      //main icons show animation
+
+      $(".main-logo").animate({
+        opacity: 1
+      }, 700, function() {
+        //
+      });
+
+      //left
+      $(".icon-bio, .icon-techno, .daynight, .sound-btn").toggleClass('hide-main-icon-left');
+
+      //right
+      $(".icon-socio, .icon-person, .icon-phone").toggleClass('hide-main-icon-right');
+
     });
   </script>
    

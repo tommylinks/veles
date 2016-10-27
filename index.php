@@ -26,7 +26,7 @@ require_once('header.php');
 
 
     <header>
-      <button class="main-menu-btn hvr-pulse">Меню</button>
+      <button class="main-menu-btn">Меню</button>
       <div class="main-icons-kit">
         <div class="main-icon main-logo">
           <img src="/beta/images/icons/logo.png" alt="logo Velec Place" />
@@ -87,26 +87,7 @@ require_once('header.php');
 
 
  <!-- DENIS_NEW -->
-            <div class='main-icon daynight' style='
-                  top: 50%;
-                  left: 10%;
-                  transform: translateY(-50%);
-                  width: 70px;
-                  height: 70px;
-                  border-radius: 50%;
-                  -webkit-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-                  -moz-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-                  box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-				display: inline-block;
-			    position: absolute;
-			    cursor: pointer;
-			    -webkit-touch-callout: none;
-			    -webkit-user-select: none;
-			    -khtml-user-select: none;
-			    -moz-user-select: none;
-			    -ms-user-select: none;
-			    user-select: none;'>
-
+            <div class='main-icon daynight'>
                 <img id='bgvid-link-day' class='snt-link' src = '<? echo $day_icon; ?>'  style = '<? echo $day_icon_style;?>position: absolute;' />
                 <img id='bgvid-link-night' class='snt-link' src = '<? echo $night_icon; ?>'  style = '<? echo $night_icon_style;?> position: absolute;' />     
             </div>
