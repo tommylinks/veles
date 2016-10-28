@@ -24,6 +24,18 @@
   <!-- floating-menu tooltips-->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/floating-menu.js"></script>
   <script type="text/javascript" src="<?php echo $template_path; ?>js/howler.js"></script>
+  <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <!-- CustomScrollbar init -->
+  <script type="text/javascript">
+    (function($){
+        $(window).on("load",function(){
+            $(".doc-popup-wrap").mCustomScrollbar({
+              theme:"rounded-dark"
+            });
+        });
+    })(jQuery);
+  </script>
 
   <!-- init music -->
   <script>

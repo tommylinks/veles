@@ -192,6 +192,47 @@ ul {
  }
 
 
+/*-----------Documents page-------------*/
+.documents-popup {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  min-width: 890px;
+  min-height: 440px;
+  width: 70vw;
+  height: 565px;
+  height: 60vh;
+  background: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.doc-popup-wrap{
+  height: 445px;
+  height: 48vh;
+}
+
+.doc-popup-header{
+  margin: 10px 0;
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.doc-popup-header span:hover {
+  padding: 10px 15px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .1s;
+}
+
 
 /*------------footer------------*/
 
