@@ -36,11 +36,11 @@
 	$('.sound-btn').click(function() {
 		if($('.sound-btn').hasClass('pause')) {
 			$('.sound-btn').removeClass('pause');
-      $('.sound-btn').width('60');
+      $('.sound-btn').width('25');
       sound.play();
 		} else {
       $('.sound-btn').addClass('pause');
-      $('.sound-btn').width(30);
+      $('.sound-btn').width('8');
       sound.pause();
     }
 
