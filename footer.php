@@ -277,7 +277,7 @@
         //
       });
       $(".main-menu, .overlay").fadeOut(500);
-      $(".footer-bg ").css('background','rgba(0,0,0,0.5)');
+      $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
       
       //main icons show animation
 
