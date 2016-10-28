@@ -34,7 +34,7 @@ require_once('../header.php');
                 <span>О компании</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Учасники проэкта</span>
+                <span>Участники проекта</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span>Документация</span>
