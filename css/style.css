@@ -313,5 +313,8 @@ ul {
 
 
 @media (max-width: 1430px) {
-  .footer-info a {margin: 0 7px;}
+  .footer-info a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
 }
