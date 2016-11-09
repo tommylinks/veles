@@ -1,36 +1,41 @@
 <?php 
 
 // meta tags
-$title = "documents";
+$title = "Documents"; ///---
 $description = "DESCRIPTION";
 
 require_once('../header.php');
 ?> 
-<style type="text/css">
-  pre {position: absolute; left: 500px; top: 30px; z-index: 11; color: white;}
-
-</style>
-
-<pre><? print_r ($_COOKIE); ?></pre>
 
 <body>
-  <div class="wrapper">
-  <div id = 'pjax-global'> 
-      <img id='bgimg' class='img-bg' src='' style = ''>
-      <img id='bgimg-back' class='img-bg' src='' style = "opacity: 1;">
-     
-      <div id='bgvid-wrapper' style ='position: absolute; display:none;'>
-        <video id='bgvid' preload='auto'>
-          <source type='video/webm'>
-        </video>
-      </div>
-    <header>
+<div class="wrapper">
+
+  <!-- preloader  -->
+  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
+
+  <!--END preloader  -->
+  <div id = "pjax-global"> 
+    <img id="bgimg" class="img-bg" src="" style = "">
+    <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
+
+    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+      <video id="bgvid" preload="auto">
+        <source type="video/webm">
+        <source type="video/mp4">
+      </video>
+    </div>
+
+<header>
             <button class="main-menu-btn">Меню</button>
-        <div class="documents-popup">
+
+    <!-- START documents-popup   -->
+           
+        <div class="documents-popup" style="display: none;">
+
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>О компании</span>
+                <span class="bgvid-link-02 snt-link">О компании</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span>Участники проекта</span>
@@ -40,20 +45,21 @@ require_once('../header.php');
               </div>
             </div>
           </div>
+
           <div class="doc-popup-wrap">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="doc-popup-left">
-                  <img class="img-responsive" src="../images/other/dniprobud.png">
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
                   <br>
-                  <img class="img-responsive" src="../images/other/dniprobud.png">
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
                   <br>
-                  <img class="img-responsive" src="../images/other/dniprobud.png">
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
                   <br>
-                  <img class="img-responsive" src="../images/other/dniprobud.png">
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
                   <br>
                 </div>
-              </div>
+              </div> 
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="doc-popup-content">
                   <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
@@ -81,27 +87,29 @@ require_once('../header.php');
             </div>
           </div>
         </div>
+
+        <!-- END documents-popup   -->  
+
       <button class="sound-btn"></button>
     </header>
 
-  <!-- overlay -->
+      <!-- overlay -->
   <div class="overlay"></div>
 
-  <!-- main menu -->
+   <!-- main menu -->
   <div class="main-menu">
-  <style> .snt-link { cursor: pointer; }</style>
     <ul>
-      <li><div id="bgvid-link-01" class="snt-link">Главная</div></li>
-      <li><div id="bgvid-link-02" class="snt-link">О комплексе</div></li>
-      <li><div id="bgvid-link-03" class="snt-link">Преимущества</div></li>
-      <li><div id="bgvid-link-04" class="snt-link">Расположение</div></li>
-      <li><div id="bgvid-link-05" class="snt-link">Вид из окон</div></li>
-      <li><div id="bgvid-link-06" class="snt-link">Ход строительства</div></li>
-      <li><div id="bgvid-link-07" class="snt-link">Купить</div></li>
-      <li><div id="bgvid-link-08" class="snt-link">Аппартаменты</div></li>
-      <li><div id="bgvid-link-09" class="snt-link">Коммерческая недвижимость</div></li>
-      <li><div id="bgvid-link-10" class="snt-link">Документы</div></li>
-      <li><div id="bgvid-link-11" class="snt-link">События</div></li>
+      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
+      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
+      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
+      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
+      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
+      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
+      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
+      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
+      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
+      <li><div class="bgvid-link-11 snt-link">События</div></li>
     </ul>
     <span class="close-main-menu">  &times;</span>
   </div>
@@ -109,6 +117,13 @@ require_once('../header.php');
   <div class="main-icon daynight">
     <img id="bgvid-link-day" class="snt-link" src =""  style="position: absolute;" />
     <img id="bgvid-link-night" class="snt-link" src =""  style="position: absolute;" />     
+  </div>
+
+
+  <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
+    <div class="prev snt-link bgvid-link-04" style="display: none;"> < </div>
+    <div class="start snt-link bgvid-link-01" style="display: none;"> ^ </div>
+    <div class="next snt-link bgvid-link-06" style="display: none;"> > </div>
   </div>
 
 <script>
@@ -191,30 +206,31 @@ require_once('../header.php');
   };
 
   //записываем глобальные переменные НОЧЬ
-  var funcSessionStorageNight = function() {
-    sessionStorage.clear();
-    var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidNight01);
-    var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgNight01);
-    var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidNight02);
-    var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgNight02);
-    var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidNight03);
-    var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgNight03);
-    var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidNight04);
-    var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgNight04);
-    var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidNight05);
-    var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgNight05);
-    var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidNight06);
-    var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgNight06);
-    var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidNight07);
-    var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgNight07);
-    var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidNight08);
-    var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgNight08);
-    var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidNight09);
-    var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgNight09);
-    var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidNight10);
-    var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgNight10);
-    var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidNight11);
-    var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgNight11);
+    var funcSessionStorageNight = function() {
+      sessionStorage.clear();
+      var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidNight01);
+      var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgNight01);
+      var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidNight02);
+      var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgNight02);
+      var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidNight03);
+      var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgNight03);
+      var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidNight04);
+      var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgNight04);
+      var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidNight05);
+      var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgNight05);
+      var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidNight06);
+      var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgNight06);
+      var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidNight07);
+      var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgNight07);
+      var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidNight08);
+      var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgNight08);
+      var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidNight09);
+      var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgNight09);
+      var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidNight10);
+      var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgNight10);
+      var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidNight11);
+      var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgNight11);
+
   };
 
   //текущее время
@@ -222,39 +238,32 @@ require_once('../header.php');
   var daytime = date.getHours();
   console.log (daytime);
   
-
   // функция замены ссылок + анимация ДЕНЬ
-
   var funcAnimationDay = function () {
-
-      $('#bgvid').attr('src', pathVidDay10); ///-----
-      $('#bgimg').attr('src', pathImgDay10); ///-----
-      $('#bgimg-back').attr('src', pathImgNight10); ///-----
-      $('#bgimg').animate({ opacity: 1 }, 1000);
-      $('#bgimg_back').animate({ opacity: 0 }, 1000);
-      $('#bgvid-link-night').attr('src', pathIconNight);
-      $('#bgvid-link-day').attr('src', pathIconDay);
-      $('#bgvid-link-night').css('display','block');
-      $('#bgvid-link-day').css('display','none');
+    $('#bgvid').attr('src', pathVidDay10); ///-----
+    $('#bgimg').attr('src', pathImgDay10); ///-----
+    $('#bgimg-back').attr('src', pathImgNight10); ///-----
+    $('#bgimg').animate({ opacity: 1 }, 0);
+    $('#bgimg_back').animate({ opacity: 0 }, 0);
+    $('#bgvid-link-night').attr('src', pathIconNight);
+    $('#bgvid-link-day').attr('src', pathIconDay);
+    $('#bgvid-link-night').css('display','block');
+    $('#bgvid-link-day').css('display','none');
   };
 
   // функция замены ссылок + анимация НОЧЬ
-
     var funcAnimationNight = function () {
 
       $('#bgvid').attr('src', pathVidNight10); ///-----
       $('#bgimg').attr('src', pathImgDay10); ///-----
       $('#bgimg-back').attr('src', pathImgNight10); ///-----
-      $('#bgimg').animate({ opacity: 0 }, 1000);
-      $('#bgimg_back').animate({ opacity: 1 }, 1000);
+      $('#bgimg').animate({ opacity: 0 }, 0);
+      $('#bgimg_back').animate({ opacity: 1 }, 0);
       $('#bgvid-link-night').attr('src', pathIconNight);
       $('#bgvid-link-day').attr('src', pathIconDay);
       $('#bgvid-link-night').css('display','none');
       $('#bgvid-link-day').css('display','block');
   };
-
-
-  ////////
 
   if (document.cookie == false) {
     // условия зависимости контента от времени суток
@@ -305,7 +314,6 @@ require_once('../header.php');
      
   }
 
-
 $('#bgvid-link-day').click(function(){
 
   // записываем глобальные переменные для дня
@@ -326,13 +334,12 @@ $('#bgvid-link-night').click(function(){
   funcSessionStorageNight ();
 
   document.cookie = "daynight=";
-  document.cookie = "daynight=night; expires=3600";
+  document.cookie = "daynight=night; expires=3600"
 
     // вызываем функцию замены ссылок и анимации для дня
     funcAnimationNight ();
 
 });
-
 
 // забираем переменные из sessionStorage
   var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
@@ -360,16 +367,19 @@ $('#bgvid-link-night').click(function(){
 </script>
 
 <!-- CustomScrollbar init -->
-<script type="text/javascript">
-  (function($){
-      $(window).on("load",function(){
+<script>
+  (function(){
           $(".doc-popup-wrap").mCustomScrollbar({
             theme:"rounded-dark"
           });
-      });
-  })(jQuery);
-
+      })();
 </script>
+
+<!-- Related with .documents-popup display: none in html. Fix appearance this block on the other pages without .documents-popup -->
+<script>
+  $(".documents-popup").css('display', 'block');
+</script>
+
 
 </div> <!--END pjax-global -->    
 

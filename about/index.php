@@ -1,36 +1,36 @@
 <?php 
 
 // meta tags
-$title = "ABOUT";
+$title = "About"; ///---
 $description = "DESCRIPTION";
 
 require_once('../header.php');
 ?> 
 
-
-
-
 <body>
-  <div class="wrapper">
-    <!-- preloader  -->
-      <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
-    <!--END preloader  -->
-  <div id = 'pjax-global'>  
-      <img id='bgimg' class='img-bg' src='' style = ''>
-      <img id='bgimg-back' class='img-bg' src='' style = "opacity: 1;">
-     
-    
-      <div id='bgvid-wrapper' style ='position: absolute; display:none;'>
-        <video id='bgvid' preload='auto'>
-          <source type='video/webm'>
-        </video>
-      </div>
-    
-    
+<div class="wrapper">
 
+  <!-- preloader  -->
+  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
+
+  <!--END preloader  -->
+  <div id = "pjax-global"> 
+    <img id="bgimg" class="img-bg" src="" style = "">
+    <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
+
+    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+      <video id="bgvid" preload="auto">
+        <source type="video/webm">
+      </video>
+    </div>
 
     <header>
-      <button class="main-menu-btn hvr-pulse">Меню</button>
+      <button class="main-menu-btn">Меню</button>
+
+    <!-- START documents-popup -->
+        <div class="documents-popup" style="display: none;"></div>
+    <!-- END documents-popup  -->
+
       <div class="main-icons-kit">
         <div class="main-icon main-logo">
           <img src="/omega/images/icons/logo.png" alt="logo Velec Place" />
@@ -60,6 +60,7 @@ require_once('../header.php');
           </figure>
         </div>
         <div class="main-icon icon-phone">
+          <div class="icon-phone-animation"></div>
         </div>
       </div><!--END main-icons-kit -->
       <button class="sound-btn"></button>
@@ -70,17 +71,16 @@ require_once('../header.php');
 
    <!-- main menu -->
   <div class="main-menu">
-  <style> .snt-link { cursor: pointer; }</style>
     <ul>
       <li><div class="bgvid-link-01 snt-link">Главная</div></li>
       <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
       <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
       <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>
-      <li><div class="bgvid-link-06 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-07 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-08 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-09 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
+      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
+      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
+      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
       <li><div class="bgvid-link-10 snt-link">Документы</div></li>
       <li><div class="bgvid-link-11 snt-link">События</div></li>
     </ul>
@@ -101,51 +101,92 @@ require_once('../header.php');
 
 <script>
   //   pathes
+
+  
+  var user = detect.parse(navigator.userAgent);
+  if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
+  
+  // video night
+  var pathVidNight01 = '/omega/media/night/01.mp4';
+  var pathVidNight02 = '/omega/media/night/02.mp4';
+  var pathVidNight03 = '/omega/media/night/03.mp4';
+  var pathVidNight04 = '/omega/media/night/04.mp4';
+  var pathVidNight05 = '/omega/media/night/05.mp4';
+  var pathVidNight06 = '/omega/media/night/06.mp4';
+  var pathVidNight07 = '/omega/media/night/07.mp4';
+  var pathVidNight08 = '/omega/media/night/08.mp4';
+  var pathVidNight09 = '/omega/media/night/09.mp4';
+  var pathVidNight10 = '/omega/media/night/10.mp4';
+  var pathVidNight11 = '/omega/media/night/11.mp4';
+
+
+  // video day
+  var pathVidDay01 = '/omega/media/day/01.mp4';
+  var pathVidDay02 = '/omega/media/day/02.mp4';
+  var pathVidDay03 = '/omega/media/day/03.mp4';
+  var pathVidDay04 = '/omega/media/day/04.mp4';
+  var pathVidDay05 = '/omega/media/day/05.mp4';
+  var pathVidDay06 = '/omega/media/day/06.mp4';
+  var pathVidDay07 = '/omega/media/day/07.mp4';
+  var pathVidDay08 = '/omega/media/day/08.mp4';
+  var pathVidDay09 = '/omega/media/day/09.mp4';
+  var pathVidDay10 = '/omega/media/day/10.mp4';
+  var pathVidDay11 = '/omega/media/day/11.mp4';
+
+} else {
+
+  // video night
   var pathVidNight01 = '/omega/media/night/01.webm';
-  var pathImgNight01 = '/omega/images/night/01.jpg';
   var pathVidNight02 = '/omega/media/night/02.webm';
-  var pathImgNight02 = '/omega/images/night/02.jpg';
   var pathVidNight03 = '/omega/media/night/03.webm';
-  var pathImgNight03 = '/omega/images/night/03.jpg';
   var pathVidNight04 = '/omega/media/night/04.webm';
-  var pathImgNight04 = '/omega/images/night/04.jpg';
   var pathVidNight05 = '/omega/media/night/05.webm';
-  var pathImgNight05 = '/omega/images/night/05.jpg';
   var pathVidNight06 = '/omega/media/night/06.webm';
-  var pathImgNight06 = '/omega/images/night/06.jpg';
   var pathVidNight07 = '/omega/media/night/07.webm';
-  var pathImgNight07 = '/omega/images/night/07.jpg';
   var pathVidNight08 = '/omega/media/night/08.webm';
-  var pathImgNight08 = '/omega/images/night/08.jpg';
   var pathVidNight09 = '/omega/media/night/09.webm';
-  var pathImgNight09 = '/omega/images/night/09.jpg';
   var pathVidNight10 = '/omega/media/night/10.webm';
-  var pathImgNight10 = '/omega/images/night/10.jpg';
   var pathVidNight11 = '/omega/media/night/11.webm';
+
+
+  // video day
+  var pathVidDay01 = '/omega/media/day/01.webm';
+  var pathVidDay02 = '/omega/media/day/02.webm';
+  var pathVidDay03 = '/omega/media/day/03.webm';
+  var pathVidDay04 = '/omega/media/day/04.webm';
+  var pathVidDay05 = '/omega/media/day/05.webm';
+  var pathVidDay06 = '/omega/media/day/06.webm';
+  var pathVidDay07 = '/omega/media/day/07.webm';
+  var pathVidDay08 = '/omega/media/day/08.webm';
+  var pathVidDay09 = '/omega/media/day/09.webm';
+  var pathVidDay10 = '/omega/media/day/10.webm';
+  var pathVidDay11 = '/omega/media/day/11.webm';
+}
+
+  // img night
+  var pathImgNight01 = '/omega/images/night/01.jpg';
+  var pathImgNight02 = '/omega/images/night/02.jpg';
+  var pathImgNight03 = '/omega/images/night/03.jpg';
+  var pathImgNight04 = '/omega/images/night/04.jpg';
+  var pathImgNight05 = '/omega/images/night/05.jpg';
+  var pathImgNight06 = '/omega/images/night/06.jpg';
+  var pathImgNight07 = '/omega/images/night/07.jpg';
+  var pathImgNight08 = '/omega/images/night/08.jpg';
+  var pathImgNight09 = '/omega/images/night/09.jpg';
+  var pathImgNight10 = '/omega/images/night/10.jpg';
   var pathImgNight11 = '/omega/images/night/11.jpg';
 
-
-  var pathVidDay01 = '/omega/media/day/01.webm';
+  // img day
   var pathImgDay01 = '/omega/images/day/01.jpg';
-  var pathVidDay02 = '/omega/media/day/02.webm';
   var pathImgDay02 = '/omega/images/day/02.jpg';
-  var pathVidDay03 = '/omega/media/day/03.webm';
   var pathImgDay03 = '/omega/images/day/03.jpg';
-  var pathVidDay04 = '/omega/media/day/04.webm';
   var pathImgDay04 = '/omega/images/day/04.jpg';
-  var pathVidDay05 = '/omega/media/day/05.webm';
   var pathImgDay05 = '/omega/images/day/05.jpg';  
-  var pathVidDay06 = '/omega/media/day/06.webm';
   var pathImgDay06 = '/omega/images/day/06.jpg';
-  var pathVidDay07 = '/omega/media/day/07.webm';
   var pathImgDay07 = '/omega/images/day/07.jpg';
-  var pathVidDay08 = '/omega/media/day/08.webm';
   var pathImgDay08 = '/omega/images/day/08.jpg';
-  var pathVidDay09 = '/omega/media/day/09.webm';
   var pathImgDay09 = '/omega/images/day/09.jpg';
-  var pathVidDay10 = '/omega/media/day/10.webm';
   var pathImgDay10 = '/omega/images/day/10.jpg';
-  var pathVidDay11 = '/omega/media/day/11.webm';
   var pathImgDay11 = '/omega/images/day/11.jpg';
 
   var pathIconDay = '/omega/images/icons/day.png';
@@ -153,30 +194,30 @@ require_once('../header.php');
 
   //записываем глобальные переменные ДЕНЬ
   var funcSessionStorageDay = function() {
-      sessionStorage.clear();
-      var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidDay01);
-      var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgDay01);
-      var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidDay02);
-      var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
-      var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidDay03);
-      var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgDay03);
-      var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidDay04);
-      var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgDay04);
-      var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidDay05);
-      var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgDay05);
-      var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidDay06);
-      var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgDay06);
-      var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidDay07);
-      var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgDay07);
-      var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidDay08);
-      var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgDay08);
-      var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidDay09);
-      var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgDay09);
-      var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidDay10);
-      var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgDay10);
-      var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidDay11);
-      var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgDay11);
-  }
+    sessionStorage.clear();
+    var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidDay01);
+    var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgDay01);
+    var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidDay02);
+    var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
+    var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidDay03);
+    var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgDay03);
+    var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidDay04);
+    var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgDay04);
+    var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidDay05);
+    var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgDay05);
+    var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidDay06);
+    var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgDay06);
+    var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidDay07);
+    var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgDay07);
+    var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidDay08);
+    var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgDay08);
+    var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidDay09);
+    var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgDay09);
+    var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidDay10);
+    var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgDay10);
+    var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidDay11);
+    var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgDay11);
+  };
 
   //записываем глобальные переменные НОЧЬ
     var funcSessionStorageNight = function() {
@@ -204,32 +245,27 @@ require_once('../header.php');
       var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidNight11);
       var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgNight11);
 
-  }
-
+  };
 
   //текущее время
   var date = new Date();
   var daytime = date.getHours();
   console.log (daytime);
   
-
   // функция замены ссылок + анимация ДЕНЬ
-
   var funcAnimationDay = function () {
-
-      $('#bgvid').attr('src', pathVidDay02); ///-----
-      $('#bgimg').attr('src', pathImgDay02); ///-----
-      $('#bgimg-back').attr('src', pathImgNight02); ///-----
-      $('#bgimg').animate({ opacity: 1 }, 0);
-      $('#bgimg_back').animate({ opacity: 0 }, 0);
-      $('#bgvid-link-night').attr('src', pathIconNight);
-      $('#bgvid-link-day').attr('src', pathIconDay);
-      $('#bgvid-link-night').css('display','block');
-      $('#bgvid-link-day').css('display','none');
-  }
+    $('#bgvid').attr('src', pathVidDay02); ///-----
+    $('#bgimg').attr('src', pathImgDay02); ///-----
+    $('#bgimg-back').attr('src', pathImgNight02); ///-----
+    $('#bgimg').animate({ opacity: 1 }, 0);
+    $('#bgimg_back').animate({ opacity: 0 }, 0);
+    $('#bgvid-link-night').attr('src', pathIconNight);
+    $('#bgvid-link-day').attr('src', pathIconDay);
+    $('#bgvid-link-night').css('display','block');
+    $('#bgvid-link-day').css('display','none');
+  };
 
   // функция замены ссылок + анимация НОЧЬ
-
     var funcAnimationNight = function () {
 
       $('#bgvid').attr('src', pathVidNight02); ///-----
@@ -241,10 +277,7 @@ require_once('../header.php');
       $('#bgvid-link-day').attr('src', pathIconDay);
       $('#bgvid-link-night').css('display','none');
       $('#bgvid-link-day').css('display','block');
-  }
-
-
-  ////////
+  };
 
   if (document.cookie == false) {
     // условия зависимости контента от времени суток
@@ -295,11 +328,10 @@ require_once('../header.php');
      
   }
 
-
 $('#bgvid-link-day').click(function(){
 
-    // записываем глобальные переменные для дня
-    funcSessionStorageDay ();
+  // записываем глобальные переменные для дня
+  funcSessionStorageDay ();
 
   document.cookie = "daynight=";
   document.cookie = "daynight=day; expires=3600";
@@ -312,8 +344,8 @@ $('#bgvid-link-day').click(function(){
 
 $('#bgvid-link-night').click(function(){
 
-    // записываем глобальные переменные для ночи
-    funcSessionStorageNight ();
+  // записываем глобальные переменные для ночи
+  funcSessionStorageNight ();
 
   document.cookie = "daynight=";
   document.cookie = "daynight=night; expires=3600"
@@ -322,7 +354,6 @@ $('#bgvid-link-night').click(function(){
     funcAnimationNight ();
 
 });
-
 
 // забираем переменные из sessionStorage
   var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
@@ -347,17 +378,10 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
   var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-  
 </script>
 
 
-
-
 </div> <!--END pjax-global -->    
-
-
-
 
 <?
 require_once('../footer.php');

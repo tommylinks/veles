@@ -11,7 +11,7 @@ require_once('header.php');
 <div class="wrapper">
 
   <!-- preloader  -->
-  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
+  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div> 
 
   <!--END preloader  -->
   <div id = "pjax-global"> 
@@ -21,11 +21,17 @@ require_once('header.php');
     <div id="bgvid-wrapper" style ="position: absolute; display:none;">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
+        <source type="video/mp4">
       </video>
     </div>
 
     <header>
       <button class="main-menu-btn">Меню</button>
+
+      <!-- START documents-popup -->
+        <div class="documents-popup" style="display: none;"></div>
+	  <!-- END documents-popup  -->
+
       <div class="main-icons-kit">
         <div class="main-icon main-logo">
           <img src="/omega/images/icons/logo.png" alt="logo Velec Place" />
@@ -66,17 +72,16 @@ require_once('header.php');
 
    <!-- main menu -->
   <div class="main-menu">
-  <style> .snt-link { cursor: pointer; }</style>
     <ul>
       <li><div class="bgvid-link-01 snt-link">Главная</div></li>
       <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
       <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
       <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>
-      <li><div class="bgvid-link-06 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-07 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-08 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-09 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
+      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
+      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
+      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
       <li><div class="bgvid-link-10 snt-link">Документы</div></li>
       <li><div class="bgvid-link-11 snt-link">События</div></li>
     </ul>
@@ -88,7 +93,6 @@ require_once('header.php');
     <img id="bgvid-link-night" class="snt-link" src =""  style="position: absolute;" />     
   </div>
 
-// TEST navigation
   <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
     <div class="prev snt-link" style="display: none;"> < </div>
     <div class="start snt-link bgvid-link-01" style="display: none;"> ^ </div>
@@ -97,51 +101,91 @@ require_once('header.php');
 
 <script>
   //   pathes
+
+var user = detect.parse(navigator.userAgent);
+if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
+  
+  // video night
+  var pathVidNight01 = '/omega/media/night/01.mp4';
+  var pathVidNight02 = '/omega/media/night/02.mp4';
+  var pathVidNight03 = '/omega/media/night/03.mp4';
+  var pathVidNight04 = '/omega/media/night/04.mp4';
+  var pathVidNight05 = '/omega/media/night/05.mp4';
+  var pathVidNight06 = '/omega/media/night/06.mp4';
+  var pathVidNight07 = '/omega/media/night/07.mp4';
+  var pathVidNight08 = '/omega/media/night/08.mp4';
+  var pathVidNight09 = '/omega/media/night/09.mp4';
+  var pathVidNight10 = '/omega/media/night/10.mp4';
+  var pathVidNight11 = '/omega/media/night/11.mp4';
+
+
+  // video day
+  var pathVidDay01 = '/omega/media/day/01.mp4';
+  var pathVidDay02 = '/omega/media/day/02.mp4';
+  var pathVidDay03 = '/omega/media/day/03.mp4';
+  var pathVidDay04 = '/omega/media/day/04.mp4';
+  var pathVidDay05 = '/omega/media/day/05.mp4';
+  var pathVidDay06 = '/omega/media/day/06.mp4';
+  var pathVidDay07 = '/omega/media/day/07.mp4';
+  var pathVidDay08 = '/omega/media/day/08.mp4';
+  var pathVidDay09 = '/omega/media/day/09.mp4';
+  var pathVidDay10 = '/omega/media/day/10.mp4';
+  var pathVidDay11 = '/omega/media/day/11.mp4';
+
+} else {
+
+  // video night
   var pathVidNight01 = '/omega/media/night/01.webm';
-  var pathImgNight01 = '/omega/images/night/01.jpg';
   var pathVidNight02 = '/omega/media/night/02.webm';
-  var pathImgNight02 = '/omega/images/night/02.jpg';
   var pathVidNight03 = '/omega/media/night/03.webm';
-  var pathImgNight03 = '/omega/images/night/03.jpg';
   var pathVidNight04 = '/omega/media/night/04.webm';
-  var pathImgNight04 = '/omega/images/night/04.jpg';
   var pathVidNight05 = '/omega/media/night/05.webm';
-  var pathImgNight05 = '/omega/images/night/05.jpg';
   var pathVidNight06 = '/omega/media/night/06.webm';
-  var pathImgNight06 = '/omega/images/night/06.jpg';
   var pathVidNight07 = '/omega/media/night/07.webm';
-  var pathImgNight07 = '/omega/images/night/07.jpg';
   var pathVidNight08 = '/omega/media/night/08.webm';
-  var pathImgNight08 = '/omega/images/night/08.jpg';
   var pathVidNight09 = '/omega/media/night/09.webm';
-  var pathImgNight09 = '/omega/images/night/09.jpg';
   var pathVidNight10 = '/omega/media/night/10.webm';
-  var pathImgNight10 = '/omega/images/night/10.jpg';
   var pathVidNight11 = '/omega/media/night/11.webm';
+
+
+  // video day
+  var pathVidDay01 = '/omega/media/day/01.webm';
+  var pathVidDay02 = '/omega/media/day/02.webm';
+  var pathVidDay03 = '/omega/media/day/03.webm';
+  var pathVidDay04 = '/omega/media/day/04.webm';
+  var pathVidDay05 = '/omega/media/day/05.webm';
+  var pathVidDay06 = '/omega/media/day/06.webm';
+  var pathVidDay07 = '/omega/media/day/07.webm';
+  var pathVidDay08 = '/omega/media/day/08.webm';
+  var pathVidDay09 = '/omega/media/day/09.webm';
+  var pathVidDay10 = '/omega/media/day/10.webm';
+  var pathVidDay11 = '/omega/media/day/11.webm';
+}
+
+  // img night
+  var pathImgNight01 = '/omega/images/night/01.jpg';
+  var pathImgNight02 = '/omega/images/night/02.jpg';
+  var pathImgNight03 = '/omega/images/night/03.jpg';
+  var pathImgNight04 = '/omega/images/night/04.jpg';
+  var pathImgNight05 = '/omega/images/night/05.jpg';
+  var pathImgNight06 = '/omega/images/night/06.jpg';
+  var pathImgNight07 = '/omega/images/night/07.jpg';
+  var pathImgNight08 = '/omega/images/night/08.jpg';
+  var pathImgNight09 = '/omega/images/night/09.jpg';
+  var pathImgNight10 = '/omega/images/night/10.jpg';
   var pathImgNight11 = '/omega/images/night/11.jpg';
 
-
-  var pathVidDay01 = '/omega/media/day/01.webm';
+  // img day
   var pathImgDay01 = '/omega/images/day/01.jpg';
-  var pathVidDay02 = '/omega/media/day/02.webm';
   var pathImgDay02 = '/omega/images/day/02.jpg';
-  var pathVidDay03 = '/omega/media/day/03.webm';
   var pathImgDay03 = '/omega/images/day/03.jpg';
-  var pathVidDay04 = '/omega/media/day/04.webm';
   var pathImgDay04 = '/omega/images/day/04.jpg';
-  var pathVidDay05 = '/omega/media/day/05.webm';
   var pathImgDay05 = '/omega/images/day/05.jpg';  
-  var pathVidDay06 = '/omega/media/day/06.webm';
   var pathImgDay06 = '/omega/images/day/06.jpg';
-  var pathVidDay07 = '/omega/media/day/07.webm';
   var pathImgDay07 = '/omega/images/day/07.jpg';
-  var pathVidDay08 = '/omega/media/day/08.webm';
   var pathImgDay08 = '/omega/images/day/08.jpg';
-  var pathVidDay09 = '/omega/media/day/09.webm';
   var pathImgDay09 = '/omega/images/day/09.jpg';
-  var pathVidDay10 = '/omega/media/day/10.webm';
   var pathImgDay10 = '/omega/images/day/10.jpg';
-  var pathVidDay11 = '/omega/media/day/11.webm';
   var pathImgDay11 = '/omega/images/day/11.jpg';
 
   var pathIconDay = '/omega/images/icons/day.png';
@@ -335,10 +379,11 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
-<!-- polyfill for ie -object-fit- -->
-<script type="text/javascript" src="/omega/js/fitie.js"></script>
 
-</div> <!--END pjax-global -->    
+
+</div> <!--END pjax-global -->   
+
+
 
 <?
 require_once('footer.php');
