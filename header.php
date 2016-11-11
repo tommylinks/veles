@@ -1,5 +1,5 @@
   <?//path
-$template_path = "/omega/";?>
+$template_path = "/zetta/";?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -20,28 +20,19 @@ $template_path = "/omega/";?>
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/hover-min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/floating-menu.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/ionicons.css"> 
-  <!-- CustomScrollbar -->
-  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/jquery.mCustomScrollbar.css">
-
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/style.css"> 
 
   <!-- JQuety + Pjax   -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.pjax.js"></script>
 
-  <!-- floating-menu tooltips-->
+    <!-- floating-menu tooltips-->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/floating-menu.js"></script>
-
   <script type="text/javascript" src="<?php echo $template_path; ?>js/howler.js"></script>
 
-  <!-- CustomScrollbar -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-  <!-- For detection user-agent -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/detect.min.js"></script>
- 
   <style> 
-    #bgimg-back {z-index: -2;}
+     #bgimg-back {z-index: -2;}
 
     body {
       overflow: hidden;
@@ -96,10 +87,10 @@ $template_path = "/omega/";?>
     .contpre small{font-size:25px;}
      
     .contpre{
-      height: 88px;
+      width: 250px;
       position: absolute;
       left: 50%;top: 48%;
-      margin-left:-60px;
+      margin-left:-125px;
       color:#fff;
       font-size:40px;
       letter-spacing:-2px;
@@ -109,9 +100,9 @@ $template_path = "/omega/";?>
     #p_prldr .svg_anm {
       position: absolute;
       width: 125px;
-      height: 88px;
-      background: url(/omega/images/icons/three-dots.svg) center center no-repeat;
-      background-size:115px;
-    }
+      height: 77px;
+      background: url(/zetta/images/icons/three-dots.svg) center center no-repeat;
+      background-size:115px;    
+      margin: -25px 0 0 -62px;}
   </style>
 </head>
