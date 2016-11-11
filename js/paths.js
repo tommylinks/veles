@@ -117,3 +117,58 @@ function funcPathVidDayWebm() {
 
   var pathIconDay = '/omega/images/icons/day.png';
   var pathIconNight = '/omega/images/icons/night.png';
+
+
+ //записываем глобальные переменные ДЕНЬ
+  var funcSessionStorageDay = function() {
+    sessionStorage.clear();
+    var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidDay01);
+    var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgDay01);
+    var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidDay02);
+    var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
+    var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidDay03);
+    var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgDay03);
+    var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidDay04);
+    var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgDay04);
+    var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidDay05);
+    var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgDay05);
+    var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidDay06);
+    var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgDay06);
+    var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidDay07);
+    var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgDay07);
+    var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidDay08);
+    var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgDay08);
+    var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidDay09);
+    var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgDay09);
+    var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidDay10);
+    var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgDay10);
+    var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidDay11);
+    var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgDay11);
+  };
+
+  //записываем глобальные переменные НОЧЬ
+    var funcSessionStorageNight = function() {
+      sessionStorage.clear();
+      var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidNight01);
+      var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgNight01);
+      var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidNight02);
+      var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgNight02);
+      var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidNight03);
+      var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgNight03);
+      var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidNight04);
+      var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgNight04);
+      var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidNight05);
+      var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgNight05);
+      var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidNight06);
+      var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgNight06);
+      var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidNight07);
+      var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgNight07);
+      var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidNight08);
+      var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgNight08);
+      var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidNight09);
+      var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgNight09);
+      var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidNight10);
+      var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgNight10);
+      var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidNight11);
+      var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgNight11);
+  };

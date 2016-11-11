@@ -102,7 +102,6 @@ require_once('header.php');
 <script>
 
   //   pathes
-
 var user = detect.parse(navigator.userAgent);
 if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   
@@ -114,8 +113,6 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
 
 } else {
 
-  console.log (pathVidDay01);
-
   // video night webm
   funcPathVidNightWebm();
 
@@ -123,12 +120,9 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   funcPathVidDayWebm ();
 }
 
- 
-
   //текущее время
   var date = new Date();
   var daytime = date.getHours();
-  console.log (daytime);
 
   // функция замены ссылок + анимация ДЕНЬ и НОЧЬ
   var funcAnimation = function (pathVid, pathImgDay, pathImgNight, opacityBgimg, opacityBgimgBack, opacityDelay, displayStyleNight, displayStyleDay) {
@@ -150,9 +144,8 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       document.cookie = "daynight=";
       document.cookie = "daynight=day; expires=3600";
       console.log (pathVidDay01);
-      // вызываем функцию замены ссылок и анимации для дня
-      // oldfunction funcAnimationDay ();
 
+      // вызываем функцию замены ссылок и анимации для дня
       funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 0, 'block', 'none' ); 
 
       // записываем глобальные переменные для дня
@@ -164,8 +157,6 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       document.cookie = "daynight=night; expires=3600";
 
       // вызываем функцию замены ссылок и анимации для ночи
-      // oldfunction funcAnimationNight ();
-
       funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 0, 'none', 'block' );
 
       // записываем глобальные переменные для ночи
@@ -173,15 +164,13 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
      } 
   } else {
     // получить текущие куки и распарсить 
-      console.log (document.cookie);
+
       var getCookie = document.cookie.split('; ');
       var daynightCookie = getCookie[0].split('=');
 
       if (daynightCookie[1] == "day") {
 
         // вызываем функцию замены ссылок и анимации для дня
-        // oldfunction funcAnimationDay ();
-
         funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 0, 'block', 'none' ); 
 
         // записываем глобальные переменные для дня
@@ -190,8 +179,6 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       } else {
 
         // вызываем функцию замены ссылок и анимации для дня
-        // oldfunction funcAnimationNight ();
-
         funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 0, 'none', 'block' );
 
         // записываем глобальные переменные для ночи
@@ -201,23 +188,20 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   }
 
 $('#bgvid-link-day').click(function(){
-  console.log (pathVidDay01);
+
   // записываем глобальные переменные для дня
   funcSessionStorageDay ();
 
   document.cookie = "daynight=";
   document.cookie = "daynight=day; expires=3600";
 
-    // вызываем функцию замены ссылок и анимации для дня
-    // oldfunction funcAnimationDayButton ();
-
-    funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 1000, 'block', 'none' );
+  // вызываем функцию замены ссылок и анимации для дня
+  funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 1000, 'block', 'none' );
 
 });
 
 
 $('#bgvid-link-night').click(function(){
-  console.log (pathVidDay01);
 
   // записываем глобальные переменные для ночи
   funcSessionStorageNight ();
@@ -225,10 +209,8 @@ $('#bgvid-link-night').click(function(){
   document.cookie = "daynight=";
   document.cookie = "daynight=night; expires=3600"
 
-    // вызываем функцию замены ссылок и анимации для дня
-    // oldfunctio funcAnimationNightButton ();
-
-    funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 1000, 'none', 'block' );
+  // вызываем функцию замены ссылок и анимации для дня
+  funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 1000, 'none', 'block' );
 
 });
 
