@@ -1,77 +1,70 @@
 ﻿<?php 
 
 // meta tags
-$title = "INDEX";
+$title = "INDEX"; ///---
 $description = "DESCRIPTION";
 
 require_once('header.php');
 ?> 
-<style type="text/css">
-  pre {position: absolute; left: 500px; top: 30px; z-index: 11; color: white;}
-
-</style>
-
-
-<pre><? print_r ($_COOKIE); ?></pre>
-
-
-
 
 <body>
-  <div class="wrapper">
-<!-- preloader  -->
-<div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
-<!--END preloader  -->
+<div class="wrapper">
 
-  <div id = 'pjax-global'> 
-      
-      <img id='bgimg' class='img-bg' src='' style = ''>
-      <img id='bgimg-back' class='img-bg' src='' style = "opacity: 1;">
-     
-    
-      <div id='bgvid-wrapper' style ='position: absolute; display:none;'>
-        <video id='bgvid' preload='auto'>
-          <source type='video/webm'>
-        </video>
-      </div>
-    
-    
+  <!-- preloader  -->
+  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div> 
 
+  <!--END preloader  -->
+  <div id = "pjax-global"> 
+    <img id="bgimg" class="img-bg" src="" style = "">
+    <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
+
+    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+      <video id="bgvid" preload="auto">
+        <source type="video/webm">
+        <source type="video/mp4">
+      </video>
+    </div>
 
     <header>
-      <button class="main-menu-btn hvr-pulse">Меню</button>
+      <button class="main-menu-btn hvr-grow">Меню</button>
+
+      <!-- START documents-popup -->
+        <div class="documents-popup" style="display: none;"></div>
+	  <!-- END documents-popup  -->
+
       <div class="main-icons-kit">
         <div class="main-icon main-logo">
-          <img src="/zetta/images/icons/logo.png" alt="logo Velec Place" />
+          <img class="hvr-grow" src="/omega/images/icons/logo.png" alt="logo Velec Place" />
         </div>
         <div class="main-icon icon-bio" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" class="hvr-pulse" src="/zetta/images/icons/bio.png" alt="icon bio energy" />
+            <img class="hvr-bob" class="hvr-pulse" src="/omega/images/icons/bio.png" alt="icon bio energy" />
             <figcaption>Био энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-socio" data-action="show-actions-menu">  
           <figure>
-            <img class="hvr-pulse" src="/zetta/images/icons/socio.png" alt="icon socio energy" />
+            <img class="hvr-bob" src="/omega/images/icons/socio.png" alt="icon socio energy" />
             <figcaption>Социо энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-techno" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" src="/zetta/images/icons/techno.png" alt="icon techno energy" />
+            <img class="hvr-bob" src="/omega/images/icons/techno.png" alt="icon techno energy" />
             <figcaption>Техно энергия</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-person" data-action="show-actions-menu">
           <figure>
-            <img class="hvr-pulse" src="/zetta/images/icons/person.png" alt="icon person energy" />
+            <img class="hvr-bob" src="/omega/images/icons/person.png" alt="icon person energy" />
             <figcaption>Энергия личности</figcaption>
           </figure>
         </div>
         <div class="main-icon icon-phone">
+          <div class="icon-phone-animation"></div>
         </div>
       </div><!--END main-icons-kit -->
-      <button class="sound-btn"></button>
+      <button class="sound-btn hvr-grow"></button>
     </header>
 
       <!-- overlay -->
@@ -79,133 +72,83 @@ require_once('header.php');
 
    <!-- main menu -->
   <div class="main-menu">
-  <style> .snt-link { cursor: pointer; }</style>
     <ul>
       <li><div class="bgvid-link-01 snt-link">Главная</div></li>
       <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
       <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
       <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>
-      <li><div class="bgvid-link-06 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-07 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-08 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-09 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
+      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
+      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
+      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
       <li><div class="bgvid-link-10 snt-link">Документы</div></li>
       <li><div class="bgvid-link-11 snt-link">События</div></li>
     </ul>
-    <span class="close-main-menu">  &times;</span>
+    <span class="close-main-menu hvr-grow">  &times;</span>
   </div>
 
-  <div class='main-icon daynight' style='
-        top: 50%;
-        left: 10%;
-        transform: translateY(-50%);
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        -webkit-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-  display: inline-block;
-    position: absolute;
-    cursor: pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-     user-select: none;'>
-
-      <img id='bgvid-link-day' class='snt-link' src = ''  style = 'position: absolute;' />
-      <img id='bgvid-link-night' class='snt-link' src = ''  style = ' position: absolute;' />     
+  <div class="main-icon daynight">
+    <img id="bgvid-link-day" class="snt-link hvr-grow" src =""  style="position: absolute;" />
+    <img id="bgvid-link-night" class="snt-link hvr-grow" src =""  style="position: absolute;" />     
   </div>
-
 
   <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
     <div class="prev snt-link" style="display: none;"> < </div>
-    <div class="start snt-link" style="display: none;"> ^ </div>
+    <div class="start snt-link bgvid-link-01" style="display: none;"> ^ </div>
     <div class="next snt-link bgvid-link-02" style="display: inline-block;"> > </div>
   </div>
 
-
 <script>
+
   //   pathes
-  var pathVidNight01 = '/zetta/media/night/01.webm';
-  var pathImgNight01 = '/zetta/images/night/01.jpg';
-  var pathVidNight02 = '/zetta/media/night/02.webm';
-  var pathImgNight02 = '/zetta/images/night/02.jpg';
-  var pathVidNight03 = '/zetta/media/night/03.webm';
-  var pathImgNight03 = '/zetta/images/night/03.jpg';
-  var pathVidNight04 = '/zetta/media/night/04.webm';
-  var pathImgNight04 = '/zetta/images/night/04.jpg';
-  var pathVidNight05 = '/zetta/media/night/05.webm';
-  var pathImgNight05 = '/zetta/images/night/05.jpg';
-  var pathVidNight06 = '/zetta/media/night/06.webm';
-  var pathImgNight06 = '/zetta/images/night/06.jpg';
-  var pathVidNight07 = '/zetta/media/night/07.webm';
-  var pathImgNight07 = '/zetta/images/night/07.jpg';
-  var pathVidNight08 = '/zetta/media/night/08.webm';
-  var pathImgNight08 = '/zetta/images/night/08.jpg';
-  var pathVidNight09 = '/zetta/media/night/09.webm';
-  var pathImgNight09 = '/zetta/images/night/09.jpg';
-  var pathVidNight10 = '/zetta/media/night/10.webm';
-  var pathImgNight10 = '/zetta/images/night/10.jpg';
-  var pathVidNight11 = '/zetta/media/night/11.webm';
-  var pathImgNight11 = '/zetta/images/night/11.jpg';
 
+var user = detect.parse(navigator.userAgent);
+if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
+  
+  // video night mp4
+  funcPathVidNightMp4();
 
-  var pathVidDay01 = '/zetta/media/day/01.webm';
-  var pathImgDay01 = '/zetta/images/day/01.jpg';
-  var pathVidDay02 = '/zetta/media/day/02.webm';
-  var pathImgDay02 = '/zetta/images/day/02.jpg';
-  var pathVidDay03 = '/zetta/media/day/03.webm';
-  var pathImgDay03 = '/zetta/images/day/03.jpg';
-  var pathVidDay04 = '/zetta/media/day/04.webm';
-  var pathImgDay04 = '/zetta/images/day/04.jpg';
-  var pathVidDay05 = '/zetta/media/day/05.webm';
-  var pathImgDay05 = '/zetta/images/day/05.jpg';  
-  var pathVidDay06 = '/zetta/media/day/06.webm';
-  var pathImgDay06 = '/zetta/images/day/06.jpg';
-  var pathVidDay07 = '/zetta/media/day/07.webm';
-  var pathImgDay07 = '/zetta/images/day/07.jpg';
-  var pathVidDay08 = '/zetta/media/day/08.webm';
-  var pathImgDay08 = '/zetta/images/day/08.jpg';
-  var pathVidDay09 = '/zetta/media/day/09.webm';
-  var pathImgDay09 = '/zetta/images/day/09.jpg';
-  var pathVidDay10 = '/zetta/media/day/10.webm';
-  var pathImgDay10 = '/zetta/images/day/10.jpg';
-  var pathVidDay11 = '/zetta/media/day/11.webm';
-  var pathImgDay11 = '/zetta/images/day/11.jpg';
+  // video day mp4
+  funcPathVidNightMp4();
 
-  var pathIconDay = '/zetta/images/icons/day.png';
-  var pathIconNight = '/zetta/images/icons/night.png';
+} else {
+
+  console.log (pathVidDay01);
+
+  // video night webm
+  funcPathVidNightWebm();
+
+  // video day webm
+  funcPathVidDayWebm ();
+}
 
   //записываем глобальные переменные ДЕНЬ
   var funcSessionStorageDay = function() {
-      sessionStorage.clear();
-      var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidDay01);
-      var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgDay01);
-      var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidDay02);
-      var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
-      var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidDay03);
-      var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgDay03);
-      var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidDay04);
-      var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgDay04);
-      var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidDay05);
-      var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgDay05);
-      var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidDay06);
-      var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgDay06);
-      var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidDay07);
-      var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgDay07);
-      var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidDay08);
-      var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgDay08);
-      var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidDay09);
-      var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgDay09);
-      var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidDay10);
-      var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgDay10);
-      var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidDay11);
-      var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgDay11);
-  }
+    sessionStorage.clear();
+    var linkBgvid01 = sessionStorage.setItem('linkBgvid01', pathVidDay01);
+    var linkBgimg01 = sessionStorage.setItem('linkBgimg01', pathImgDay01);
+    var linkBgvid02 = sessionStorage.setItem('linkBgvid02', pathVidDay02);
+    var linkBgimg02 = sessionStorage.setItem('linkBgimg02', pathImgDay02);
+    var linkBgvid03 = sessionStorage.setItem('linkBgvid03', pathVidDay03);
+    var linkBgimg03 = sessionStorage.setItem('linkBgimg03', pathImgDay03);
+    var linkBgvid04 = sessionStorage.setItem('linkBgvid04', pathVidDay04);
+    var linkBgimg04 = sessionStorage.setItem('linkBgimg04', pathImgDay04);
+    var linkBgvid05 = sessionStorage.setItem('linkBgvid05', pathVidDay05);
+    var linkBgimg05 = sessionStorage.setItem('linkBgimg05', pathImgDay05);
+    var linkBgvid06 = sessionStorage.setItem('linkBgvid06', pathVidDay06);
+    var linkBgimg06 = sessionStorage.setItem('linkBgimg06', pathImgDay06);
+    var linkBgvid07 = sessionStorage.setItem('linkBgvid07', pathVidDay07);
+    var linkBgimg07 = sessionStorage.setItem('linkBgimg07', pathImgDay07);
+    var linkBgvid08 = sessionStorage.setItem('linkBgvid08', pathVidDay08);
+    var linkBgimg08 = sessionStorage.setItem('linkBgimg08', pathImgDay08);
+    var linkBgvid09 = sessionStorage.setItem('linkBgvid09', pathVidDay09);
+    var linkBgimg09 = sessionStorage.setItem('linkBgimg09', pathImgDay09);
+    var linkBgvid10 = sessionStorage.setItem('linkBgvid10', pathVidDay10);
+    var linkBgimg10 = sessionStorage.setItem('linkBgimg10', pathImgDay10);
+    var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidDay11);
+    var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgDay11);
+  };
 
   //записываем глобальные переменные НОЧЬ
     var funcSessionStorageNight = function() {
@@ -233,77 +176,25 @@ require_once('header.php');
       var linkBgvid11 = sessionStorage.setItem('linkBgvid11', pathVidNight11);
       var linkBgimg11 = sessionStorage.setItem('linkBgimg11', pathImgNight11);
 
-  }
-
-
-  // забираем глобальные переменные из хранилища
-
-  var funcGetSessionStorage = function() {
-
-	  var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-  }
-
+  };
 
   //текущее время
   var date = new Date();
   var daytime = date.getHours();
   console.log (daytime);
-  
 
-  // функция замены ссылок + анимация ДЕНЬ
-
-  var funcAnimationDay = function () {
-
-      $('#bgvid').attr('src', pathVidDay01); ///-----
-      $('#bgimg').attr('src', pathImgDay01); ///-----
-      $('#bgimg-back').attr('src', pathImgNight01); ///-----
-      $('#bgimg').animate({ opacity: 1 }, 1000);
-      $('#bgimg_back').animate({ opacity: 0 }, 1000);
-      $('#bgvid-link-night').attr('src', pathIconNight);
-      $('#bgvid-link-day').attr('src', pathIconDay);
-      $('#bgvid-link-night').css('display','block');
-      $('#bgvid-link-day').css('display','none');
-  }
-
-  // функция замены ссылок + анимация НОЧЬ
-
-    var funcAnimationNight = function () {
-
-      $('#bgvid').attr('src', pathVidNight01); ///-----
-      $('#bgimg').attr('src', pathImgDay01); ///-----
-      $('#bgimg-back').attr('src', pathImgNight01); ///-----
-      $('#bgimg').animate({ opacity: 0 }, 1000);
-      $('#bgimg_back').animate({ opacity: 1 }, 1000);
-      $('#bgvid-link-night').attr('src', pathIconNight);
-      $('#bgvid-link-day').attr('src', pathIconDay);
-      $('#bgvid-link-night').css('display','none');
-      $('#bgvid-link-day').css('display','block');
-  }
-
-
-  ////////
+  // функция замены ссылок + анимация ДЕНЬ и НОЧЬ
+  var funcAnimation = function (pathVid, pathImgDay, pathImgNight, opacityBgimg, opacityBgimgBack, opacityDelay, displayStyleNight, displayStyleDay) {
+    $('#bgvid').attr('src', pathVid);
+    $('#bgimg').attr('src', pathImgDay);
+    $('#bgimg-back').attr('src', pathImgNight);
+    $('#bgimg').animate({ opacity: opacityBgimg }, opacityDelay);
+    $('#bgimg_back').animate({ opacity: opacityBgimgBack }, opacityDelay);
+    $('#bgvid-link-night').attr('src', pathIconNight);
+    $('#bgvid-link-day').attr('src', pathIconDay);
+    $('#bgvid-link-night').css('display', displayStyleNight);
+    $('#bgvid-link-day').css('display', displayStyleDay);
+  };
 
   if (document.cookie == false) {
     // условия зависимости контента от времени суток
@@ -311,38 +202,14 @@ require_once('header.php');
       console.log ("день");
       document.cookie = "daynight=";
       document.cookie = "daynight=day; expires=3600";
-
+      console.log (pathVidDay01);
       // вызываем функцию замены ссылок и анимации для дня
-      funcAnimationDay ();
+      // oldfunction funcAnimationDay ();
+
+      funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 0, 'block', 'none' ); 
 
       // записываем глобальные переменные для дня
       funcSessionStorageDay ();
-
-            //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-      console.log('linkBgvid02aa', linkBgvid02);
 
      } else { //night
       console.log ("ночь");
@@ -350,36 +217,12 @@ require_once('header.php');
       document.cookie = "daynight=night; expires=3600";
 
       // вызываем функцию замены ссылок и анимации для ночи
-      funcAnimationNight ();
+      // oldfunction funcAnimationNight ();
+
+      funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 0, 'none', 'block' );
 
       // записываем глобальные переменные для ночи
       funcSessionStorageNight ();
-
-      //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-      console.log('linkBgvid02a', linkBgvid02);
      } 
   } else {
     // получить текущие куки и распарсить 
@@ -390,196 +233,86 @@ require_once('header.php');
       if (daynightCookie[1] == "day") {
 
         // вызываем функцию замены ссылок и анимации для дня
-        funcAnimationDay ();
+        // oldfunction funcAnimationDay ();
+
+        funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 0, 'block', 'none' ); 
 
         // записываем глобальные переменные для дня
         funcSessionStorageDay ();
 
-              //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-        console.log('linkBgvid02b', linkBgvid02);
-
       } else {
 
         // вызываем функцию замены ссылок и анимации для дня
-        funcAnimationNight ();
+        // oldfunction funcAnimationNight ();
+
+        funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 0, 'none', 'block' );
 
         // записываем глобальные переменные для ночи
         funcSessionStorageNight ();
-
-              //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-        console.log('linkBgvid02c', linkBgvid02);
       }
      
   }
 
-
 $('#bgvid-link-day').click(function(){
-
-
+  console.log (pathVidDay01);
+  // записываем глобальные переменные для дня
+  funcSessionStorageDay ();
 
   document.cookie = "daynight=";
   document.cookie = "daynight=day; expires=3600";
 
     // вызываем функцию замены ссылок и анимации для дня
-    funcAnimationDay ();
+    // oldfunction funcAnimationDayButton ();
 
-	// записываем глобальные переменные для дня
-    funcSessionStorageDay ();
+    funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 1000, 'block', 'none' );
 
-          //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-
-	console.log('linkBgvid02n', linkBgvid02);
 });
 
 
 $('#bgvid-link-night').click(function(){
+  console.log (pathVidDay01);
 
-
+  // записываем глобальные переменные для ночи
+  funcSessionStorageNight ();
 
   document.cookie = "daynight=";
   document.cookie = "daynight=night; expires=3600"
 
     // вызываем функцию замены ссылок и анимации для дня
-    funcAnimationNight ();
-    // записываем глобальные переменные для ночи
-    funcSessionStorageNight ();
+    // oldfunctio funcAnimationNightButton ();
 
-          //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-    console.log('linkBgvid02m', linkBgvid02);
+    funcAnimation ( pathVidNight01, pathImgDay01, pathImgNight01, 0, 1, 1000, 'none', 'block' );
 
 });
 
-
-            //забираем глобальные переменные
-      var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
-	  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
-	  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
-	  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-	  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
-	  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
-	  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
-	  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
-	  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
-	  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
-	  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
-	  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
-	  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
-	  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
-	  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
-	  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
-	  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
-	  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-	  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
-	  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-	  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
-	  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
-
-	
-
+// забираем переменные из sessionStorage
+  var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
+  var linkBgimg01 = sessionStorage.getItem('linkBgimg01');
+  var linkBgvid02 = sessionStorage.getItem('linkBgvid02');
+  var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
+  var linkBgvid03 = sessionStorage.getItem('linkBgvid03');
+  var linkBgimg03 = sessionStorage.getItem('linkBgimg03');
+  var linkBgvid04 = sessionStorage.getItem('linkBgvid04');
+  var linkBgimg04 = sessionStorage.getItem('linkBgimg04');
+  var linkBgvid05 = sessionStorage.getItem('linkBgvid05');
+  var linkBgimg05 = sessionStorage.getItem('linkBgimg05');
+  var linkBgvid06 = sessionStorage.getItem('linkBgvid06');
+  var linkBgimg06 = sessionStorage.getItem('linkBgimg06');
+  var linkBgvid07 = sessionStorage.getItem('linkBgvid07');
+  var linkBgimg07 = sessionStorage.getItem('linkBgimg07');
+  var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
+  var linkBgimg08 = sessionStorage.getItem('linkBgimg08');
+  var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
+  var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
+  var linkBgvid10 = sessionStorage.getItem('linkBgvid10');
+  var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
+  var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
+  var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
 
 
-
-
-
-
-<!-- polyfill for ie -object-fit- -->
-<script type="text/javascript" src="/zetta/js/fitie.js"></script>
-
-</div> <!--END pjax-global -->    
-
+</div> <!--END pjax-global -->   
 
 
 
