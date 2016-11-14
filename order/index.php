@@ -95,8 +95,8 @@ require_once('../header.php');
 
 
   <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
-    <div class="prev snt-link bgvid-link-04" style="display: none;"> < </div>
-    <div class="start snt-link bgvid-link-01" style="display: none;"> ^ </div>
+    <div class="prev snt-link bgvid-link-04" style="display: inline-block;"> < </div>
+    <div class="start snt-link bgvid-link-01" style="display: inline-block;"> ^ </div>
     <div class="next snt-link bgvid-link-06" style="display: none;"> > </div>
   </div>
 

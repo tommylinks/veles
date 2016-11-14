@@ -39,18 +39,14 @@ ul {
   position: absolute;
   top: 60px;
   left: 20px;
-  padding: 10px 20px 10px 60px;
+  padding: 10px 20px 10px 65px;
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
-  background: url('../images/icons/menu.png') no-repeat 20px center;
-  border: 2px solid #fff;
+  background: url('../images/icons/menu-icon.png') no-repeat 0px center;
+  border:none;
   font-size: 24px;
-  border-radius: 10px;
   outline: none;
-  -webkit-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
   text-shadow: 0 0 2.9px #010101;
 }
 
