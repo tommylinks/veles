@@ -9,16 +9,15 @@ require_once('header.php');
 
 <body>
 <div class="wrapper">
-
-  <!-- preloader  -->
-  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div> 
-
-  <!--END preloader  -->
-  <div id = "pjax-global"> 
+<!-- preloader  -->
+<script>
+	preloader(true, 'white', 'red');
+</script><!--END preloader  -->
+  <div id = "pjax-global" style = "opacity: 0;"> 
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
-    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+<div id="bgvid-wrapper" style = "position: absolute; ">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
         <source type="video/mp4">
@@ -26,45 +25,45 @@ require_once('header.php');
     </div>
 
     <header>
-      <button class="main-menu-btn hvr-grow">Меню</button>
+      <button class="main-menu-btn hvr-grow" style="opacity: 0;">Меню</button>
 
-      <!-- START documents-popup -->
-        <div class="documents-popup" style="display: none;"></div>
-	  <!-- END documents-popup  -->
+      <!-- START documents-popup 
+        <div class="documents-popup" style="opacity: 0;"></div>
+	  END documents-popup  -->
 
       <div class="main-icons-kit">
-        <div class="main-icon main-logo">
+        <div class="main-icon main-logo" style="opacity: 0;">
           <img class="hvr-grow" src="/omega/images/icons/logo.png" alt="logo Velec Place" />
         </div>
-        <div class="main-icon icon-bio" data-action="show-actions-menu">
+        <div class="main-icon icon-bio hide-main-icon-left" data-action="show-actions-menu">
           <figure>
             <img class="hvr-bob" class="hvr-pulse" src="/omega/images/icons/bio.png" alt="icon bio energy" />
             <figcaption>Био энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-socio" data-action="show-actions-menu">  
+        <div class="main-icon icon-socio hide-main-icon-right" data-action="show-actions-menu">  
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/socio.png" alt="icon socio energy" />
             <figcaption>Социо энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-techno" data-action="show-actions-menu">
+        <div class="main-icon icon-techno hide-main-icon-left" data-action="show-actions-menu">
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/techno.png" alt="icon techno energy" />
             <figcaption>Техно энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-person" data-action="show-actions-menu">
+        <div class="main-icon icon-person hide-main-icon-right" data-action="show-actions-menu">
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/person.png" alt="icon person energy" />
             <figcaption>Энергия личности</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-phone">
+        <div class="main-icon icon-phone hide-main-icon-right">
           <div class="icon-phone-animation"></div>
         </div>
       </div><!--END main-icons-kit -->
-      <button class="sound-btn hvr-grow"></button>
+      <button class="sound-btn hvr-grow hide-main-icon-left"></button>
     </header>
 
       <!-- overlay -->
@@ -88,28 +87,29 @@ require_once('header.php');
     <span class="close-main-menu hvr-grow">  &times;</span>
   </div>
 
-  <div class="main-icon daynight">
+  <div class="main-icon daynight hide-main-icon-left">
     <img id="bgvid-link-day" class="snt-link hvr-grow" src =""  style="position: absolute;" />
     <img id="bgvid-link-night" class="snt-link hvr-grow" src =""  style="position: absolute;" />     
   </div>
 
-  <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
-    <div class="prev snt-link" style="display: none;"> < </div>
-    <div class="start snt-link bgvid-link-01" style="display: none;"> ^ </div>
-    <div class="next snt-link bgvid-link-02" style="display: inline-block;"> > </div>
-  </div>
+
+  <!-- new navigation -->
+    <div class="snt-prev snt-link bgvid-link-01 hvr-grow" style="display: none; opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-02 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-next snt-link bgvid-link-03 hvr-grow" style="display: none; opacity: 0;"></div>
 
 <script>
 
   //   pathes
 var user = detect.parse(navigator.userAgent);
+
 if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   
   // video night mp4
   funcPathVidNightMp4();
 
   // video day mp4
-  funcPathVidNightMp4();
+  funcPathVidDayMp4();
 
 } else {
 
@@ -143,7 +143,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       console.log ("день");
       document.cookie = "daynight=";
       document.cookie = "daynight=day; expires=3600";
-      console.log (pathVidDay01);
+     
 
       // вызываем функцию замены ссылок и анимации для дня
       funcAnimation ( pathVidDay01, pathImgDay01, pathImgNight01, 1, 0, 0, 'block', 'none' ); 
@@ -239,7 +239,19 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
+<!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
+<script>
+  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+</script>
+<!-- Animation icons when the page have been loaded -->
+<script>
+    setTimeout ( funcIconAnimationIn, 700 );
+</script>
+<script>
 
+			
+
+</script>
 
 </div> <!--END pjax-global -->   
 

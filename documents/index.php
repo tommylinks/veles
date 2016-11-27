@@ -9,16 +9,16 @@ require_once('../header.php');
 
 <body>
 <div class="wrapper">
+<!-- preloader  -->
+<script>
+	preloader(true, 'white', 'red');	
+</script><!--END preloader  -->
 
-  <!-- preloader  -->
-  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
-
-  <!--END preloader  -->
-  <div id = "pjax-global"> 
+  <div id = "pjax-global" style = "opacity: 0;"> 
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
-    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+    <div id="bgvid-wrapper" style ="position: absolute;">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
         <source type="video/mp4">
@@ -26,12 +26,11 @@ require_once('../header.php');
     </div>
 
 <header>
-            <button class="main-menu-btn">Меню</button>
+    <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+    <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
-    <!-- START documents-popup   -->
-           
-        <div class="documents-popup" style="display: none;">
-
+      <!-- START documents-popup   -->           
+        <div class="documents-popup" style="opacity: 0;">
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
@@ -90,7 +89,7 @@ require_once('../header.php');
 
         <!-- END documents-popup   -->  
 
-      <button class="sound-btn"></button>
+      <button class="sound-btn secondary-p"></button>
     </header>
 
       <!-- overlay -->
@@ -114,7 +113,7 @@ require_once('../header.php');
     <span class="close-main-menu">  &times;</span>
   </div>
 
-  <div class="main-icon daynight">
+  <div class="main-icon daynight secondary-p">
     <img id="bgvid-link-day" class="snt-link" src =""  style="position: absolute;" />
     <img id="bgvid-link-night" class="snt-link" src =""  style="position: absolute;" />     
   </div>
@@ -136,7 +135,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   funcPathVidNightMp4();
 
   // video day mp4
-  funcPathVidNightMp4();
+  funcPathVidDayMp4();
 
 } else {
 
@@ -274,11 +273,15 @@ $('#bgvid-link-night').click(function(){
       })();
 </script>
 
-<!-- Related with .documents-popup display: none in html. Fix appearance this block on the other pages without .documents-popup -->
+<!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $(".documents-popup").css('display', 'block');
+  $('.main-menu-btn').on("click", funcIconAnimationOut );
 </script>
 
+<!-- Animation icons when the page have been loaded -->
+<script>
+    setTimeout ( funcIconAnimationIn, 700 );
+</script>
 
 </div> <!--END pjax-global -->    
 

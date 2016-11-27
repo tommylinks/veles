@@ -24,6 +24,9 @@ $template_path = "/omega/";?>
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/jquery.mCustomScrollbar.css">
 
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/style.css"> 
+  
+  <!-- Preloader -->
+  <link rel="stylesheet" href="<?php echo $template_path; ?>css/preloader.min.css">
 
   <!-- JQuety + Pjax   -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
@@ -43,9 +46,21 @@ $template_path = "/omega/";?>
   <!-- Pathes -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/paths.js"></script>
 
+  <!-- Custom functions -->
+  <script type="text/javascript" src="<?php echo $template_path; ?>js/functions.js"></script>
+    
+  <!-- Preloader -->
+  <script src="<?php echo $template_path; ?>js/preloader.js"></script>
+  
+  <!-- ONLOAD -->
+  <!-- <script src="<?php echo $template_path; ?>js/onload.js"></script>-->
+  <!-- <script src="https://js.cx/script/jquery.documentReady.js"></script>-->
+  
+
 
  
   <style> 
+
     #bgimg-back {z-index: -2;}
 
     body {
@@ -72,9 +87,9 @@ $template_path = "/omega/";?>
       left: 0;
       width: 100%;
       height: 100%;
-      display: none;
+      display: block;
       opacity: 0;
-      z-index: 101;
+      z-index: 0;
     }
     
     video {

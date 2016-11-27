@@ -1,4 +1,4 @@
-    <footer class="footer-bg">
+    <footer class="footer-bg" style = "opacity: 0;">
       <div class="footer-info">
         <div class="left-footer-menu">
           <a href="#" class="footer-text">Видеоролик</a>
@@ -142,78 +142,80 @@
     var linkNav10 = '/omega/documents/';
     var linkNav11 = '/omega/events/';
 
-    //function
-    function pjaxVideoContent (linkBgvid, linkNav, linkBgimg, linkBgNight) {
+	 
+		//main pjax function
+		function pjaxVideoContent (linkBgvid, linkNav, linkBgimg, linkBgNight) {
 
-      // returns duration current video 
-      var durationVideomsShort = +vidId.duration * 1000 + 150;
-      var durationVideoms = +vidId.duration * 1000 + 200;
+		  // returns duration current video 
+		  var durationVideomsLong = +vidId.duration * 1000 + 1750;
+		  var durationVideomsShort = +vidId.duration * 1000 + 150;
+		  var durationVideoms = +vidId.duration * 1000 + 350;
+		  var durationVideomsShortMinus = +vidId.duration * 1000 - 500;
 
+		  $('#bgvid-wrapper').css('z-index', 101);
+		  $('#bgvid-wrapper').animate({opacity: 1,}, 1000);
+		  $('#bgvid').attr('src', linkBgvid);
+		  
+	  
+		  //play video
+		  $('#bgvid').get(0).play();  
 
-      $('#bgvid-wrapper').css('display', 'block');
-      $('#bgvid-wrapper').animate({opacity: 1,}, 0);
-      $('#bgvid').attr('src', linkBgvid);
-      
-  
-      //play video
-      $('#bgvid').get(0).play();  
+		  setTimeout (function () { 
+		  $('#bgimg').attr('src', linkBgimg);
+		  $('#bgimg-back').attr('src', linkBgNight);
+		 }, durationVideomsShortMinus);
+		 
+			
+		 
+		  setTimeout (function () { 
+			$('#bgvid-wrapper').css('opacity', 0);
+		 }, durationVideomsLong);
+			
+		  setTimeout (function () { 
 
-      setTimeout (function () { 
-      $('#bgimg').attr('src', linkBgimg);
-      $('#bgimg-back').attr('src', linkBgNight);
-     }, 200);
+			$.pjax({
+			  type       : 'POST',
+			  url        : linkNav,
+			  container  : '#pjax-global',
+			  fragment   : '#pjax-global',
+			  data       : {},
+			  push       : true,
+			  replace    : true,
+			  "scrollTo" : false
+			   });
+			
+			$('#bgimg').attr('src', linkBgimg);
+			$('#bgimg-back').attr('src', linkBgNight);
+			$('#bgvid-wrapper').animate({opacity: 0}, 0); 
+			
+		 } , durationVideoms);
+		} 
+		
 
-      setTimeout (function () { 
-        $('#bgvid-wrapper').css('display', 'none');
-     }, durationVideomsShort);
-
-      setTimeout (function () { 
-
-        $.pjax({
-          type       : 'POST',
-          url        : linkNav,
-          container  : '#pjax-global',
-          fragment   : '#pjax-global',
-          data       : {},
-          push       : true,
-          replace    : false,
-          "scrollTo" : false
-           });
-
-           $('#bgimg').attr('src', linkBgimg);
-           $('#bgimg-back').attr('src', linkBgNight);
-           $('#bgvid-wrapper').animate({opacity: 0,}, 0); 
-
-      } , durationVideoms);
-
-    } 
+	
     </script>
   
-    <!-- show main-menu DENIS-->
+    <!-- show main-menu -->
     <script>
       $('#pjax-global').on('click', '.main-menu-btn', function () {
         $(".footer-bg ").css('background','rgba(0,0,0,0)');
 
         //main icons hide animation
-        $(".main-logo, .documents-popup").animate({
+        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .main-menu-btn, .secondary-logo").animate({
           opacity: 0
-        }, 300, function() {
-          //
-        });
+        }, 300);
 
-        // left
-        $(".icon-bio, .icon-techno, .daynight, .sound-btn").toggleClass('hide-main-icon-left');
+        // icons move to left
+        $(".icon-bio, .icon-techno, .daynight, .sound-btn").addClass('hide-main-icon-left');
 
-        //right
-        $(".icon-socio, .icon-person, .icon-phone").toggleClass('hide-main-icon-right');
+        // icons move to right
+        $(".icon-socio, .icon-person, .icon-phone").addClass('hide-main-icon-right');
 
         $(".main-menu, .overlay").fadeIn(500);
         $(".main-menu").animate({
           opacity: 1,
           left:"0%"
-        }, 500, function() {
-          //
-        });
+        }, 500);
       });
 
 
@@ -230,17 +232,17 @@
         
         //main icons show animation
 
-        $(".main-logo, .documents-popup").animate({
+        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .main-menu-btn, .secondary-logo").animate({
           opacity: 1
         }, 500, function() {
           //
         });
 
-        //left
-        $(".icon-bio, .icon-techno, .daynight, .sound-btn").toggleClass('hide-main-icon-left');
+        // icons back on default position (left)
+        $(".icon-bio, .icon-techno, .daynight, .sound-btn").removeClass('hide-main-icon-left');
 
-        //right
-        $(".icon-socio, .icon-person, .icon-phone").toggleClass('hide-main-icon-right');
+        // icons back on default position (right)
+        $(".icon-socio, .icon-person, .icon-phone").removeClass('hide-main-icon-right');
 
       });
     </script>

@@ -9,16 +9,16 @@ require_once('../header.php');
 
 <body>
 <div class="wrapper">
+<!-- preloader  -->
+<script>
+	preloader(true, 'white', 'red');	
+</script><!--END preloader  -->
 
-  <!-- preloader  -->
-  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
-
-  <!--END preloader  -->
-  <div id = "pjax-global"> 
+  <div id = "pjax-global" style = "opacity: 0;"> 
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
-    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+    <div id="bgvid-wrapper" style ="position: absolute;">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
         <source type="video/mp4">
@@ -26,45 +26,18 @@ require_once('../header.php');
     </div>
 
     <header>
-      <button class="main-menu-btn">Меню</button>
+      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
-    <!-- START documents-popup -->
-        <div class="documents-popup" style="display: none;"></div>
-    <!-- END documents-popup  -->
+      <!-- START documents-popup -->
+  
+        <div class="documents-popup" style="opacity: 0;">
+          <h1 style="text-align: center;    line-height: 476px;">Страница в разработке.</h1>
+        </div>
+    
+      <!-- END documents-popup  -->
 
-      <div class="main-icons-kit">
-        <div class="main-icon main-logo">
-          <img src="/omega/images/icons/logo.png" alt="logo Velec Place" />
-        </div>
-        <div class="main-icon icon-bio" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" class="hvr-pulse" src="/omega/images/icons/bio.png" alt="icon bio energy" />
-            <figcaption>Био энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-socio" data-action="show-actions-menu">  
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/socio.png" alt="icon socio energy" />
-            <figcaption>Социо энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-techno" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/techno.png" alt="icon techno energy" />
-            <figcaption>Техно энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-person" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/person.png" alt="icon person energy" />
-            <figcaption>Энергия личности</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-phone">
-          <div class="icon-phone-animation"></div>
-        </div>
-      </div><!--END main-icons-kit -->
-      <button class="sound-btn"></button>
+      <button class="sound-btn secondary-p"></button>
     </header>
 
       <!-- overlay -->
@@ -88,7 +61,7 @@ require_once('../header.php');
     <span class="close-main-menu">  &times;</span>
   </div>
 
-  <div class="main-icon daynight">
+  <div class="main-icon daynight secondary-p">
     <img id="bgvid-link-day" class="snt-link" src =""  style="position: absolute;" />
     <img id="bgvid-link-night" class="snt-link" src =""  style="position: absolute;" />     
   </div>
@@ -111,7 +84,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   funcPathVidNightMp4();
 
   // video day mp4
-  funcPathVidNightMp4();
+  funcPathVidDayMp4();
 
 } else {
 
@@ -240,6 +213,15 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
+<!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
+<script>
+  $('.main-menu-btn').on("click", funcIconAnimationOut );
+</script>
+
+<!-- Animation icons when the page have been loaded -->
+<script>
+    setTimeout ( funcIconAnimationIn, 700 );
+</script>
 
 </div> <!--END pjax-global -->    
 

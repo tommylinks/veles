@@ -9,16 +9,16 @@ require_once('../header.php');
 
 <body>
 <div class="wrapper">
-
-  <!-- preloader  -->
-  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span></div></div>
-
-  <!--END preloader  -->
-  <div id = "pjax-global"> 
+<!-- preloader  -->
+<script>
+	preloader(true, 'white', 'red');	
+</script><!--END preloader  -->
+ 
+  <div id = "pjax-global" style = "opacity: 0;">  
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
-    <div id="bgvid-wrapper" style ="position: absolute; display:none;">
+    <div id="bgvid-wrapper" style ="position: absolute;">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
         <source type="video/mp4">
@@ -26,45 +26,70 @@ require_once('../header.php');
     </div>
 
     <header>
-      <button class="main-menu-btn">Меню</button>
+      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
+      
+        <!-- START documents-popup   -->           
+        <div class="documents-popup" style="opacity: 0;">
+          <div class="doc-popup-header">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <span class="bgvid-link-02 snt-link">О компании</span>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <span>Участники проекта</span>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <span>Документация</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- START documents-popup -->
-        <div class="documents-popup" style="display: none;"></div>
-    <!-- END documents-popup  -->
+          <div class="doc-popup-wrap">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="doc-popup-left">
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  <br>
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  <br>
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  <br>
+                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  <br>
+                </div>
+              </div> 
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="doc-popup-content">
+                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
+                  <div>Sapiente eaque aliquam, tenetur, modi suscipit totam excepturi eum quia nostrum asperiores voluptates, beatae temporibus, vel enim deserunt quo? Ea quis, nemo sequi numquam unde accusamus delectus. Culpa, voluptatum. Fuga!</div>
+                  <div>Odio laudantium sed iure debitis, pariatur ullam officia explicabo ad, mollitia, eveniet perspiciatis minima deleniti alias voluptatum ut quae sint nihil! Minus recusandae veritatis vel quia, commodi quas aliquid, minima!</div>
+                  <div>Ab consequuntur qui, blanditiis placeat libero, repellendus molestias dolore voluptatibus doloribus dignissimos facilis repellat incidunt necessitatibus fugit ratione provident illum temporibus atque. Dolore ipsam enim quasi debitis maxime doloribus, quisquam.</div>
+                  <div>Ex error, eligendi, rerum minima sed fugit, reiciendis repudiandae molestiae labore adipisci deserunt quis. Cumque minus, atque laborum voluptate accusamus. Veniam culpa debitis, illum ex explicabo eum quod minus officiis.</div>
+                  <div>Nulla, ipsam voluptatibus, eligendi voluptatem placeat deserunt! Sequi blanditiis, expedita rem nesciunt cupiditate iure magnam debitis inventore et. Corporis odio, impedit voluptatum magni at sequi? Quaerat sapiente in magnam accusamus.</div>
+                  <div>Quam totam iusto cumque nesciunt vero laborum odio, commodi facilis veniam nisi animi quae, perferendis accusamus asperiores excepturi id impedit suscipit earum explicabo quis nemo delectus, atque eveniet. Corrupti, sint.</div>
+                  <div>Maxime, labore, temporibus. Enim sed at a iusto, perferendis ducimus beatae dolores consectetur deserunt officiis modi culpa fugiat cupiditate sit sapiente amet commodi architecto debitis rem quasi laborum perspiciatis provident!</div>
+                  <div>Officiis, temporibus error nemo nam commodi totam illum libero quos autem, voluptatum quasi tempore distinctio numquam quod mollitia eum consectetur quibusdam doloribus modi neque nostrum aliquam, eaque quidem sequi laboriosam.</div>
+                  <div>Nobis error sed ipsam unde voluptatum accusantium, et, tempora iusto itaque tempore nesciunt ut. Mollitia qui, dolorem rerum et voluptate nostrum omnis pariatur voluptas vitae, exercitationem officia recusandae amet inventore.</div>
+                  <div>Eos omnis aspernatur saepe impedit, iusto voluptatem reiciendis dolore ipsam labore beatae, soluta facere. Dolores, debitis, blanditiis. Suscipit et voluptas, velit quidem sint libero, eligendi, enim, earum facere quisquam molestias.</div>
+                  <div>Id delectus cupiditate repellendus iste, soluta voluptas totam expedita laborum blanditiis ut repudiandae tempore quisquam beatae corrupti ratione quis distinctio quia quae reprehenderit corporis. Numquam magnam ut amet sint fuga.</div>
+                  <div>Consectetur ab est harum labore sint provident, perspiciatis sapiente voluptatum unde suscipit vitae, nam ipsum, eum assumenda corporis minus. Dignissimos et veritatis iure ratione perferendis excepturi repellat, inventore placeat nihil.</div>
+                  <div>Doloremque tenetur quasi nam vero officiis mollitia, voluptatum fuga voluptas temporibus, ducimus reprehenderit nihil voluptate, sit. Harum, perspiciatis laudantium dolores necessitatibus sint ut itaque, fugiat libero, optio natus cumque ab?</div>
+                  <div>In dolor, illum quis repudiandae blanditiis rerum quia accusantium! Repellendus, quidem alias. Nemo odit voluptates laudantium sed adipisci ratione nulla asperiores, quis similique magni doloremque quasi alias iste earum? Praesentium.</div>
+                  <div>Odit veniam at ea dolorem voluptatum fugit qui, repellendus eos, omnis nesciunt iste velit nam dolor similique ducimus tempora labore deserunt illum repellat! Sapiente nobis adipisci obcaecati. Atque, earum, dolores.</div>
+                  <div>Voluptatem suscipit rerum maxime sapiente eaque ipsam maiores, officia odit cupiditate, tenetur totam laboriosam aliquid dolorem veritatis expedita amet blanditiis nihil voluptates qui in soluta. Voluptatem sint neque nam architecto.</div>
+                  <div>Voluptate officia unde fuga quaerat, temporibus alias ipsum. Eos harum provident facilis rem iure, sapiente dolorum nulla, quod optio a omnis quo fugiat nemo dolores et atque nisi nesciunt. Ab?</div>
+                  <div>Inventore ullam porro tempora minus assumenda molestias illo, rerum quasi dolore! Deserunt beatae dolorem maxime amet dolorum eum quia facilis provident aut quisquam odit incidunt expedita atque repellat blanditiis, eligendi.</div>
+                  <div>Labore nesciunt nisi suscipit dolor laborum laudantium accusamus atque, numquam officiis eaque odio qui cum architecto aut incidunt hic optio error. Exercitationem tenetur temporibus aut magni ducimus, nihil minima explicabo!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="main-icons-kit">
-        <div class="main-icon main-logo">
-          <img src="/omega/images/icons/logo.png" alt="logo Velec Place" />
-        </div>
-        <div class="main-icon icon-bio" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" class="hvr-pulse" src="/omega/images/icons/bio.png" alt="icon bio energy" />
-            <figcaption>Био энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-socio" data-action="show-actions-menu">  
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/socio.png" alt="icon socio energy" />
-            <figcaption>Социо энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-techno" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/techno.png" alt="icon techno energy" />
-            <figcaption>Техно энергия</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-person" data-action="show-actions-menu">
-          <figure>
-            <img class="hvr-pulse" src="/omega/images/icons/person.png" alt="icon person energy" />
-            <figcaption>Энергия личности</figcaption>
-          </figure>
-        </div>
-        <div class="main-icon icon-phone">
-          <div class="icon-phone-animation"></div>
-        </div>
-      </div><!--END main-icons-kit -->
-      <button class="sound-btn"></button>
+        <!-- END documents-popup   -->
+
+      <button class="sound-btn secondary-p"></button>
     </header>
 
       <!-- overlay -->
@@ -88,17 +113,16 @@ require_once('../header.php');
     <span class="close-main-menu">  &times;</span>
   </div>
 
-  <div class="main-icon daynight">
+  <div class="main-icon daynight secondary-p">
     <img id="bgvid-link-day" class="snt-link" src =""  style="position: absolute;" />
     <img id="bgvid-link-night" class="snt-link" src =""  style="position: absolute;" />     
   </div>
 
 
-  <div class="navigation" style="position: absolute; left: 50%; top: 80%; margin-left: -50px; width: 100px; font-size: 40px; color: white;">
-    <div class="prev snt-link bgvid-link-03" style="display: inline-block;"> < </div>
-    <div class="start snt-link bgvid-link-01" style="display: inline-block;"> ^ </div>
-    <div class="next snt-link bgvid-link-06" style="display: inline-block;"> > </div>
-  </div>
+    <!-- new navigation -->
+    <div class="snt-prev snt-link bgvid-link-03 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-01 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-next snt-link bgvid-link-06 hvr-grow" style="opacity: 0;"></div>
 
 <script>
 
@@ -110,7 +134,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   funcPathVidNightMp4();
 
   // video day mp4
-  funcPathVidNightMp4();
+  funcPathVidDayMp4();
 
 } else {
 
@@ -239,6 +263,25 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
+<!-- CustomScrollbar init -->
+<script>
+  (function(){
+          $(".doc-popup-wrap").mCustomScrollbar({
+            theme:"rounded-dark"
+          });
+      })();
+</script>
+
+
+<!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
+<script>
+  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+</script>
+
+<!-- Animation icons when the page have been loaded -->
+<script>
+    setTimeout ( funcIconAnimationIn, 700 );
+</script>
 
 
 </div> <!--END pjax-global -->    

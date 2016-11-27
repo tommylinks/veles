@@ -22,8 +22,6 @@
   var pathVidDay10;
   var pathVidDay11;
 
-
-
 // video night mp4
 
 function funcPathVidNightMp4() {  
