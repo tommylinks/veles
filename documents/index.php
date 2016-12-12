@@ -40,7 +40,7 @@ require_once('../header.php');
                 <span>Участники проекта</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Документация</span>
+                <span>Разреш. документация</span>
               </div>
             </div>
           </div>

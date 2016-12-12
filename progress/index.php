@@ -33,13 +33,13 @@ require_once('../header.php');
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-02 snt-link">О компании</span>
+                <span class="bgvid-link-02 snt-link">Готовность комплексa</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Участники проекта</span>
+                <span>Строительство Online</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Документация</span>
+                <span>Дневник строительства</span>
               </div>
             </div>
           </div>

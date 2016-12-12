@@ -72,9 +72,9 @@ require_once('../header.php');
 
 
   <!-- new navigation -->
-    <div class="snt-prev snt-link bgvid-link-02 hvr-grow" style="opacity: 0;"></div>
-    <div class="snt-start snt-link bgvid-link-01 hvr-grow" style="opacity: 0;"></div>
-    <div class="snt-next snt-link bgvid-link-04 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-prev snt-link bgvid-link-02 hvr-grow tooltip-nav-lr" title="О комплексе" style="opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-01 hvr-grow tooltip-nav" title="Начало" style="opacity: 0;"></div>
+    <div class="snt-next snt-link bgvid-link-04 hvr-grow tooltip-nav-lr" title="Расположение" style="opacity: 0;"></div>
 
 <script>
 
@@ -226,6 +226,28 @@ $('#bgvid-link-night').click(function(){
     setTimeout ( funcIconAnimationIn, 700 );
 </script>
 
+
+  <!--  tooltips -->
+  <script>
+    // for main icons
+    $('.tooltip').tooltipster({
+      theme: 'tooltipster-borderless',
+      trigger: 'click',
+      interactive: true,
+    });
+
+    // for navigation icons
+    $('.tooltip-nav').tooltipster({
+      theme: 'tooltipster-borderless',
+      side: 'bottom'
+    });
+
+    $('.tooltip-nav-lr').tooltipster({
+      theme: 'tooltipster-borderless',
+      side: ['left', 'right']
+    });
+  </script>
+   <!--END floating tooltips -->
 
 
 </div> <!--END pjax-global -->    

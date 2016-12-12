@@ -196,6 +196,12 @@ ul {
 }
 
 
+.tooltip_templates {display:none;}
+
+.tooltipster-content a {color:#fff;}
+
+.tooltipster-content {white-space:nowrap;}
+
 /*-----------Documents page-------------*/
 
 .documents-popup {

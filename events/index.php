@@ -33,14 +33,8 @@ require_once('../header.php');
         <div class="documents-popup" style="opacity: 0;">
           <div class="doc-popup-header">
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-02 snt-link">О компании</span>
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Участники проекта</span>
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Документация</span>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <span class="bgvid-link-02 snt-link">События</span>
               </div>
             </div>
           </div>

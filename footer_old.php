@@ -24,7 +24,7 @@
   <!-- init music -->
   <script>
 /*  	var sound = new Howl({
-	  src: ['/omega/media/sound/1.mp3']
+	  src: ['/omega/1.mp3']
 	});
 
 	sound.play();
@@ -45,14 +45,79 @@
   </script>
   <!--END init music -->
 
+  <!-- preloader -->
+  <script type="text/javascript">$(window).on('load', function () {
+    var $preloader = $('#p_prldr'),
+          $svg_anm   = $preloader.find('.svg_anm');
+      $svg_anm.fadeOut();
+      $preloader.delay(500).fadeOut('slow');
+    });
+  </script>
+
+  <!-- floating tooltips -->
+  <script type="text/javascript">
+    $.floatingMenu({
+      selector: '.main-icon[data-action="show-actions-menu"]',
+      items: [
+        {
+            icon : 'ion-social-youtube',
+            title : 'Youtube',
+            action : 'https://youtube.com/',
+            blank : true, // open url in new tab (optional, defaults to false)
+            close : false, // dont close the menu after and action has happened (optional, defaults to true)
+        },
+        {
+            icon : 'ion-social-skype',
+            title : 'google',
+            action : 'https://google.com/',
+            close : false, // no effect since there is a redirect (optional)
+        },
+        {
+            icon : 'ion-social-tumblr',
+            title : 'Insert',
+            action : function(event) {
+                alert('insert');
+            },
+            blank : true, // no effect since action is not a url (optional, defaults to false)
+            close : false, // dont close the menu after and action has happened (optional, defaults to true)
+        },
+        {
+            icon : 'ion-social-javascript',
+            title : 'Edit',
+            action : function(event) 
+            {
+                alert('edit');
+            },
+        },
+        {
+            icon : 'ion-social-chrome',
+            title : 'Remove',
+            action : function(event) {
+                alert('remove');
+            },
+        },
+        {
+            icon : '',
+            title : 'Подробнее...',
+            action : function(event) {
+                alert('remove');
+            },
+        },
+      ]
+    });
+
+  </script>
+   <!--END floating tooltips -->
+
+
 
   <!-- Scrolling events + Pjax -->
   <script>
     //id`s & classes & links
-
-	var vidId = document.getElementById('bgvid');  
+    var vidId = document.getElementById('bgvid');
     var wrapperId = document.getElementById('bgvid-wrapper');
     var elemId = document.getElementById('pjax-global');
+
     var linkId01 = document.getElementsByClassName('bgvid-link-01');
     var linkId02 = document.getElementsByClassName('bgvid-link-02');
     var linkId03 = document.getElementsByClassName('bgvid-link-03');
@@ -76,76 +141,54 @@
     var linkNav09 = '/omega/progress/';
     var linkNav10 = '/omega/documents/';
     var linkNav11 = '/omega/events/';
-			
 
+	 
 		//main pjax function
-	
 		function pjaxVideoContent (linkBgvid, linkNav, linkBgimg, linkBgNight) {
-						
-			  // returns duration current video 
-			  if (vidId.duration != vidId.duration) {
-			  var durationVideomsLong = 3.5 * 1000 + 1750;
-			  var durationVideomsShort = 3.5 * 1000 + 150;
-			  var durationVideoms = 3.5 * 1000 + 350;
-			  var durationVideomsShortMinus = 3.5 * 1000 - 500;		  
-			  } else {
-			  var durationVideomsLong = +vidId.duration * 1000 + 1750;
-			  var durationVideomsShort = +vidId.duration * 1000 + 150;
-			  var durationVideoms = +vidId.duration * 1000 + 350;
-			  var durationVideomsShortMinus = +vidId.duration * 1000 - 500;
-			  }
 
-			console.log( "video not ready" );
+		  // returns duration current video 
+		  var durationVideomsLong = +vidId.duration * 1000 + 1750;
+		  var durationVideomsShort = +vidId.duration * 1000 + 150;
+		  var durationVideoms = +vidId.duration * 1000 + 350;
+		  var durationVideomsShortMinus = +vidId.duration * 1000 - 500;
+
+		  $('#bgvid-wrapper').css('z-index', 101);
+		  $('#bgvid-wrapper').animate({opacity: 1,}, 1000);
+		  $('#bgvid').attr('src', linkBgvid);
+		  
+	  
+		  //play video
+		  $('#bgvid').get(0).play();  
+
+		  setTimeout (function () { 
+		  $('#bgimg').attr('src', linkBgimg);
+		  $('#bgimg-back').attr('src', linkBgNight);
+		 }, durationVideomsShortMinus);
+		 
 			
+		 
+		  setTimeout (function () { 
+			$('#bgvid-wrapper').css('opacity', 0);
+		 }, durationVideomsLong);
 			
-			  //preloader
-			  addProgressBar();
-			  
-			  
+		  setTimeout (function () { 
 
-			  $('#bgvid-wrapper').css('z-index', 101);
-			  $('#bgvid-wrapper').animate({opacity: 1,}, 1000);
-			  $('#bgvid').attr('src', linkBgvid);
-				
-
-				setTimeout (function () { 
-					  $('#bgimg').attr('src', linkBgimg);
-					  $('#bgimg-back').attr('src', linkBgNight);
-					 }, durationVideomsShortMinus);	
-					 
-					 
-					 setTimeout (function () { 
-						console.log( "video ready" ); 						 
-
-						//play video
-						$('#bgvid')[0].play();
-					  
-						setTimeout (function () { 
-							$('#bgvid-wrapper').css('opacity', 0);
-						}, durationVideomsLong);
-							
-						  setTimeout (function () { 
-
-							$.pjax({
-							  type       : 'POST',
-							  url        : linkNav,
-							  container  : '#pjax-global',
-							  fragment   : '#pjax-global',
-							  data       : {},
-							  push       : true,
-							  replace    : true,
-							  "scrollTo" : false
-							   });
-							
-							$('#bgimg').attr('src', linkBgimg);
-							$('#bgimg-back').attr('src', linkBgNight);
-							$('#bgvid-wrapper').animate({opacity: 0}, 0); 
-							
-						 } , durationVideoms);
-				 
-				 }, durationContentLoads);
-				 
+			$.pjax({
+			  type       : 'POST',
+			  url        : linkNav,
+			  container  : '#pjax-global',
+			  fragment   : '#pjax-global',
+			  data       : {},
+			  push       : true,
+			  replace    : true,
+			  "scrollTo" : false
+			   });
 			
+			$('#bgimg').attr('src', linkBgimg);
+			$('#bgimg-back').attr('src', linkBgNight);
+			$('#bgvid-wrapper').animate({opacity: 0}, 0); 
+			
+		 } , durationVideoms);
 		} 
 		
 
@@ -180,7 +223,9 @@
         $(".main-menu").animate({
           opacity: 0,
           left: "-10%"
-        }, 500);
+        }, 500, function() {
+          //
+        });
         $(".main-menu, .overlay").fadeOut(500);
 
         $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
@@ -189,7 +234,9 @@
 
         $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .main-menu-btn, .secondary-logo").animate({
           opacity: 1
-        }, 500);
+        }, 500, function() {
+          //
+        });
 
         // icons back on default position (left)
         $(".icon-bio, .icon-techno, .daynight, .sound-btn").removeClass('hide-main-icon-left');

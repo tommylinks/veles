@@ -3,19 +3,22 @@
 // meta tags
 $title = "INDEX"; ///---
 $description = "DESCRIPTION";
+$manifest = "manifest.main";
 
 require_once('header.php');
 ?> 
 
 <body>
 <div class="wrapper">
-<!-- preloader  -->
+
 <script>
-	preloader(true, 'white', 'red');
+	preloader(true, 'white', 'red');	
 </script><!--END preloader  -->
+
   <div id = "pjax-global" style = "opacity: 0;"> 
-    <img id="bgimg" class="img-bg" src="" style = "">
-    <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
+  	
+    <img id = "bgimg" class="img-bg" src="" style = "">
+    <img id = "bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
 <div id="bgvid-wrapper" style = "position: absolute; ">
       <video id="bgvid" preload="auto">
@@ -35,25 +38,57 @@ require_once('header.php');
         <div class="main-icon main-logo" style="opacity: 0;">
           <img class="hvr-grow" src="/omega/images/icons/logo.png" alt="logo Velec Place" />
         </div>
-        <div class="main-icon icon-bio hide-main-icon-left" data-action="show-actions-menu">
+        
+        <!-- tooltip for bio -->
+        <div class="tooltip_templates">
+          <span id="tooltip_content_bio">
+            <a href="#">Артезианская вода</a>, <a href="#">Эко расположение</a>
+          </span>
+        </div>
+
+        <div class="main-icon icon-bio hide-main-icon-left tooltip" data-tooltip-content="#tooltip_content_bio">
           <figure>
             <img class="hvr-bob" class="hvr-pulse" src="/omega/images/icons/bio.png" alt="icon bio energy" />
             <figcaption>Био энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-socio hide-main-icon-right" data-action="show-actions-menu">  
+
+        <!-- tooltip for socio -->
+        <div class="tooltip_templates">
+          <span id="tooltip_content_socio">
+            <a href="#">Семинары</a>, <a href="#">Тренинги</a>
+          </span>
+        </div>
+
+        <div class="main-icon icon-socio hide-main-icon-right tooltip" data-tooltip-content="#tooltip_content_socio">  
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/socio.png" alt="icon socio energy" />
             <figcaption>Социо энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-techno hide-main-icon-left" data-action="show-actions-menu">
+
+        <!-- tooltip for techno -->
+        <div class="tooltip_templates">
+          <span id="tooltip_content_techno">
+            <a href="#">Лифты</a>, <a href="#">Паркинг</a>
+          </span>
+        </div>
+
+        <div class="main-icon icon-techno hide-main-icon-left tooltip" data-tooltip-content="#tooltip_content_techno">
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/techno.png" alt="icon techno energy" />
             <figcaption>Техно энергия</figcaption>
           </figure>
         </div>
-        <div class="main-icon icon-person hide-main-icon-right" data-action="show-actions-menu">
+
+        <!-- tooltip for person -->
+        <div class="tooltip_templates">
+          <span id="tooltip_content_person">
+            <a href="#">Мастерские</a>, <a href="#">Галерея</a>
+          </span>
+        </div>
+
+        <div class="main-icon icon-person hide-main-icon-right tooltip" data-tooltip-content="#tooltip_content_person">
           <figure>
             <img class="hvr-bob" src="/omega/images/icons/person.png" alt="icon person energy" />
             <figcaption>Энергия личности</figcaption>
@@ -95,8 +130,9 @@ require_once('header.php');
 
   <!-- new navigation -->
     <div class="snt-prev snt-link bgvid-link-01 hvr-grow" style="display: none; opacity: 0;"></div>
-    <div class="snt-start snt-link bgvid-link-02 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-02 hvr-grow tooltip-nav" title="О комплексе" style="opacity: 0;"></div>
     <div class="snt-next snt-link bgvid-link-03 hvr-grow" style="display: none; opacity: 0;"></div>
+
 
 <script>
 
@@ -247,13 +283,27 @@ $('#bgvid-link-night').click(function(){
 <script>
     setTimeout ( funcIconAnimationIn, 700 );
 </script>
-<script>
 
-			
 
-</script>
+  <!--  tooltips -->
+  <script>
+    // for main icons
+    $('.tooltip').tooltipster({
+      theme: 'tooltipster-borderless',
+      trigger: 'click',
+      interactive: true,
+    });
 
+    // for navigation icons
+    $('.tooltip-nav').tooltipster({
+      theme: 'tooltipster-borderless',
+    });
+  </script>
+   <!--END floating tooltips -->
+
+	     
 </div> <!--END pjax-global -->   
+ 
 
 
 

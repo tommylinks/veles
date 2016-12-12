@@ -1,12 +1,13 @@
   <?//path
 $template_path = "/omega/";?>
 <!DOCTYPE html>
+<!-- <html lang="ru" manifest=<? echo $manifest; ?> > -->
 <html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <title><? echo $title; ?></title>
-  <meta name="description" content=<? echo $description; ?>>
+  <meta name="description" content=<? echo $description; ?> >
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Template Basic Images Start -->
@@ -18,8 +19,7 @@ $template_path = "/omega/";?>
   <!-- Template Basic Images End -->
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/bootstrap.min.css"> 
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/hover-min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/floating-menu.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/ionicons.css"> 
+  <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/tooltipster.bundle.min.css"> 
   <!-- CustomScrollbar -->
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/jquery.mCustomScrollbar.css">
 
@@ -32,8 +32,8 @@ $template_path = "/omega/";?>
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.pjax.js"></script>
 
-  <!-- floating-menu tooltips-->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/floating-menu.js"></script>
+  <!-- tooltipster -->
+  <script type="text/javascript" src="<?php echo $template_path; ?>js/tooltipster.bundle.min.js"></script>
 
   <script type="text/javascript" src="<?php echo $template_path; ?>js/howler.js"></script>
 
@@ -48,16 +48,13 @@ $template_path = "/omega/";?>
 
   <!-- Custom functions -->
   <script type="text/javascript" src="<?php echo $template_path; ?>js/functions.js"></script>
-    
+
+  <!-- Speednetwork -->
+  <script src="<?php echo $template_path; ?>js/speednetwork.js"></script>
+      
   <!-- Preloader -->
   <script src="<?php echo $template_path; ?>js/preloader.js"></script>
   
-  <!-- ONLOAD -->
-  <!-- <script src="<?php echo $template_path; ?>js/onload.js"></script>-->
-  <!-- <script src="https://js.cx/script/jquery.documentReady.js"></script>-->
-  
-
-
  
   <style> 
 
@@ -104,14 +101,16 @@ $template_path = "/omega/";?>
 
     /*preloader*/
 
-    #p_prldr{
-      position: fixed;
-      left: 0;
-      top: 0;
-      right:0;
-      bottom:0;
-      background: rgb(55,55,55);
-      z-index: 102;}
+    #snt-preloader {
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		width: 0%;
+		height: 3px;
+		position: absolute;
+		background-color: #ea6052;
+		z-index: 999;
+	}
      
     .contpre small{font-size:25px;}
      

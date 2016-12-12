@@ -15,6 +15,7 @@ require_once('../header.php');
 </script><!--END preloader  -->
 
   <div id = "pjax-global" style = "opacity: 0;"> 
+ 
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
@@ -36,13 +37,13 @@ require_once('../header.php');
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-02 snt-link">О компании</span>
+                <span class="bgvid-link-02 snt-link">Концепция</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Участники проекта</span>
+                <span>Преимущества</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Документация</span>
+                <span>Тех.Характеристики</span>
               </div>
             </div>
           </div>
@@ -124,10 +125,13 @@ require_once('../header.php');
 
 
 <!-- new navigation -->
-    <div class="snt-prev snt-link bgvid-link-01 hvr-grow" style="opacity: 0;"></div>
-    <div class="snt-start snt-link bgvid-link-01 hvr-grow" style="opacity: 0;"></div>
-    <div class="snt-next snt-link bgvid-link-03 hvr-grow" style="opacity: 0;"></div>
+    <div class="snt-prev snt-link bgvid-link-01 hvr-grow tooltip-nav-lr" title="Главная" style="opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-01 hvr-grow tooltip-nav" title="Начало" style="opacity: 0;"></div>
+    <div class="snt-next snt-link bgvid-link-03 hvr-grow tooltip-nav-lr" title="Преимущества" style="opacity: 0;"></div>
   
+  
+
+
 
 <script>
 
@@ -292,8 +296,32 @@ $('#bgvid-link-night').click(function(){
 </script>
 
 
+  <!--  tooltips -->
+  <script>
+    // for main icons
+    $('.tooltip').tooltipster({
+      theme: 'tooltipster-borderless',
+      trigger: 'click',
+      interactive: true,
+    });
 
+    // for navigation icons
+    $('.tooltip-nav').tooltipster({
+      theme: 'tooltipster-borderless',
+      side: 'bottom'
+    });
+
+    $('.tooltip-nav-lr').tooltipster({
+      theme: 'tooltipster-borderless',
+      side: ['left', 'right']
+    });
+  </script>
+   <!--END floating tooltips -->
+
+	
 </div> <!--END pjax-global -->    
+  
+
 
 <?
 require_once('../footer.php');
