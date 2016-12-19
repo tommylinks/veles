@@ -1,11 +1,13 @@
 <?php 
 
 // meta tags
-$title = "order"; ///---
+$title = "Buy flat"; ///---
 $description = "DESCRIPTION";
+$manifest = "main.manifest";
 
 require_once('../header.php');
-?> 
+?>
+
 
 <body>
 <div class="wrapper">
@@ -15,10 +17,11 @@ require_once('../header.php');
 </script><!--END preloader  -->
 
   <div id = "pjax-global" style = "opacity: 0;"> 
+ 
     <img id="bgimg" class="img-bg" src="" style = "">
     <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
-    <div id="bgvid-wrapper" style ="position: absolute; ">
+	<div id="bgvid-wrapper" style ="position: absolute; ">
       <video id="bgvid" preload="auto">
         <source type="video/webm">
         <source type="video/mp4">
@@ -26,19 +29,35 @@ require_once('../header.php');
     </div>
 
     <header>
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
-    <!-- START documents-popup -->
-  
-        <div class="documents-popup" style="opacity: 0;">
-          <h1 style="text-align: center;    line-height: 476px;">Страница в разработке.</h1>
-        </div>
-    
-    <!-- END documents-popup  -->
 
-     
+    
+    <!-- START documents-popup   -->  
+    <div class="choose-section-wrapper" style="opacity: 0;">
+
+	    <h1 class="section-title">
+	      Жилая недвижимость
+	    </h1>
+
+		<a href="/omega/section-one/">
+			<div class="circle one">
+				<span>1 секция</span>
+			</div>
+		</a>
+		<a href="/omega/section-two/">
+			<div class="circle two">
+				<span>2 секция</span>
+			</div>
+      	</a>
+    </div>
+    <!-- END documents-popup   -->  
+
       <button class="sound-btn secondary-p"></button>
+      <div class="icon-phone secondary-p">
+        <div class="icon-phone-animation"></div>
+      </div>
     </header>
 
       <!-- overlay -->
@@ -69,12 +88,6 @@ require_once('../header.php');
 
 
 
-
-      <!-- new navigation -->
-    <div class="snt-prev snt-link bgvid-link-04 hvr-grow tooltip-nav-lr" title="Расположение"  style="opacity: 0;"></div>
-    <div class="snt-start snt-link bgvid-link-01 hvr-grow tooltip-nav" title="Начало" style="opacity: 0;"></div>
-    <div class="snt-next snt-link bgvid-link-06 hvr-grow" style="opacity: 0; display: none;"></div>
-
 <script>
 
   //   pathes
@@ -85,7 +98,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
   funcPathVidNightMp4();
 
   // video day mp4
-  funcPathVidNightMp4();
+  funcPathVidDayMp4();
 
 } else {
 
@@ -119,6 +132,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       console.log ("день");
       document.cookie = "daynight=";
       document.cookie = "daynight=day; expires=3600";
+      console.log (pathVidDay01);
 
       // вызываем функцию замены ссылок и анимации для дня
       funcAnimation ( pathVidDay06, pathImgDay06, pathImgNight06, 1, 0, 0, 'block', 'none' ); 
@@ -214,6 +228,11 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
+
+
+
+
+
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
   $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
@@ -225,30 +244,10 @@ $('#bgvid-link-night').click(function(){
 </script>
 
 
-  <!--  tooltips -->
-  <script>
-    // for main icons
-    $('.tooltip').tooltipster({
-      theme: 'tooltipster-borderless',
-      trigger: 'click',
-      interactive: true,
-    });
-
-    // for navigation icons
-    $('.tooltip-nav').tooltipster({
-      theme: 'tooltipster-borderless',
-      side: 'bottom'
-    });
-
-    $('.tooltip-nav-lr').tooltipster({
-      theme: 'tooltipster-borderless',
-      side: ['left', 'right']
-    });
-
-  </script>
-   <!--END floating tooltips -->
-
+	
 </div> <!--END pjax-global -->    
+  
+
 
 <?
 require_once('../footer.php');

@@ -3,7 +3,7 @@
 // meta tags
 $title = "INDEX"; ///---
 $description = "DESCRIPTION";
-$manifest = "manifest.main";
+$manifest = "main.manifest";
 
 require_once('header.php');
 ?> 

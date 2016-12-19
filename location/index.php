@@ -3,6 +3,7 @@
 // meta tags
 $title = "location"; ///---
 $description = "DESCRIPTION";
+$manifest = "main.manifest";
 
 require_once('../header.php');
 ?> 
@@ -34,13 +35,13 @@ require_once('../header.php');
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-02 snt-link">История места</span>
+                <span>История места</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span>Инфраструктура</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Виды из окон</span>
+                <span class="bgvid-link-05 snt-link">Виды из окон</span> 
               </div>
             </div>
           </div>

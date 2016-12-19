@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+	<style>
+
+body {
+    background: black;
+	padding: 0px;
+    margin: 0px;
+	overflow: hidden;
+	height: 0px;
+}
+
+img {
+	position: absolute;
+}
+#wrapper {
+	width: 1920px;
+	height: 1080px;
+	background: #808991;
+	color: #FFF;
+	transform-origin: 0 0;
+	}
+
+svg {
+	z-index: 1;
+    overflow: visible;
+	position: absolute;
+	opacity: 0.7;
+	zoom: 1;
+}
+
+svg polygon {
+	stroke:black;
+	stroke-width:0.566929;
+	fill:#ccc;
+}
+
+svg polygon:hover {
+	fill:green;
+}
+
+	</style>
+
+	<script type="text/javascript" src="/omega/js/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+		<div id="wrapper" >		
+				<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" width="1920px" height="1080px" viewBox="0 0 1920 1080"> 
+					<polygon class="fil0 str0" points="358,655 509,724 511,729 512,732 463,782 455,779 447,783 294,712 "/>
+					<polygon class="fil0 str0" points="421,602 430,600 575,662 567,674 574,681 527,725 522,722 514,722 365,652 "/>
+					<polygon class="fil0 str0" points="523,521 681,586 640,625 621,623 576,661 433,598 "/>
+					<polygon class="fil0 str0" points="577,472 724,528 719,533 726,537 684,575 677,572 670,578 527,519 "/>	 
+				</svg>
+				<img src="1.jpg" alt="">
+		</div>
+
+
+<script>
+//Скрипт ресайза окна
+// фактический размер изображения
+var imgWidth = 1920;
+var imgHeight = 1080;
+
+// функция ресайза изображения при загрузке
+function resize(){
+	var xJ = window.innerWidth / imgWidth;
+	var yJ = window.innerHeight / imgHeight;
+	var kJ = (1680/imgWidth)/(921/imgHeight);
+	var kA = window.innerWidth / window.innerHeight;
+	var kB  = imgWidth  / imgHeight;
+	var yhJ = xJ / kJ * 1.02;
+	var xwJ = yJ / kJ * 1.02;
+	console.log (window.innerWidth, window.innerHeight)
+	console.log (xJ, yhJ, xwJ, yJ);
+	if (kA > kB) {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xJ +", "+ yhJ +")"
+	var valsnt = (imgWidth-360)/2;
+	}
+	else {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xwJ +", "+ yJ +")"
+	var perH = 720/window.innerHeight*window.innerWidth;
+	var valsnt = (perH - 360)/2;
+	//console.log(window.innerWidth, window.innerHeight, valsnt);
+	}
+}
+resize();
+
+
+// функция ресайза изображения при растягивании окна браузера
+$(function(){
+  $(window).resize(function() {
+	var xj = window.innerWidth / imgWidth;
+	var yj = window.innerHeight / imgHeight;
+	var kj = (1680/imgWidth)/(921/imgHeight);
+	var ka = window.innerWidth / window.innerHeight;
+	var kb = imgWidth  / imgHeight;
+	var yhj = xj / kj * 1.02;
+	var xwj = yj / kj * 1.02;
+	
+	console.log (xj, yhj, xwj, yj);
+
+	if (ka > kb) {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xj +", "+ yhj +")";
+	var valsnt = (imgWidth-360)/2;
+	}
+	else {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xwj +", "+ yj +")";
+	var perH = 720/window.innerHeight*window.innerWidth;
+	var valsnt = (perH - 360)/2;
+	console.log(window.innerWidth, window.innerHeight, valsnt);
+	}
+    })
+})
+</script>
+
+
+
+</body>
+
+</html>

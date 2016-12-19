@@ -3,6 +3,7 @@
 // meta tags
 $title = "Events"; ///---
 $description = "DESCRIPTION";
+$manifest = "main.manifest";
 
 require_once('../header.php');
 ?> 

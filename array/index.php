@@ -1,10 +1,10 @@
 <?php
-$file = 'manifest.appcache';
+$file = 'windowview.manifest';
 $current = file_get_contents($file);
 file_put_contents($file, $current, LOCK_EX);
 ?>
 
-<html  manifest="manifest.appcache">
+<html  manifest="windowview.manifest">
 
 
 

@@ -14,6 +14,14 @@ ul {
   padding: 0;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .wrapper {
   position: relative;
   height: 100%;
@@ -21,6 +29,7 @@ ul {
   max-height: 100%;
   max-height: 100vh;
   max-width: 100%;
+  user-select: none;
 }
 
 .snt-link {cursor: pointer;}
@@ -49,6 +58,11 @@ ul {
   font-size: 24px;
   outline: none;
   text-shadow: 0 0 2.9px #010101;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main-icons-kit .main-icon {
@@ -71,6 +85,11 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   cursor: initial;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main-icons-kit .icon-bio {
@@ -106,6 +125,7 @@ ul {
   box-shadow: 0px 0px 39px -10px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   transition: .5s linear;
+  z-index: 104;
 }
 
 .main-icons-kit .icon-phone {
@@ -288,6 +308,11 @@ ul {
   width: 167px;
   top: 25px;
   left: 30px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main-menu-btn.secondary-p {
@@ -296,6 +321,13 @@ ul {
   font-size: 21px;
   top: 27%;
   left: 80px;
+  z-index: 10;
+}
+
+.main-menu-btn.secondary-p.menu-buy-p {
+  top: 50px;
+  right: 60px;
+  left: auto;
 }
 
 .daynight.secondary-p {
@@ -308,6 +340,115 @@ ul {
   bottom: 30%;
   left: 90px;
 }
+
+
+/* ------styles for order page------*/
+
+  .section-title {
+    position: absolute;
+    margin-top: 0;
+    top: 40px;
+    right: 40%;
+    color:#fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 12.1px black;
+    font-weight: normal;
+  }
+
+  .circle {
+    display: table;
+    position: absolute;
+    color: #fff;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
+
+  .circle span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .circle.one {
+    top: 20%;
+    left: 20%;
+  }
+
+  .circle.two {
+    top: 37%;
+    right: 25%;
+  }
+
+  /* ----- END styles for ORDER page------*/
+
+  /* ----- styles for SECTIONS page------*/
+
+  .section-title {
+    position: absolute;
+    margin-top: 0;
+    top: 40px;
+    right: 40%;
+    color:#fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 12.1px black;
+    font-weight: normal;
+
+  }
+
+  .section-one .buy-table {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    color:#fff;
+  }
+
+  .section-two .buy-table {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    color:#fff;
+  }
+  
+  .buy-table tr {
+    padding: 10px 0;
+  }
+
+  .buy-table td {
+    padding: 10px 5px;
+  }
+
+  .buy-table-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    max-width: 220px;
+  }
+
+  .buy-table-divider {
+    border-top: 3px solid #fff;
+  }
+
+  .floor-num {
+    text-align: center;
+    padding: 5px 7px;
+    border: 5px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .floor-num:hover {
+    border: 5px solid #2dbcb6;
+
+  }
+
+  .floor-active {
+    border: 5px solid #2dbcb6;
+  }
+/* -----END styles for SECTIONS page------*/
 
 /*------------footer------------*/
 
@@ -325,6 +466,9 @@ ul {
   color: #fff;
   text-align: center;
   font-weight: normal;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 
 .footer-info a {

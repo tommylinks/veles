@@ -1,8 +1,8 @@
   <?//path
 $template_path = "/omega/";?>
 <!DOCTYPE html>
-<!-- <html lang="ru" manifest=<? echo $manifest; ?> > -->
-<html lang="ru">
+<html lang="ru" manifest="<? echo $template_path; ?><? echo $manifest; ?>" > 
+
 
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,8 @@ $template_path = "/omega/";?>
   <!--<meta property="og:image" content="<?php echo $template_path; ?>path/to/image.jpg">
   <link rel="shortcut icon" href="<?php echo $template_path; ?>img/favicon/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="<?php echo $template_path; ?>img/favicon/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $template_path; ?>img/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $template_path; ?>img/favicon/apple-touch-icon-114x114.png">-->
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $template_path; ?>img/favicon/apple-touch-icon-72x72.png">-->
+  <link rel="apple-touch-icon" sizes="16x16" href="<?php echo $template_path; ?>favicon/favicon-16x16.png">
   <!-- Template Basic Images End -->
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/bootstrap.min.css"> 
   <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>css/hover-min.css">
@@ -132,5 +132,113 @@ $template_path = "/omega/";?>
       background: url(/omega/images/icons/three-dots.svg) center center no-repeat;
       background-size:115px;
     }
-  </style>
+
+
+/*windowview START*/
+
+  #bg-img-anim {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+      -moz-object-fit: cover;
+      -webkit-object-fit: cover;
+      object-fit: cover;
+      z-index: -1;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+  }
+
+.floor-number {
+      margin: 15px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 21px;
+      text-transform: uppercase;
+      text-shadow: 0 0 5.8px rgba(0, 0, 0, 0.7);
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+  }
+
+.toggle-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10%;
+      z-index: 99;
+      width: 100px;
+}
+  .toggle-controls-top, .toggle-controls-bottom {
+    display: block;
+    background: none;
+    border: none;
+    width: 84px;
+    height: 58px;
+    margin: 0 auto;
+    outline: none;
+  }
+
+  .toggle-controls-top {
+    background: url(/omega/images/icons/floor-up.png);
+  }
+
+  .toggle-controls-bottom {
+    background: url(/omega/images/icons/floor-down.png);
+  }
+
+  .icon-phone.secondary-p {
+    display: inline-block;
+    position: absolute;
+    bottom: 110px;
+    right: 62px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .5s linear;
+  }
+
+ .icon-phone.secondary-p .icon-phone-animation {
+    width: 89px;
+    height: 89px;
+    background: url(/omega/images/icons/phone.png) no-repeat;
+    -webkit-animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
+    -moz-animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
+    -o-animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
+    animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
+ }
+
+ .close-windowview a{
+    position: absolute;
+    top: 77px;
+    right: 70px;
+    color: #fff;
+    font-size: 21px;
+    font-size: 66px;
+    cursor: pointer;
+    z-index: 2;
+    text-shadow: 0 0 13px rgba(1, 1, 1, 0.7);
+ }
+  .close-windowview a:hover{
+    text-decoration: none;
+ }
+
+.mouse-move {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+/* windowview END*/
+ </style>
 </head>

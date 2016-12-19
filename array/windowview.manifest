@@ -32,4 +32,6 @@ CACHE:
 27.jpg
 28.jpg
 29.jpg
-jquery.min.js
+
+NETWORK:
+*

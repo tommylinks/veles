@@ -1,0 +1,295 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	
+	<title>rounded-dark</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+		
+	
+	
+	
+<style>
+body {
+    background: black;
+		padding: 0px;
+    margin: 0px;
+		overflow: hidden;
+
+}
+path:hover {
+    fill: aquamarine;
+}
+
+
+		svg {
+			position: absolute;
+			max-width:100%;
+			height:auto;
+			overflow:visible;
+			z-index:9;
+			opacity:.4;
+			width: 100%;
+    		height: auto
+		}
+img {
+position: absolute;
+}
+
+#wrapper {
+				width: 1280px;
+				height: 720px;
+				background: #808991;
+				color: #FFF;
+				transform-origin: 0 0;
+				}
+
+		
+</style>
+
+
+</head>
+<body>
+
+<!-- MAIN WRAPPER -->
+<div id= "wrapper">
+
+
+
+			<div 
+			style = "position: absolute;
+			top: 40%;
+			color: blue;
+			left: 30%;
+			z-index: 5;
+			font-size: 12px;"
+			>
+			<a href="#">В РОТ МНЕ НОГИ!</a>
+			</div>
+			
+		<div class="floor05">	
+		<svg xmlns="http://www.w3.org/2000/svg">
+			 <g id="snt01" stroke="green" fill="white" stroke-width="1">
+				 <path d="M364,246 L449,240 L456,357 L416,360 L416,349 L366,353 Z"></path>
+			 </g>
+		</svg>
+		<img src="http://level-barvikha.ru/assets/dist/images/floor-plans/plan-5.jpg">
+		</div>
+		<div class="floor04" style="opacity: 0;">	
+		<svg xmlns="http://www.w3.org/2000/svg">
+			 <g id="snt02" stroke="green" fill="white" stroke-width="1">
+				 <path d="M450,240 L534,234 L544,349 L457,356 Z"></path>
+			 </g>
+		</svg>
+		<img src="http://level-barvikha.ru/assets/dist/images/floor-plans/plan-4.jpg">
+		</div>
+		
+		
+		
+		
+<!-- выезжающий блок -->
+		<link rel="stylesheet" href="jquery.mCustomScrollbar.min.css" />
+		<style>
+		.wrapper{
+       position:absolute; 
+			 z-index:6;
+      }				
+			.mask{
+        background: rgba(0, 0, 0, 0.48);
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        display: none;
+      }
+      
+      .mask-show{display: block;}
+     
+		 .snt-menu-btn {
+				position: absolute;
+				z-index: 6;
+			}
+			
+      .right-block{    
+        position: absolute;
+        right: -70%;
+        top: 0;
+        background: #000;
+        height: 100%;
+        width: 70%;
+        transition: 1s;
+				z-index: 10;
+      }
+      
+      .right-block-show{right: 0;}
+      
+      .snt-close-btn{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: #fff;
+        background: none;
+      }		
+		
+		</style>
+		
+	
+					<div class="mask"></div>
+					<!--<button class="snt-menu-btn">click me</button>		-->		
+					<!--<button id="ajax">ajax</button> -->
+					<div class="loader"><!-- <img src="load.gif" alt="">--></div>
+					<div id = "rblock01" class="right-block">
+						<button class="snt-close-btn">&times;</button>
+						<div class="block-info" style="top: 100px; left: 30px; position: absolute; background: grey;">
+						  BLOCK 01 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi voluptatibus delectus cumque sequi sapiente fugiat at distinctio ratione, laboriosam, dolorem qui vitae ex cum nihil assumenda quas doloribus porro, totam.
+						  Molestias nemo explicabo libero iusto culpa rerum optio error, aut quo facere facilis nobis, temporibus? Aliquid mollitia officia quod perferendis quos est deserunt iste, sint aspernatur delectus voluptates optio tempora!
+						  Quidem ullam omnis ipsa tenetur cumque ratione asperiores accusamus necessitatibus enim, consequatur temporibus natus delectus vero eveniet adipisci quis repellat, quia quae eius modi aperiam. Provident pariatur hic, ex nam.
+						</div>
+					</div>
+					
+					<div id = "rblock02" class="right-block">
+						<button class="snt-close-btn">&times;</button>
+						<div class="block-info" style="top: 100px; left: 30px; position: absolute; background: grey;">
+						  BLOCK 02 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi voluptatibus delectus cumque sequi sapiente fugiat at distinctio ratione, laboriosam, dolorem qui vitae ex cum nihil assumenda quas doloribus porro, totam.
+						  Molestias nemo explicabo libero iusto culpa rerum optio error, aut quo facere facilis nobis, temporibus? Aliquid mollitia officia quod perferendis quos est deserunt iste, sint aspernatur delectus voluptates optio tempora!
+						  Quidem ullam omnis ipsa tenetur cumque ratione asperiores accusamus necessitatibus enim, consequatur temporibus natus delectus vero eveniet adipisci quis repellat, quia quae eius modi aperiam. Provident pariatur hic, ex nam.
+						</div>
+					</div>
+		<script src="jquery.mCustomScrollbar.concat.min.js"></script>			
+		<script>
+		// Скрипт открывает блок 01 справа
+				 
+							$('#snt01').click( function(){
+										$("#rblock01").toggleClass("right-block-show");
+										$(".mask").toggleClass("mask-show");
+									});
+
+			// Закрываем выехавший блок
+							$('.mask, .snt-close-btn').click( function(){
+
+										$("#rblock01").removeClass("right-block-show");
+										$(".mask").removeClass("mask-show");
+
+									});
+		// Скрипт открывает блок 02 справа
+				 
+							$('#snt02').click( function(){
+										$("#rblock02").toggleClass("right-block-show");
+										$(".mask").toggleClass("mask-show");
+									});
+
+			// Закрываем выехавший блок
+							$('.mask, .snt-close-btn').click( function(){
+
+										$("#rblock02").removeClass("right-block-show");
+										$(".mask").removeClass("mask-show");
+
+									});							
+		</script>			
+		<script>
+		(function($){
+        $(window).on("load",function(){
+            $(".block-info").mCustomScrollbar({
+              axis:"y",
+              theme: "rounded",
+              autoHideScrollbar: false,
+              alwaysShowScrollbar: 2,
+              setWidth: 200,
+              setHeight: 200
+            });
+        });
+    })(jQuery);
+		</script>
+
+<!-- //выезжающий блок -->	
+
+		
+		
+		
+<!-- навигация | управление -->
+		<style>
+		.navigation {position:absolute; z-index: 7; left: 3%; bottom: 15%;}
+		.circle {width: 40px; height: 40px; background: #00c0c0; border-radius: 20px; margin: 10px; text-align: center; display: table;}
+		.circle:hover {background: #05f4ff;}
+		.circle span {display: table-cell; vertical-align: middle;}
+		</style>
+		<div class = "navigation">
+				<div class = "controls">
+					<div id = "circ05" class = "circle"><span>5</span></div>
+					<div id = "circ04" class = "circle"><span>4</span></div>
+					<div id = "circ03" class = "circle"><span>3</span></div>
+				</div>
+		</div>
+		<script>
+		$("#circ05").click(function(){
+			$(".floor04").animate({opacity: 0}, 1000);
+			$(".floor05").animate({opacity: 1}, 1000);
+		});
+		$("#circ04").click(function(){
+			$(".floor05").animate({opacity: 0}, 1000);
+			$(".floor04").animate({opacity: 1}, 1000);
+		});	
+		</script>
+<!-- //навигация | управление  -->			
+
+</div>
+<!-- //MAIN WRAPPER -->
+
+
+
+
+
+<script>
+//Скрипт ресайза окна
+// фактический размер изображения
+var imgWidth = 1280;
+var imgHeight = 720;
+
+// функция ресайза изображения при загрузке
+function resize(){
+	var xJ = window.innerWidth / imgWidth;
+	var yJ = window.innerHeight / imgHeight;
+	var kJ = (1680/imgWidth)/(921/imgHeight);
+	var kA = window.innerWidth / window.innerHeight;
+	var kB  = imgWidth  / imgHeight;
+	var yhJ = xJ / kJ * 1.01;
+	var xwJ = yJ / kJ * 1.01;
+	console.log (window.innerWidth, window.innerHeight)
+	console.log (xJ, yhJ, xwJ, yJ);
+	if (kA > kB) {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xJ +", "+ yhJ +")"
+	}
+	else {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xwJ +", "+ yJ +")"
+	}
+}
+resize();
+// функция ресайза изображения при растягивании окна браузера
+$(function(){
+  $(window).resize(function() {
+	var xj = window.innerWidth / imgWidth;
+	var yj = window.innerHeight / imgHeight;
+	var kj = (1680/imgWidth)/(921/imgHeight);
+	var ka = window.innerWidth / window.innerHeight;
+	var kb = imgWidth  / imgHeight;
+	var yhj = xj / kj * 1.01;
+	var xwj = yj / kj * 1.01;
+	console.log ($(window).width(), window.innerHeight)
+	console.log (xj, yhj, xwj, yj);
+	if (ka > kb) {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xj +", "+ yhj +")"
+	}
+	else {
+	document.getElementById("wrapper").style.webkitTransform = "translate(0px, 0px) scale("+ xwj +", "+ yj +")"
+	}
+    })
+})
+</script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 var funcIconAnimationIn = function () {
 	console.log('funcIconAnimationIn');
 	//main icons show animation
-        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn").animate({
+        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn, .mouse-move, .toggle-controls, .close-windowview, .choose-section-wrapper, .buy-sections").animate({
           opacity: 1
         }, 500);
 
@@ -18,7 +18,7 @@ var funcIconAnimationIn = function () {
 var funcIconAnimationOut = function () {
 	console.log('funcIconAnimationOut');
 		//main icons hide animation
-		$(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn").animate({
+		$(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn, .mouse-move, .toggle-controls, .close-windowview, .choose-section-wrapper, .buy-sections").animate({
 		  opacity: 0
 		}, 300);
 

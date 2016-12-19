@@ -3,6 +3,7 @@
 // meta tags
 $title = "Documents"; ///---
 $description = "DESCRIPTION";
+$manifest = "main.manifest";
 
 require_once('../header.php');
 ?> 
