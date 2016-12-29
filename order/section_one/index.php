@@ -41,13 +41,15 @@ include '../../admin/flat_info.php';
     padding: 5px 0;
   }
 
+  .carousel-inner img {max-height: 400px;}
+
 
   svg:hover + .flat-info > .flat-desc {display: block; }
 
   svg:hover + .flat-info {height: 50px; }
 
 	
-	.close-left-slide {
+.close-left-slide {
     position: absolute;
     z-index: 6;
     left: 100%;

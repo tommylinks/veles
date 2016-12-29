@@ -129,23 +129,25 @@
   </script>
 
 
-
+<!-- Удалаяет лишние элементы сладера, если пустой URL -->
 <script type="text/javascript">
 
-var countSlides = $('#myCarousel01 img');
+  (function(){
+  var countSlides = $('#myCarousel01').find('img');
 
+  var indicator = $('.carousel-indicators li');
 
-  for(var i = 0; i < countSlides.length; i++ ) {
+    for(var i = 0; i < countSlides.length; i++ ) {
 
-    var imgTag = countSlides[i];
-    console.log(imgTag.parent());
+      var local = $(countSlides[i]).attr('src');
 
-    var local = $(imgTag).attr('src');
+      if (local == '') {
+        $(countSlides[i]).parent().remove();
+        $(indicator[i]).remove();
+      } else {
+        console.log(local);
+      }
+    }
+  })();
 
-    // if (local == '') {
-    //   local.parent().remove();
-    // }else {
-    //   console.log(local);
-    // }
-  }
 </script>

@@ -262,6 +262,7 @@ a, a:hover,a:focus {
   color: #000;
   padding: 20px;
   border-radius: 10px;
+  z-index: 1;
 }
 
 .doc-popup-wrap {
@@ -285,6 +286,27 @@ a, a:hover,a:focus {
   transition: .1s;
 }
 
+/* footer video-popup */
+
+#video-popup {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  min-width: 890px;
+  min-height: 440px;
+  width: 70vw;
+  height: 565px;
+  height: 60vh;
+  background: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #000;
+  /*padding: 20px;*/
+  border-radius: 10px;
+  z-index: 2;
+}
 
 /*page navigation*/
 
