@@ -38,7 +38,7 @@ require_once('../header.php');
                 <span>История места</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Инфраструктура</span>
+                <a href="infrastructure"><span>Инфраструктура</span></a>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-05 snt-link">Виды из окон</span> 

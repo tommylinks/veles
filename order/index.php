@@ -1,7 +1,7 @@
 <?php 
 
 // meta tags
-$title = "Buy flat"; ///---
+$title = "order"; ///---
 $description = "DESCRIPTION";
 $manifest = "main.manifest";
 
@@ -41,12 +41,12 @@ require_once('../header.php');
 	      Жилая недвижимость
 	    </h1>
 
-		<a href="/omega/section-one/">
+		<a href="/omega/order/section_one/">
 			<div class="circle one">
 				<span>1 секция</span>
 			</div>
 		</a>
-		<a href="/omega/section-two/">
+		<a href="/omega/order/section_two/">
 			<div class="circle two">
 				<span>2 секция</span>
 			</div>

@@ -29,31 +29,34 @@ $template_path = "/omega/";?>
   <link rel="stylesheet" href="<?php echo $template_path; ?>css/preloader.min.css">
 
   <!-- JQuety + Pjax   -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.min.js"></script>
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.pjax.js"></script>
+  <script src="<?php echo $template_path; ?>js/jquery.min.js"></script>
+  <script src="<?php echo $template_path; ?>js/jquery.pjax.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- tooltipster -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/tooltipster.bundle.min.js"></script>
+  <script src="<?php echo $template_path; ?>js/tooltipster.bundle.min.js"></script>
 
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/howler.js"></script>
+  <script src="<?php echo $template_path; ?>js/howler.js"></script>
 
   <!-- CustomScrollbar -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="<?php echo $template_path; ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
 
   <!-- For detection user-agent -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/detect.min.js"></script>
+  <script src="<?php echo $template_path; ?>js/detect.min.js"></script>
 
   <!-- Pathes -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/paths.js"></script>
+  <script src="<?php echo $template_path; ?>js/paths.js"></script>
 
   <!-- Custom functions -->
-  <script type="text/javascript" src="<?php echo $template_path; ?>js/functions.js"></script>
+  <script src="<?php echo $template_path; ?>js/functions.js"></script>
 
   <!-- Speednetwork -->
   <script src="<?php echo $template_path; ?>js/speednetwork.js"></script>
       
   <!-- Preloader -->
   <script src="<?php echo $template_path; ?>js/preloader.js"></script>
+
+
   
  
   <style> 
@@ -203,6 +206,7 @@ $template_path = "/omega/";?>
     -ms-user-select: none;
     user-select: none;
     transition: .5s linear;
+    z-index: 10;
   }
 
  .icon-phone.secondary-p .icon-phone-animation {
@@ -241,4 +245,12 @@ $template_path = "/omega/";?>
 
 /* windowview END*/
  </style>
+ <style>
+.floorgroup {
+	opacity: 0;
+}
+.floorgroup.visible {
+	opacity: 1;
+}
+</style>
 </head>

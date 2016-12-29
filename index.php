@@ -12,11 +12,52 @@ require_once('header.php');
 <div class="wrapper">
 
 <script>
-	preloader(true, 'white', 'red');	
+  preloader(true, 'white', 'red');  
 </script><!--END preloader  -->
 
+
+
+<style type="text/css">
+  
+  .veles-widget {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 1;
+    color: #c7c7c7;
+    padding: 10px 15px;
+    text-align: center;
+    background: rgba(0,0,0, 0.3);
+    border-radius: 10px;
+    
+  }
+
+  .veles-widget caption {
+    padding: 5px 0;
+    text-transform: uppercase;
+    background: rgba(204, 204, 204, 0.34);
+    margin-bottom: 10px;
+  } 
+
+  .veles-widget td {
+    padding: 10px;
+    min-width: 100px;
+  }
+
+
+  .veles-widget .border-b {
+    border-bottom: 1px solid #c7c7c7;
+  }
+
+  .veles-widget .border-r {
+    border-right: 1px solid #c7c7c7;
+  }
+
+</style>
+
+
   <div id = "pjax-global" style = "opacity: 0;"> 
-  	
+    
     <img id = "bgimg" class="img-bg" src="" style = "">
     <img id = "bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
@@ -30,9 +71,36 @@ require_once('header.php');
     <header>
       <button class="main-menu-btn hvr-grow" style="opacity: 0;">Меню</button>
 
+      <div class="veles-widget">
+        <table>
+          <caption>Уникален в</caption>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+              <td class="border-b border-r">Киев</td>
+              <td class="border-b">Veles Place</td>
+            </tr>
+            <tr>
+              <td class="text-right">температура:</td>
+              <td class="border-r">30 С</td>
+              <td>25 С</td>
+            </tr>
+            <tr>
+              <td class="text-right">уровень смога:</td>
+              <td class="border-r">есть</td>
+              <td>нет</td>
+            </tr>
+            <tr>
+              <td class="text-right">туманность:</td>
+              <td class="border-r">есть</td>
+              <td>нет</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <!-- START documents-popup 
         <div class="documents-popup" style="opacity: 0;"></div>
-	  END documents-popup  -->
+    END documents-popup  -->
 
       <div class="main-icons-kit">
         <div class="main-icon main-logo" style="opacity: 0;">
@@ -301,7 +369,7 @@ $('#bgvid-link-night').click(function(){
   </script>
    <!--END floating tooltips -->
 
-	     
+       
 </div> <!--END pjax-global -->   
  
 
