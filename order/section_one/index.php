@@ -41,12 +41,34 @@ include '../../admin/flat_info.php';
     padding: 5px 0;
   }
 
-  .carousel-inner img {max-height: 400px;}
+  .carousel-inner img {max-height: 300px;}
 
 
   svg:hover + .flat-info > .flat-desc {display: block; }
 
   svg:hover + .flat-info {height: 50px; }
+
+  #tooltip_i_icon {
+  	max-width: 215px;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    font-size: 12px;
+    white-space: normal;
+    padding: 8px 0;
+  }
+
+ .call-me-btn {
+ 	margin: 10px auto 0 auto;
+ 	display: block;
+ 	padding:10px 15px;
+ 	background: #fad258;
+ 	text-align: center;
+ 	color: #000;
+ 	font-weight: 700;
+ 	border: none;
+    outline: none;
+ }
 
 	
 .close-left-slide {
@@ -1436,7 +1458,14 @@ include '../../admin/flat_info.php';
 
 .carousel-indicators .active {background-color: #8e8e8e;}
 
-
+.table-flat-info .i-icon {
+	display: inline-block;
+	margin: 0 5px;
+	width: 12px;
+	height: 12px;
+	background: url('../../images/icons/i-icon.png') no-repeat;
+	cursor: pointer;
+}
       
 </style>
 
@@ -1451,9 +1480,10 @@ include '../../admin/flat_info.php';
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
-
 <!-- Animation icons when the page have been loaded -->
 <script>
     setTimeout ( funcIconAnimationIn, 700 );
@@ -1575,7 +1605,9 @@ function animatedBlocks(blockId, urlContent){
 $('#svg-flat-01').click( function(){animatedBlocks("#block-fl01", "/omega/admin/apartments/flat_01.php")} );
 $('#svg-flat-02').click( function(){animatedBlocks("#block-fl02", "/omega/admin/apartments/flat_02.php")} );
 
+
 </script>
+
   
 </div> <!--END pjax-global -->    
   

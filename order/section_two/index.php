@@ -275,9 +275,10 @@ $('#bgvid-link-night').click(function(){
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
-
 <!-- Animation icons when the page have been loaded -->
 <script>
     setTimeout ( funcIconAnimationIn, 700 );

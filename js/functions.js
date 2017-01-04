@@ -1,32 +1,83 @@
-
-
+// функции анимации иконок при нажатии на элементы управления .snt-next, .snt-start, .snt-prev
 var funcIconAnimationIn = function () {
-	console.log('funcIconAnimationIn');
-	//main icons show animation
-        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn, .mouse-move, .toggle-controls, .close-windowview, .choose-section-wrapper, .buy-sections").animate({
-          opacity: 1
-        }, 500);
-
-        //left
-        $(".icon-bio, .icon-techno, .daynight, .sound-btn").removeClass('hide-main-icon-left');
-
-        //right
-        $(".icon-socio, .icon-person, .icon-phone").removeClass('hide-main-icon-right');
-
-	};
+    $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").removeClass('hide-main-icon-left');
+    $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").removeClass('hide-main-icon-right');
+    $(".snt-start").removeClass('hide-main-icon-top');
+    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper").animate({
+      opacity: 1
+    }, 300);
+	}
 
 var funcIconAnimationOut = function () {
-	console.log('funcIconAnimationOut');
-		//main icons hide animation
-		$(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .secondary-logo, .main-menu-btn, .mouse-move, .toggle-controls, .close-windowview, .choose-section-wrapper, .buy-sections").animate({
-		  opacity: 0
-		}, 300);
+    $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
+    $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
+    $(".snt-start").addClass('hide-main-icon-top');
+    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper").animate({
+      opacity: 0
+    }, 300);
+}
 
-		// left
-		$(".icon-bio, .icon-techno, .daynight, .sound-btn").addClass('hide-main-icon-left');
+// функции анимации иконок при нажатии на элементы управления .main-menu-btn
+var funcAnimMenuIn = function () {
+        $(".main-menu").animate({
+          opacity: 1,
+          left:"0%"
+        }, 300);
+        $(".main-menu, .overlay").fadeIn(500);
+        $(".footer-bg ").css('background','rgba(0,0,0,0)');
+        $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
+        $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
+        $(".snt-start").addClass('hide-main-icon-top');
+        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+          opacity: 0
+        }, 300);
+}
+ 	  
+var funcAnimMenuOut = function () {
+        $(".main-menu").animate({
+          opacity: 0,
+          left: "-10%"
+        }, 300);
+        $(".main-menu, .overlay").fadeOut(500);
+        $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
+        $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").removeClass('hide-main-icon-left');
+        $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").removeClass('hide-main-icon-right');
+        $(".snt-start").removeClass('hide-main-icon-top');        
+        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+          opacity: 1
+        }, 300);
+}
 
-		//right
-		$(".icon-socio, .icon-person, .icon-phone").addClass('hide-main-icon-right');
 
-};
+
+
+
+var tooltipLeftSlide = function() {
+  $('.tooltip-i').tooltipster({
+    theme: 'tooltipster-borderless',
+    trigger: 'click',
+    interactive: true,
+    side: 'bottom'
+  });
+}
+
+
+// init music
+
+var playMusic = function () {
+  $('.sound-btn').click(function() {
+  if($('.sound-btn').hasClass('pause')) {
+      $('.sound-btn').removeClass('pause');
+      $('.sound-btn').width('25');
+      document.getElementById('music').play();
+    } else {
+      $('.sound-btn').addClass('pause');
+      $('.sound-btn').width(8);
+      document.getElementById('music').pause();
+    }
+  });
+}
+// END init music
+  
+
 

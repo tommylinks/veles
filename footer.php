@@ -1,8 +1,8 @@
     <footer class="footer-bg" style = "opacity: 0;">
       <div class="footer-info">
         <div class="left-footer-menu">
-          <a href="#" class="footer-text">Видеоролик</a>
-          <a href="#" class="icon-play hvr-grow"></a>
+          <a href="#" class="video-popup footer-text">Видеоролик</a>
+          <a href="#" class="video-popup icon-play hvr-grow"></a>
           <a href="#" class="footer-text">Вознесенский спуск 28-30</a>
         </div>
         <div class="social-icons">
@@ -19,31 +19,16 @@
         </div>
       </div>
     </footer>
+
+  <audio id="music">
+    <source src="/omega/media/sound/1.mp3" autoplay>
+    Тег audio не поддерживается вашим браузером. 
+  </audio>
+    <script type="text/javascript">
+      document.getElementById('music').play();
+    </script>
+
  </div><!--END wrapper -->  
-
-  <!-- init music -->
-  <script>
-/*    var sound = new Howl({
-    src: ['/omega/media/sound/1.mp3']
-  });
-
-  sound.play();
-
-  $('.sound-btn').click(function() {
-    if($('.sound-btn').hasClass('pause')) {
-      $('.sound-btn').removeClass('pause');
-      $('.sound-btn').width('25');
-      sound.play();
-    } else {
-      $('.sound-btn').addClass('pause');
-      $('.sound-btn').width(8);
-      sound.pause();
-    }
-
-  });
-  */
-  </script>
-  <!--END init music -->
 
 
   <!-- Scrolling events + Pjax -->
@@ -146,71 +131,42 @@
          
       
     } 
+    </script>
+  
+
+
+<!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
+<script>
+    $('.video-popup').click(function () {
+        $("#video-popup, .overlay").fadeIn();
+
+        setTimeout(function(){$("#video-content")[0].play()}, 0);
+      });
     
+    $('.overlay, .close-video-popup').click(function () {
+      $("#video-popup, .overlay").fadeOut();
+    });
+ </script>
 
-  
-    </script>
-  
-    <!-- show main-menu -->
-    <script>
-      $('#pjax-global').on('click', '.main-menu-btn', function () {
-        $(".footer-bg ").css('background','rgba(0,0,0,0)');
-
-        //main icons hide animation
-        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections").animate({
-          opacity: 0
-        }, 300);
-
-        // icons move to left
-        $(".icon-bio, .icon-techno, .daynight, .sound-btn").addClass('hide-main-icon-left');
-
-        // icons move to right
-        $(".icon-socio, .icon-person, .icon-phone").addClass('hide-main-icon-right');
-
-        $(".main-menu, .overlay").fadeIn(500);
-        $(".main-menu").animate({
-          opacity: 1,
-          left:"0%"
-        }, 500);
-      });
-
-
-      $('#pjax-global').on('click', '.close-main-menu, .overlay', function () {
-        $(".main-menu").animate({
-          opacity: 0,
-          left: "-10%"
-        }, 500);
-        $(".main-menu, .overlay").fadeOut(500);
-
-        $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
-        
-        //main icons show animation
-
-        $(".main-logo, .documents-popup, .snt-prev, .snt-start, .snt-next, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections").animate({
-          opacity: 1
-        }, 500);
-
-        // icons back on default position (left)
-        $(".icon-bio, .icon-techno, .daynight, .sound-btn").removeClass('hide-main-icon-left');
-
-        // icons back on default position (right)
-        $(".icon-socio, .icon-person, .icon-phone").removeClass('hide-main-icon-right');
-
-      });
-    </script>
 
     <!-- Click events + Pjax  --> 
      <script>
-
-      var menuAnimation = function () {
-          $(".main-menu").animate({
-            opacity: 0,
-            left: "-100",
-          }, 500);
-          $(".main-menu, .overlay").fadeOut(500);
-          $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
-          $(".main-icons-kit").fadeIn(500);
-      };
+// функция анимации при нажатии на ссылки .bgvid-link-01 и т.д.
+var menuAnimation = function () {
+    $(".main-menu").animate({
+      opacity: 0,
+      left: "-100",
+    }, 500);
+    $(".main-menu, .overlay").fadeOut(500);
+    $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
+    $(".main-icons-kit").fadeIn(500);
+/*    $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
+    $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
+    $(".snt-start").addClass('hide-main-icon-top');        
+    $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+      opacity: 0
+    }, 300);*/
+};
 
       $('#pjax-global').on('click', '.bgvid-link-01', function () {
     var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
@@ -290,5 +246,12 @@
       });
 
     </script>
+
+
+
+
+<!-- popup videoperehod -->
+
+
 </body>
 </html>

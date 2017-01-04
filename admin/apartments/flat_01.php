@@ -49,14 +49,31 @@
             </tr>
             <tr>
               <td>Цена за 1м2:</td>
-              <td>$<? echo $flat_01["detail"]["features"]["price_meter"]; ?></td>
+              <td>
+                $<? echo $flat_01["detail"]["features"]["price_meter"]; ?>
+                <span class="i-icon tooltip-i" data-tooltip-content="#tooltip_i_icon"></span>
+              </td>
             </tr>
             <tr>
               <td>Итоговая цена:</td>
-              <td>$<? echo $flat_01["detail"]["features"]["price_summary"]; ?></td>
+              <td>
+                $<? echo $flat_01["detail"]["features"]["price_summary"]; ?>
+                <span class="i-icon tooltip-i" data-tooltip-content="#tooltip_i_icon"></span>
+              </td>
             </tr>
           </tbody>
         </table>
+
+        <!-- tooltip_i_icon block -->
+        <div class="tooltip_templates">
+          <span id="tooltip_i_icon">
+            Подробнее о ценообразовании Вы
+            можете узнать у нас в офисе продаж
+            или по телефону
+            <button class="call-me-btn">Связаться со мной</button>
+          </span>
+        </div>
+        <!-- tooltip_i_icon block -->
 
       </div><!--col-info  -->
     </div>
@@ -151,3 +168,9 @@
   })();
 
 </script>
+
+<!--  tooltips -->
+<script>
+  tooltipLeftSlide();
+</script>
+ <!--END floating tooltips -->

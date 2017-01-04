@@ -36,7 +36,6 @@ $template_path = "/omega/";?>
   <!-- tooltipster -->
   <script src="<?php echo $template_path; ?>js/tooltipster.bundle.min.js"></script>
 
-  <script src="<?php echo $template_path; ?>js/howler.js"></script>
 
   <!-- CustomScrollbar -->
   <script src="<?php echo $template_path; ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -57,7 +56,7 @@ $template_path = "/omega/";?>
   <script src="<?php echo $template_path; ?>js/preloader.js"></script>
 
 
-  
+
  
   <style> 
 
@@ -252,5 +251,44 @@ $template_path = "/omega/";?>
 .floorgroup.visible {
 	opacity: 1;
 }
+</style>
+
+
+<style type="text/css">
+  
+  .veles-widget {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 1;
+    color: #c7c7c7;
+    padding: 10px 15px;
+    text-align: center;
+    background: rgba(0,0,0, 0.3);
+    border-radius: 10px;
+    
+  }
+
+  .veles-widget caption {
+    padding: 5px 0;
+    text-transform: uppercase;
+    background: rgba(204, 204, 204, 0.34);
+    margin-bottom: 10px;
+  } 
+
+  .veles-widget td {
+    padding: 10px;
+    min-width: 100px;
+  }
+
+
+  .veles-widget .border-b {
+    border-bottom: 1px solid #c7c7c7;
+  }
+
+  .veles-widget .border-r {
+    border-right: 1px solid #c7c7c7;
+  }
+
 </style>
 </head>

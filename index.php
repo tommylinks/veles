@@ -17,45 +17,6 @@ require_once('header.php');
 
 
 
-<style type="text/css">
-  
-  .veles-widget {
-    position: absolute;
-    right: 20px;
-    top: 30px;
-    z-index: 1;
-    color: #c7c7c7;
-    padding: 10px 15px;
-    text-align: center;
-    background: rgba(0,0,0, 0.3);
-    border-radius: 10px;
-    
-  }
-
-  .veles-widget caption {
-    padding: 5px 0;
-    text-transform: uppercase;
-    background: rgba(204, 204, 204, 0.34);
-    margin-bottom: 10px;
-  } 
-
-  .veles-widget td {
-    padding: 10px;
-    min-width: 100px;
-  }
-
-
-  .veles-widget .border-b {
-    border-bottom: 1px solid #c7c7c7;
-  }
-
-  .veles-widget .border-r {
-    border-right: 1px solid #c7c7c7;
-  }
-
-</style>
-
-
   <div id = "pjax-global" style = "opacity: 0;"> 
     
     <img id = "bgimg" class="img-bg" src="" style = "">
@@ -71,7 +32,7 @@ require_once('header.php');
     <header>
       <button class="main-menu-btn hvr-grow" style="opacity: 0;">Меню</button>
 
-      <div class="veles-widget">
+      <div class="veles-widget" style="opacity: 0;">
         <table>
           <caption>Уникален в</caption>
           <tbody>
@@ -166,11 +127,22 @@ require_once('header.php');
           <div class="icon-phone-animation"></div>
         </div>
       </div><!--END main-icons-kit -->
-      <button class="sound-btn hvr-grow hide-main-icon-left"></button>
+      <button class="sound-btn hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
       <!-- overlay -->
   <div class="overlay"></div>
+
+
+<!-- START footer video-popup   -->
+      <div id="video-popup" style="display: none;">
+        <video id="video-content" width="100%" loop="loop" >
+            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+        </video>
+        <span class="close-video-popup">&times;</span>
+      </div>
+<!-- END footer video-popup   -->  
 
    <!-- main menu -->
   <div class="main-menu">
@@ -345,7 +317,9 @@ $('#bgvid-link-night').click(function(){
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
 <!-- Animation icons when the page have been loaded -->
 <script>
@@ -369,10 +343,33 @@ $('#bgvid-link-night').click(function(){
   </script>
    <!--END floating tooltips -->
 
-       
+
+<!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
+<script>
+  $('.video-popup').click(function () {
+      $("#video-popup, .overlay").fadeIn();
+
+      setTimeout(function(){$("#video-content")[0].play()}, 0);
+    });
+  
+  $('.overlay, .close-video-popup').click(function () {
+    $("#video-popup, .overlay").fadeOut();
+  });
+</script>
+
+
+<!-- init music -->
+<script type="text/javascript">
+  playMusic();
+</script>
+<!--END init music -->
+
+
+
+
+
 </div> <!--END pjax-global -->   
  
-
 
 
 <?

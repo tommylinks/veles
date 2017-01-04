@@ -72,7 +72,17 @@ require_once('../../header.php');
     </div> -->
 
     <header>
-
+    <!-- overlay -->
+    <div class="overlay"></div>
+    <!-- START footer video-popup   -->
+      <div id="video-popup" style="display: none;">
+        <video id="video-content" width="100%" loop="loop" >
+            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+        </video>
+        <span class="close-video-popup">&times;</span>
+      </div>
+    <!-- END footer video-popup   -->  
       
         <!-- START map-wrapper  -->           
         <div class="map-wrapper">
@@ -344,14 +354,28 @@ $('#bgvid-link-night').click(function(){
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
-
 <!-- Animation icons when the page have been loaded -->
 <script>
     setTimeout ( funcIconAnimationIn, 700 );
 </script>
 
+
+  <!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
+  <script>
+    $('.video-popup').click(function () {
+        $("#video-popup, .overlay").fadeIn();
+
+        setTimeout(function(){$("#video-content")[0].play()}, 0);
+      });
+    
+    $('.overlay, .close-video-popup').click(function () {
+      $("#video-popup, .overlay").fadeOut();
+    });
+  </script>
 
 
 </div> <!--END pjax-global -->    
