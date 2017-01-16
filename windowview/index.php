@@ -9,7 +9,7 @@ require_once('../header.php');
 ?> 
 
 <body>
-<div class="wrapper" style="user-select: none;">
+<div class="wrapper">
 <!-- preloader  -->
 <script>
   preloader(true, 'white', 'red');  
@@ -18,9 +18,8 @@ require_once('../header.php');
   <div id = "pjax-global" style = "opacity: 0;">  
     <div id="bgmask" style = "cursor: move; position: absolute; width: 100%; top: 5%; height: 85%;  margin: 0; z-index: 1; padding: 0;"></div>
 
-    <img id="bgimg" class="img-bg" src="00.jpg" style = "" />
-    <img id="bgimg-back" class="img-bg" src="00.jpg" style = "opacity: 1;" /> 
-    <img id="bgimg-default" class="img-bg" src="00.jpg" />
+    <img id="bgimg" class="img-bg bgimg-default" style = "" />
+    <img id="bgimg-back" class="img-bg bgimg-default" style = "opacity: 1;" /> 
     
 
 
@@ -37,7 +36,7 @@ require_once('../header.php');
       
         <!-- START CONTENT   -->   
 
-        <span  class="close-windowview"><a href='/omega/location/'>&times;</a></span>
+        <span  class="close-home"><a href='/omega/'>&times;</a></span>
 
         <div class="toggle-controls">
           <button id ="top" class="toggle-controls-top"></button>
@@ -112,6 +111,16 @@ require_once('../header.php');
       <!-- overlay -->
   <div class="overlay"></div>
 
+    <!-- START footer video-popup   -->
+      <div id="video-popup" style="display: none;">
+        <video id="video-content" width="100%" loop="loop" >
+            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+        </video>
+        <span class="close-video-popup">&times;</span>
+      </div>
+<!-- END footer video-popup   --> 
+
    <!-- main menu -->
   <div class="main-menu">
     <ul>
@@ -181,7 +190,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       document.cookie = "daynight=day; expires=3600";
 
       // вызываем функцию замены ссылок и анимации для дня
-      funcAnimation ( pathVidDay04, pathImgDay04, pathImgNight04, 1, 0, 0, 'block', 'none' ); 
+      funcAnimation ( pathVidDay05, pathImgDay05, pathImgNight05, 1, 0, 0, 'block', 'none' ); 
 
       // записываем глобальные переменные для дня
       funcSessionStorageDay ();
@@ -192,7 +201,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       document.cookie = "daynight=night; expires=3600";
 
       // вызываем функцию замены ссылок и анимации для ночи
-      funcAnimation ( pathVidNight04, pathImgDay04, pathImgNight04, 0, 1, 0, 'none', 'block' );
+      funcAnimation ( pathVidNight05, pathImgDay05, pathImgNight05, 0, 1, 0, 'none', 'block' );
 
       // записываем глобальные переменные для ночи
       funcSessionStorageNight ();
@@ -206,7 +215,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       if (daynightCookie[1] == "day") {
 
         // вызываем функцию замены ссылок и анимации для дня
-        funcAnimation ( pathVidDay04, pathImgDay04, pathImgNight04, 1, 0, 0, 'block', 'none' ); 
+        funcAnimation ( pathVidDay05, pathImgDay05, pathImgNight05, 1, 0, 0, 'block', 'none' ); 
 
         // записываем глобальные переменные для дня
         funcSessionStorageDay ();
@@ -214,7 +223,7 @@ if (user.browser.family === 'Safari' || user.browser.family === 'IE') {
       } else {
 
         // вызываем функцию замены ссылок и анимации для дня
-        funcAnimation ( pathVidNight04, pathImgDay04, pathImgNight04, 0, 1, 0, 'none', 'block' );
+        funcAnimation ( pathVidNight05, pathImgDay05, pathImgNight05, 0, 1, 0, 'none', 'block' );
 
         // записываем глобальные переменные для ночи
         funcSessionStorageNight ();
@@ -231,7 +240,7 @@ $('#bgvid-link-day').click(function(){
   document.cookie = "daynight=day; expires=3600";
 
   // вызываем функцию замены ссылок и анимации для дня
-  funcAnimation ( pathVidDay04, pathImgDay04, pathImgNight04, 1, 0, 1000, 'block', 'none' );
+  funcAnimation ( pathVidDay05, pathImgDay05, pathImgNight05, 1, 0, 1000, 'block', 'none' );
 
 });
 
@@ -245,7 +254,7 @@ $('#bgvid-link-night').click(function(){
   document.cookie = "daynight=night; expires=3600"
 
   // вызываем функцию замены ссылок и анимации для дня
-  funcAnimation ( pathVidNight04, pathImgDay04, pathImgNight04, 0, 1, 1000, 'none', 'block' );
+  funcAnimation ( pathVidNight05, pathImgDay05, pathImgNight05, 0, 1, 1000, 'none', 'block' );
 
 });
 
@@ -279,19 +288,14 @@ $('#bgvid-link-night').click(function(){
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn, .close-windowview').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
-
 <!-- Animation icons when the page have been loaded -->
 <script>
     setTimeout ( funcIconAnimationIn, 700 );
 </script>
-
-
-
-
-
-
 
 
 
@@ -323,7 +327,7 @@ $('#bgvid-link-night').click(function(){
     numIndex = +sessionStorage.getItem('numIndex');
     }
     
-    $('#bgimg-default').attr('src', arrayImg);
+    //$('.bgimg-default').attr('src', arrayImg);
     floor.innerHTML = numFloor;
 
         var screenHeight = screen.height;
@@ -392,7 +396,7 @@ function position () {
             arrayImg = arr[0];
             numIndex = 0;
             numFloor = floor.innerHTML = '1';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 5);
 
         } else if (event.pageY == b || event.pageY < b && event.pageY > a ) { 
@@ -401,7 +405,7 @@ function position () {
             arrayImg = arr[1];
             numIndex = 1;
             numFloor = floor.innerHTML = '1';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 10);
 
         } else if (event.pageY == c || event.pageY < c && event.pageY > b ) { 
@@ -410,7 +414,7 @@ function position () {
             arrayImg = arr[2];
             numIndex = 2;
             numFloor = floor.innerHTML = '1';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 15);
 
         } else if (event.pageY == d || event.pageY < d && event.pageY > c ) { 
@@ -419,7 +423,7 @@ function position () {
             arrayImg = arr[3];
             numIndex = 3;
             numFloor = floor.innerHTML = '2';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 20);
 
     } else if (event.pageY == e || event.pageY < e && event.pageY > d ) { 
@@ -428,7 +432,7 @@ function position () {
             arrayImg = arr[4];
             numIndex = 4;
             numFloor = floor.innerHTML = '2';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 25);
 
         } else if (event.pageY == f || event.pageY < f && event.pageY > e) { 
@@ -437,7 +441,7 @@ function position () {
             arrayImg = arr[5];
             numIndex = 5;
             numFloor = floor.innerHTML = '2';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 30);
 
         } else if (event.pageY == g || event.pageY < g && event.pageY > f) { 
@@ -446,7 +450,7 @@ function position () {
             arrayImg = arr[6];
             numIndex = 6;
             numFloor = floor.innerHTML = '3';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 35);
 
         } else if (event.pageY == h || event.pageY < h && event.pageY > g) { 
@@ -455,7 +459,7 @@ function position () {
             arrayImg = arr[7];
             numIndex = 7;
             numFloor = floor.innerHTML = '3';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 40);
 
         } else if (event.pageY == i || event.pageY < i && event.pageY > h) { 
@@ -464,7 +468,7 @@ function position () {
             arrayImg = arr[8];
             numIndex = 8;
             numFloor = floor.innerHTML = '3';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 45);
 
         } else if (event.pageY == j || event.pageY < j && event.pageY > i) { 
@@ -473,7 +477,7 @@ function position () {
             arrayImg = arr[9];
             numIndex = 9;
             numFloor = floor.innerHTML = '4';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 50);
 
         } else if (event.pageY == k || event.pageY < k && event.pageY > j) { 
@@ -482,7 +486,7 @@ function position () {
             arrayImg = arr[10];
             numIndex = 10;
             numFloor = floor.innerHTML = '4';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 55);
 
         } else if (event.pageY == l || event.pageY < l && event.pageY > k) { 
@@ -491,7 +495,7 @@ function position () {
             arrayImg = arr[11];
             numIndex = 11;
             numFloor = floor.innerHTML = '4';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 60);
 
         } else if (event.pageY == j || event.pageY < j && event.pageY > l) { 
@@ -500,7 +504,7 @@ function position () {
             arrayImg = arr[12];
             numIndex = 12;
             numFloor = floor.innerHTML = '5';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 65);
 
         } else if (event.pageY == n || event.pageY < n && event.pageY > m) { 
@@ -509,7 +513,7 @@ function position () {
             arrayImg = arr[13];
             numIndex = 13;
             numFloor = floor.innerHTML = '5';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 70);
 
         } else if (event.pageY == o || event.pageY < o && event.pageY > n) { 
@@ -518,7 +522,7 @@ function position () {
             arrayImg = arr[14];
             numIndex = 14;
             numFloor = floor.innerHTML = '5';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 75);   
 
         } else if (event.pageY == p || event.pageY < p && event.pageY > o) { 
@@ -527,7 +531,7 @@ function position () {
             arrayImg = arr[15];
             numIndex = 15;
             numFloor = floor.innerHTML = '6';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 80);
 
         } else if (event.pageY == q || event.pageY < q && event.pageY > p) { 
@@ -536,7 +540,7 @@ function position () {
             arrayImg = arr[16];
             numIndex = 16;
             numFloor = floor.innerHTML = '6';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 85);
 
         } else if (event.pageY == r || event.pageY < r && event.pageY > q) { 
@@ -545,7 +549,7 @@ function position () {
             arrayImg = arr[17];
             numIndex = 17;
             numFloor = floor.innerHTML = '6';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 90);
 
         } else if (event.pageY == s || event.pageY < s && event.pageY > r) { 
@@ -554,7 +558,7 @@ function position () {
             arrayImg = arr[18];
             numIndex = 18;
             numFloor = floor.innerHTML = '7';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 95);
 
         } else if (event.pageY == t || event.pageY < t && event.pageY > s) { 
@@ -563,7 +567,7 @@ function position () {
             arrayImg = arr[19];
             numIndex = 19;
             numFloor = floor.innerHTML = '7';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 100);
     
         } else if (event.pageY == v || event.pageY < v && event.pageY > t) { 
@@ -572,7 +576,7 @@ function position () {
             arrayImg = arr[20];
             numIndex = 20;
             numFloor = floor.innerHTML = '7';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 105);
     
         } else if (event.pageY == w || event.pageY < w && event.pageY > v) { 
@@ -581,7 +585,7 @@ function position () {
             arrayImg = arr[21];
             numIndex = 21;
             numFloor = floor.innerHTML = '8';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 110);
     
         } else if (event.pageY == x || event.pageY < x && event.pageY > w) { 
@@ -590,7 +594,7 @@ function position () {
             arrayImg = arr[22];
             numIndex = 22;
             numFloor = floor.innerHTML = '8';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 115);
     
         } else if (event.pageY == y || event.pageY < y && event.pageY > x) { 
@@ -599,7 +603,7 @@ function position () {
             arrayImg = arr[23];
             numIndex = 23;
             numFloor = floor.innerHTML = '8';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 120);
      
         } else if (event.pageY == z || event.pageY < z && event.pageY > y) { 
@@ -608,7 +612,7 @@ function position () {
             arrayImg = arr[24];
             numIndex = 24;
             numFloor = floor.innerHTML = '9';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 125);
       
         } else if (event.pageY == za || event.pageY < za && event.pageY > z) { 
@@ -617,7 +621,7 @@ function position () {
             arrayImg = arr[25];
             numIndex = 25;
             numFloor = floor.innerHTML = '9';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 130);
       
         } else if (event.pageY == zb || event.pageY < zb && event.pageY > za) { 
@@ -626,7 +630,7 @@ function position () {
             arrayImg = arr[26];
             numIndex = 26;
             numFloor = floor.innerHTML = '9';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 135);
       
         } else if (event.pageY == zc || event.pageY < zc && event.pageY > zb) { 
@@ -635,7 +639,7 @@ function position () {
             arrayImg = arr[27];
             numIndex = 27;
             numFloor = floor.innerHTML = '10';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 140);
       
         } else if (event.pageY == zd || event.pageY < zd && event.pageY > zc) { 
@@ -644,7 +648,7 @@ function position () {
             arrayImg = arr[28];
             numIndex = 28;
             numFloor = floor.innerHTML = '10';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 145);
            
         } else if (event.pageY == ze || event.pageY < ze && event.pageY > zd || event.pageY > screenHeight) { 
@@ -653,7 +657,7 @@ function position () {
             arrayImg = arr[29];
             numIndex = 29;
             numFloor = floor.innerHTML = '10';
-            $('#bgimg-default').attr('src', arrayImg)
+            $('.bgimg-default').attr('src', arrayImg)
           }, 150);
            
         } 
@@ -683,244 +687,244 @@ arrayImg = sessionStorage.getItem('arrayImg');
 console.log(numIndex, numFloor, arrayImg);
 
 if (numIndex == 0) { 
- setTimeout(function(){$('#bgimg-default').attr('src', arr[0])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[1])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[2])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[0])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[1])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[2])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 45);
  floor.innerHTML = 2;
  sessionStorage.setItem('numFloor', 2);     
  sessionStorage.setItem('numIndex', 3);
  sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 1) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[1])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[2])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[1])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[2])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 35);
          floor.innerHTML = 2;
          sessionStorage.setItem('numFloor', 2);     
          sessionStorage.setItem('numIndex', 3);
          sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 2) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[2])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[2])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 25);
          floor.innerHTML = 2;
          sessionStorage.setItem('numFloor', 2);     
          sessionStorage.setItem('numIndex', 3);
          sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 3) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[4])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[5])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[4])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[5])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 45);
  floor.innerHTML = 3;
  sessionStorage.setItem('numFloor', 3);     
  sessionStorage.setItem('numIndex', 6);
  sessionStorage.setItem('arrayImg', arr[6]);
 } else if (numIndex == 4) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[4])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[5])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[4])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[5])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 35);
          floor.innerHTML = 3;
          sessionStorage.setItem('numFloor', 3);     
          sessionStorage.setItem('numIndex', 6);
          sessionStorage.setItem('arrayImg', arr[6]);
 } else if (numIndex == 5) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[5])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[5])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 25);
          floor.innerHTML = 3;
          sessionStorage.setItem('numFloor', 3);     
          sessionStorage.setItem('numIndex', 6);
          sessionStorage.setItem('arrayImg', arr[6]);
 } else if (numIndex == 6) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[7])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[8])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[7])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[8])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 45);
  floor.innerHTML = 4;
  sessionStorage.setItem('numFloor', 4);     
  sessionStorage.setItem('numIndex', 9);
  sessionStorage.setItem('arrayImg', arr[9]);
 } else if (numIndex == 7) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[7])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[8])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[7])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[8])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 35);
          floor.innerHTML = 4;
          sessionStorage.setItem('numFloor', 4);     
          sessionStorage.setItem('numIndex', 9);
          sessionStorage.setItem('arrayImg', arr[9]);
 }  else if (numIndex == 8) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[8])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[8])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 25);
          floor.innerHTML = 4;
          sessionStorage.setItem('numFloor', 4);     
          sessionStorage.setItem('numIndex', 9);
          sessionStorage.setItem('arrayImg', arr[9]);
 } else if (numIndex == 9) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[10])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[11])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[10])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[11])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 45);
  floor.innerHTML = 5;
  sessionStorage.setItem('numFloor', 5);     
  sessionStorage.setItem('numIndex', 12);
  sessionStorage.setItem('arrayImg', arr[12]);
 } else if (numIndex == 10) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[10])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[11])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[10])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[11])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 35);
          floor.innerHTML = 5;
          sessionStorage.setItem('numFloor', 5);     
          sessionStorage.setItem('numIndex', 12);
          sessionStorage.setItem('arrayImg', arr[12]);
 }  else if (numIndex == 11) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[11])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[11])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 25);
          floor.innerHTML = 5;
          sessionStorage.setItem('numFloor', 5);     
          sessionStorage.setItem('numIndex', 12);
          sessionStorage.setItem('arrayImg', arr[12]);
 } else if (numIndex == 12) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[13])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[14])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[13])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[14])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 45);
  floor.innerHTML = 6;
  sessionStorage.setItem('numFloor', 6);     
  sessionStorage.setItem('numIndex', 15);
  sessionStorage.setItem('arrayImg', arr[15]);
 } else if (numIndex == 13) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[13])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[14])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[13])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[14])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 35);
          floor.innerHTML = 6;
          sessionStorage.setItem('numFloor', 6);     
          sessionStorage.setItem('numIndex', 15);
          sessionStorage.setItem('arrayImg', arr[15]);
 } else if (numIndex == 14) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[14])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[14])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 25);
          floor.innerHTML = 6;
          sessionStorage.setItem('numFloor', 6);     
          sessionStorage.setItem('numIndex', 15);
          sessionStorage.setItem('arrayImg', arr[15]);
 } else if (numIndex == 15) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[16])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[17])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[16])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[17])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 45);
  floor.innerHTML = 7;
  sessionStorage.setItem('numFloor', 7);     
  sessionStorage.setItem('numIndex', 18);
  sessionStorage.setItem('arrayImg', arr[18]);
 } else if (numIndex == 16) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[16])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[17])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[16])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[17])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 35);
          floor.innerHTML = 7;
          sessionStorage.setItem('numFloor', 7);     
          sessionStorage.setItem('numIndex', 18);
          sessionStorage.setItem('arrayImg', arr[18]);
 }  else if (numIndex == 17) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[17])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[17])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 25);
          floor.innerHTML = 7;
          sessionStorage.setItem('numFloor', 7);     
          sessionStorage.setItem('numIndex', 18);
          sessionStorage.setItem('arrayImg', arr[18]);
 } else if (numIndex == 18) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[19])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[20])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[19])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[20])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 45);
  floor.innerHTML = 8;
  sessionStorage.setItem('numFloor', 8);     
  sessionStorage.setItem('numIndex', 21);
  sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 19) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[19])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[20])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[19])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[20])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 35);
          floor.innerHTML = 8;
          sessionStorage.setItem('numFloor', 8);     
          sessionStorage.setItem('numIndex', 21);
          sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 20) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[20])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[20])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 25);
          floor.innerHTML = 8;
          sessionStorage.setItem('numFloor', 8);     
          sessionStorage.setItem('numIndex', 21);
          sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 21) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[22])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[23])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[22])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[23])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 45);
  floor.innerHTML = 9;
  sessionStorage.setItem('numFloor', 9);     
  sessionStorage.setItem('numIndex', 24);
  sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 22) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[22])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[23])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[22])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[23])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 35);
          floor.innerHTML = 9;
          sessionStorage.setItem('numFloor', 9);     
          sessionStorage.setItem('numIndex', 24);
          sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 23) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[23])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[23])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 25);
          floor.innerHTML = 9;
          sessionStorage.setItem('numFloor', 9);     
          sessionStorage.setItem('numIndex', 24);
          sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 24) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[25])}, 25);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[26])}, 35);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 45);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 55);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 65);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[25])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[26])}, 35);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 45);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 55);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 65);
  floor.innerHTML = 10;
  sessionStorage.setItem('numFloor', 10);     
  sessionStorage.setItem('numIndex', 29);
  sessionStorage.setItem('arrayImg', arr[29]);
 } else if (numIndex == 25) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[25])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[26])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 45);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 55);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[25])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[26])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 55);
          floor.innerHTML = 10;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 29);
          sessionStorage.setItem('arrayImg', arr[29]);
 } else if (numIndex == 26) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[26])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[26])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 45);
          floor.innerHTML = 10;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 29);
          sessionStorage.setItem('arrayImg', arr[29]);
 } else if (numIndex == 27) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 35);
          floor.innerHTML = 10;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 29);
          sessionStorage.setItem('arrayImg', arr[29]);
 } else if (numIndex == 28) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 25);
          floor.innerHTML = 10;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 29);
          sessionStorage.setItem('arrayImg', arr[29]);
 }  else if (numIndex == 29) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 15);
          floor.innerHTML = 10;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 29);
@@ -938,238 +942,238 @@ numIndex = +sessionStorage.getItem('numIndex');
 arrayImg = sessionStorage.getItem('arrayImg');
 
 if (numIndex == 0) { 
- setTimeout(function(){$('#bgimg-default').attr('src', arr[0])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[0])}, 15);
  floor.innerHTML = 1;
  sessionStorage.setItem('numFloor', 1);     
  sessionStorage.setItem('numIndex', 0);
  sessionStorage.setItem('arrayImg', arr[0]);
 } else if (numIndex == 1) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[1])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[0])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[1])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[0])}, 25);
          floor.innerHTML = 1;
          sessionStorage.setItem('numFloor', 1);     
          sessionStorage.setItem('numIndex', 0);
          sessionStorage.setItem('arrayImg', arr[0]);
 } else if (numIndex == 2) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[2])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[1])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[0])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[2])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[1])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[0])}, 35);
          floor.innerHTML = 1;
          sessionStorage.setItem('numFloor', 1);     
          sessionStorage.setItem('numIndex', 0);
          sessionStorage.setItem('arrayImg', arr[0]);
 } else if (numIndex == 3) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[2])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[1])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[0])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[2])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[1])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[0])}, 45);
          floor.innerHTML = 1;
          sessionStorage.setItem('numFloor', 1);     
          sessionStorage.setItem('numIndex', 0);
          sessionStorage.setItem('arrayImg', arr[0]);
 } else if (numIndex == 4) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[4])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[4])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 25);
  floor.innerHTML = 2;
  sessionStorage.setItem('numFloor', 2);     
  sessionStorage.setItem('numIndex', 3);
  sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 5) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[5])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[4])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[5])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[4])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 35);
          floor.innerHTML = 2;
          sessionStorage.setItem('numFloor', 2);     
          sessionStorage.setItem('numIndex', 3);
          sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 6) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[5])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[4])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[3])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[5])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[4])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[3])}, 45);
          floor.innerHTML = 2;
          sessionStorage.setItem('numFloor', 2);     
          sessionStorage.setItem('numIndex', 3);
          sessionStorage.setItem('arrayImg', arr[3]);
 } else if (numIndex == 7) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[7])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[7])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 25);
  floor.innerHTML = 3;
  sessionStorage.setItem('numFloor', 3);
  sessionStorage.setItem('numIndex', 6);
  sessionStorage.setItem('arrayImg', arr[6]);
 }  else if (numIndex == 8) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[8])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[7])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[8])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[7])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 35);
          floor.innerHTML = 3;
          sessionStorage.setItem('numFloor', 3);     
          sessionStorage.setItem('numIndex', 6);
          sessionStorage.setItem('arrayImg', arr[6]);       
 } else if (numIndex == 9) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[8])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[7])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[6])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[8])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[7])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[6])}, 45);
          floor.innerHTML = 3;
          sessionStorage.setItem('numFloor', 3);     
          sessionStorage.setItem('numIndex', 6);
          sessionStorage.setItem('arrayImg', arr[6]);
 } else if (numIndex == 10) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[10])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[10])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 25);
  floor.innerHTML = 4;
  sessionStorage.setItem('numFloor', 4);     
  sessionStorage.setItem('numIndex', 9);
  sessionStorage.setItem('arrayImg', arr[9]);
 }  else if (numIndex == 11) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[11])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[10])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[11])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[10])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 35);
          floor.innerHTML = 4;
          sessionStorage.setItem('numFloor', 4);     
          sessionStorage.setItem('numIndex', 9);
          sessionStorage.setItem('arrayImg', arr[9]);
 } else if (numIndex == 12) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[11])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[10])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[9])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[11])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[10])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[9])}, 45);
          floor.innerHTML = 4;
          sessionStorage.setItem('numFloor', 4);     
          sessionStorage.setItem('numIndex', 9);
          sessionStorage.setItem('arrayImg', arr[9]);
 } else if (numIndex == 13) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[13])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[13])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 25);
  floor.innerHTML = 5;
  sessionStorage.setItem('numFloor', 6);     
  sessionStorage.setItem('numIndex', 12);
  sessionStorage.setItem('arrayImg', arr[12]);
 } else if (numIndex == 14) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[14])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[13])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[14])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[13])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 35);
          floor.innerHTML = 5;
          sessionStorage.setItem('numFloor', 6);     
          sessionStorage.setItem('numIndex', 12);
          sessionStorage.setItem('arrayImg', arr[12]);
 } else if (numIndex == 15) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[14])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[13])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[12])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[14])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[13])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[12])}, 45);
          floor.innerHTML = 5;
          sessionStorage.setItem('numFloor', 5);     
          sessionStorage.setItem('numIndex', 12);
          sessionStorage.setItem('arrayImg', arr[12]);
 } else if (numIndex == 16) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[16])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[16])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 25);
  floor.innerHTML = 6;
  sessionStorage.setItem('numFloor', 6);     
  sessionStorage.setItem('numIndex', 15);
  sessionStorage.setItem('arrayImg', arr[15]);
 }  else if (numIndex == 17) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[17])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[16])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[17])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[16])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 35);
          floor.innerHTML = 6;
          sessionStorage.setItem('numFloor', 6);     
          sessionStorage.setItem('numIndex', 15);
          sessionStorage.setItem('arrayImg', arr[15]);
 } else if (numIndex == 18) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[17])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[16])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[15])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[17])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[16])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[15])}, 45);
          floor.innerHTML = 6;
          sessionStorage.setItem('numFloor', 6);     
          sessionStorage.setItem('numIndex', 15);
          sessionStorage.setItem('arrayImg', arr[15]);
 } else if (numIndex == 19) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[19])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[19])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 25);
  floor.innerHTML = 7;
  sessionStorage.setItem('numFloor', 7);     
  sessionStorage.setItem('numIndex', 18);
  sessionStorage.setItem('arrayImg', arr[18]);
 } else if (numIndex == 20) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[20])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[19])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[20])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[19])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 35);
          floor.innerHTML = 7;
          sessionStorage.setItem('numFloor', 7);     
          sessionStorage.setItem('numIndex', 18);
          sessionStorage.setItem('arrayImg', arr[18]);
 } else if (numIndex == 21) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[20])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[19])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[18])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[20])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[19])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[18])}, 45);
          floor.innerHTML = 7;
          sessionStorage.setItem('numFloor', 7);     
          sessionStorage.setItem('numIndex', 18);
          sessionStorage.setItem('arrayImg', arr[18]);
 } else if (numIndex == 22) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[22])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[22])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 25);
  floor.innerHTML = 8;
  sessionStorage.setItem('numFloor', 8);     
  sessionStorage.setItem('numIndex', 21);
  sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 23) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[23])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[22])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[23])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[22])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 35);
          floor.innerHTML = 8;
          sessionStorage.setItem('numFloor', 8);     
          sessionStorage.setItem('numIndex', 21);
          sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 24) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[23])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[22])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[21])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[23])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[22])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[21])}, 45);
          floor.innerHTML = 8;
          sessionStorage.setItem('numFloor', 8);     
          sessionStorage.setItem('numIndex', 21);
          sessionStorage.setItem('arrayImg', arr[21]);
 } else if (numIndex == 25) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[25])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[25])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 25);
  floor.innerHTML = 9;
  sessionStorage.setItem('numFloor', 9);
  sessionStorage.setItem('numIndex', 24);
  sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 26) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[26])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[25])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[26])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[25])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 35);
          floor.innerHTML = 9;
          sessionStorage.setItem('numFloor', 9);     
          sessionStorage.setItem('numIndex', 24);
          sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 27) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[26])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[25])}, 35);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[24])}, 45);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[26])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[25])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[24])}, 45);
          floor.innerHTML = 9;
          sessionStorage.setItem('numFloor', 9);     
          sessionStorage.setItem('numIndex', 24);
          sessionStorage.setItem('arrayImg', arr[24]);
 } else if (numIndex == 28) {
- setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 15);
- setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 25);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 15);
+ setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 25);
  floor.innerHTML = 9;
  sessionStorage.setItem('numFloor', 9);
  sessionStorage.setItem('numIndex', 27);
  sessionStorage.setItem('arrayImg', arr[27]);
 }  else if (numIndex == 29) {
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[29])}, 15);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[28])}, 25);
-         setTimeout(function(){$('#bgimg-default').attr('src', arr[27])}, 35);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[29])}, 15);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[28])}, 25);
+         setTimeout(function(){$('.bgimg-default').attr('src', arr[27])}, 35);
          floor.innerHTML = 9;
          sessionStorage.setItem('numFloor', 10);     
          sessionStorage.setItem('numIndex', 27);
@@ -1195,6 +1199,7 @@ if(window.applicationCache.status === window.applicationCache.UPDATEREADY) {
 } 
 
   </script> 
+
 
 
 

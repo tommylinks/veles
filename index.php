@@ -12,11 +12,13 @@ require_once('header.php');
 <div class="wrapper">
 
 <script>
-	preloader(true, 'white', 'red');	
+  preloader(true, 'white', 'red');  
 </script><!--END preloader  -->
 
+
+
   <div id = "pjax-global" style = "opacity: 0;"> 
-  	
+    
     <img id = "bgimg" class="img-bg" src="" style = "">
     <img id = "bgimg-back" class="img-bg" src="" style = "opacity: 1;">
 
@@ -30,9 +32,36 @@ require_once('header.php');
     <header>
       <button class="main-menu-btn hvr-grow" style="opacity: 0;">Меню</button>
 
+      <div class="veles-widget" style="opacity: 0;">
+        <table>
+          <caption>Уникален в</caption>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+              <td class="border-b border-r">Киев</td>
+              <td class="border-b">Veles Place</td>
+            </tr>
+            <tr>
+              <td class="text-right">температура:</td>
+              <td class="border-r">30 С</td>
+              <td>25 С</td>
+            </tr>
+            <tr>
+              <td class="text-right">уровень смога:</td>
+              <td class="border-r">есть</td>
+              <td>нет</td>
+            </tr>
+            <tr>
+              <td class="text-right">туманность:</td>
+              <td class="border-r">есть</td>
+              <td>нет</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <!-- START documents-popup 
         <div class="documents-popup" style="opacity: 0;"></div>
-	  END documents-popup  -->
+    END documents-popup  -->
 
       <div class="main-icons-kit">
         <div class="main-icon main-logo" style="opacity: 0;">
@@ -98,11 +127,22 @@ require_once('header.php');
           <div class="icon-phone-animation"></div>
         </div>
       </div><!--END main-icons-kit -->
-      <button class="sound-btn hvr-grow hide-main-icon-left"></button>
+      <button class="sound-btn hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
       <!-- overlay -->
   <div class="overlay"></div>
+
+
+<!-- START footer video-popup   -->
+      <div id="video-popup" style="display: none;">
+        <video id="video-content" width="100%" loop="loop" >
+            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+        </video>
+        <span class="close-video-popup">&times;</span>
+      </div>
+<!-- END footer video-popup   -->  
 
    <!-- main menu -->
   <div class="main-menu">
@@ -118,6 +158,7 @@ require_once('header.php');
       <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
       <li><div class="bgvid-link-10 snt-link">Документы</div></li>
       <li><div class="bgvid-link-11 snt-link">События</div></li>
+      <li><div class="snt-link"><a href="/omega/contacts/">Контакты</a></div></li>
     </ul>
     <span class="close-main-menu hvr-grow">  &times;</span>
   </div>
@@ -277,7 +318,9 @@ $('#bgvid-link-night').click(function(){
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
-  $('.snt-next, .snt-start, .snt-prev, .main-menu-btn').on("click", funcIconAnimationOut );
+  $('.snt-next, .snt-start, .snt-prev').on("click", funcIconAnimationOut );
+  $('.main-menu-btn').on("click", funcAnimMenuIn );
+  $('.close-main-menu, .overlay').on("click", funcAnimMenuOut );
 </script>
 <!-- Animation icons when the page have been loaded -->
 <script>
@@ -301,10 +344,33 @@ $('#bgvid-link-night').click(function(){
   </script>
    <!--END floating tooltips -->
 
-	     
+
+<!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
+<script>
+  $('.video-popup').click(function () {
+      $("#video-popup, .overlay").fadeIn();
+
+      setTimeout(function(){$("#video-content")[0].play()}, 0);
+    });
+  
+  $('.overlay, .close-video-popup').click(function () {
+    $("#video-popup, .overlay").fadeOut();
+  });
+</script>
+
+
+<!-- init music -->
+<script type="text/javascript">
+  playMusic();
+</script>
+<!--END init music -->
+
+
+
+
+
 </div> <!--END pjax-global -->   
  
-
 
 
 <?

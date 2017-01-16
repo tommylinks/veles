@@ -22,7 +22,7 @@ npSpeedCheck = {
       var speedMbps = 6;
     } 
 
-    localStorage.clear('speedMbps', speedMbps);
+    localStorage.removeItem('speedMbps');
     localStorage.setItem('speedMbps', speedMbps);
 
   }
