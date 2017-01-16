@@ -205,10 +205,36 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
   <div id="video-popup" style="display: none;">
     <video id="video-content" width="100%" loop="loop" >
+<<<<<<< HEAD
    		 <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
         <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
     </video>
     <span class="close-video-popup">&times;</span>
+=======
+        <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+        <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+    </video>
+    <span class="close-video-popup">&times;</span>
+  </div>
+<!-- END footer video-popup   -->  
+
+   <!-- main menu -->
+  <div class="main-menu">
+    <ul>
+      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
+      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
+      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
+      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
+      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
+      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
+      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
+      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
+      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
+      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
+      <li><div class="bgvid-link-11 snt-link">События</div></li>
+    </ul>
+    <span class="close-main-menu">  &times;</span>
+>>>>>>> origin/gh-pages
   </div>
 <!-- END footer video-popup   -->  
 
@@ -503,6 +529,18 @@ $('#bgvid-link-night').click(function(){
   </script>
    <!--END floating tooltips -->
 
+  <!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
+  <script>
+    $('.video-popup').click(function () {
+        $("#video-popup, .overlay").fadeIn();
+
+        setTimeout(function(){$("#video-content")[0].play()}, 0);
+      });
+    
+    $('.overlay, .close-video-popup').click(function () {
+      $("#video-popup, .overlay").fadeOut();
+    });
+  </script>
 
 
   <!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->

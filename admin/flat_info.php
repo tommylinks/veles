@@ -10,7 +10,11 @@
 $flat_01 = [
 	"brief" => [
 		"area" => "72",
+<<<<<<< HEAD
 		"status" => "Свободна",
+=======
+		"status" => "Куплена",
+>>>>>>> origin/gh-pages
 	],
 	"detail" => [
 		"plan" => "/omega/order/section_one/sheme.png",
@@ -36,7 +40,10 @@ $flat_01 = [
 		],
 	],	
 ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/gh-pages
 $flat_02 = [
 	"brief" => [
 		"area" => "74",
@@ -67,7 +74,10 @@ $flat_02 = [
 		],
 	],
 ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/gh-pages
 $flat_03 = [
 	"brief" => [
 		"area" => "65",

@@ -98,6 +98,7 @@ require_once('../header.php');
   <div class="overlay"></div>
 
   <!-- START footer video-popup   -->
+<<<<<<< HEAD
       <div id="video-popup" style="display: none;">
         <video id="video-content" width="100%" loop="loop" >
             <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
@@ -106,6 +107,16 @@ require_once('../header.php');
         <span class="close-video-popup">&times;</span>
       </div>
 <!-- END footer video-popup   --> 
+=======
+    <div id="video-popup" style="display: none;">
+      <video id="video-content" width="100%" loop="loop" >
+          <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+          <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+      </video>
+      <span class="close-video-popup">&times;</span>
+    </div>
+<!-- END footer video-popup   -->  
+>>>>>>> origin/gh-pages
 
    <!-- main menu -->
   <div class="main-menu">

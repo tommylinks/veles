@@ -19,6 +19,7 @@
         </div>
       </div>
     </footer>
+<<<<<<< HEAD
 
   <audio id="music">
     <source src="/omega/media/sound/1.mp3" >
@@ -27,6 +28,18 @@
 
  </div><!--END wrapper -->  
 
+=======
+
+  <audio id="music">
+    <source src="/omega/media/sound/1.mp3" autoplay>
+    Тег audio не поддерживается вашим браузером. 
+  </audio>
+    <script type="text/javascript">
+      document.getElementById('music').play();
+    </script>
+
+ </div><!--END wrapper -->  
+>>>>>>> origin/gh-pages
 
 
   <!-- Scrolling events + Pjax -->
@@ -149,6 +162,7 @@
 
     <!-- Click events + Pjax  --> 
      <script>
+<<<<<<< HEAD
 // функция анимации при нажатии на ссылки типа .bgvid-link-01 и т.д.
 var menuAnimation = function () {
       $(".main-menu").animate({
@@ -164,6 +178,23 @@ var menuAnimation = function () {
     $(".documents-popup, .secondary-logo, .main-menu-btn, .sound-btn").animate({
       opacity: 0
     }, 300);
+=======
+// функция анимации при нажатии на ссылки .bgvid-link-01 и т.д.
+var menuAnimation = function () {
+    $(".main-menu").animate({
+      opacity: 0,
+      left: "-100",
+    }, 500);
+    $(".main-menu, .overlay").fadeOut(500);
+    $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
+    $(".main-icons-kit").fadeIn(500);
+/*    $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
+    $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
+    $(".snt-start").addClass('hide-main-icon-top');        
+    $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+      opacity: 0
+    }, 300);*/
+>>>>>>> origin/gh-pages
 };
 
       $('#pjax-global').on('click', '.bgvid-link-01', function () {
@@ -247,6 +278,7 @@ var menuAnimation = function () {
 
     </script>
 
+<<<<<<< HEAD
 <!-- popup videoperehod -->
 
 <!-- add to local storage state of music button -->
@@ -265,6 +297,12 @@ var menuAnimation = function () {
 
 
 </script>
+=======
+
+
+
+<!-- popup videoperehod -->
+>>>>>>> origin/gh-pages
 
 
 </body>

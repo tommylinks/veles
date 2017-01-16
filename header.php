@@ -55,9 +55,12 @@ $template_path = "/omega/";?>
   <!-- Preloader -->
   <script src="<?php echo $template_path; ?>js/preloader.js"></script>
 
+<<<<<<< HEAD
   <!-- tagcanvas -->
   <script src="<?php echo $template_path; ?>js/jquery.tagcanvas.min.js"></script>
 
+=======
+>>>>>>> origin/gh-pages
 
 
  

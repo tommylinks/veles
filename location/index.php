@@ -101,8 +101,13 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
   <div id="video-popup" style="display: none;">
     <video id="video-content" width="100%" loop="loop" >
+<<<<<<< HEAD
         <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
         <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+=======
+        <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
+        <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
+>>>>>>> origin/gh-pages
     </video>
     <span class="close-video-popup">&times;</span>
   </div>

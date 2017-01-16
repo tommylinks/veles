@@ -1356,6 +1356,7 @@ include '../../admin/flat_info.php';
       <!-- overlay -->
   <div class="overlay"></div>
 
+<<<<<<< HEAD
     <!-- START footer video-popup   -->
       <div id="video-popup" style="display: none;">
         <video id="video-content" width="100%" loop="loop" >
@@ -1366,6 +1367,8 @@ include '../../admin/flat_info.php';
       </div>
 <!-- END footer video-popup   --> 
 
+=======
+>>>>>>> origin/gh-pages
    <!-- main menu -->
   <div class="main-menu">
     <ul>
