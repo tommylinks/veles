@@ -13,7 +13,8 @@
       
         foreach ($tags as $i => $value) {
           echo '<span id="tooltip_claud_tag_'.$tags[$i]["number"].'" class="tooltip_cloud_tag" >';
-           echo '<span>'.$tags[$i]["tooltip"].'</span>';
+          echo '<span class="tooltip-title">'.$tags[$i]["tooltip_title"].'</span>';
+          echo '<span class="tooltip-desc">'.$tags[$i]["tooltip"].'</span>';
           echo '</span>'; 
         }
       

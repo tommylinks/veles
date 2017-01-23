@@ -7,6 +7,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio techno socio person",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (01)."
 	],
 
@@ -15,6 +16,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio techno socio",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (02)."
 	],
 
@@ -23,6 +25,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio techno",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (03)."
 	],
 
@@ -31,6 +34,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio socio",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (04)."
 	],
 
@@ -39,6 +43,7 @@ $tags = [
 		"href" => "#",
 		"class" => "techno socio",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (05)."
 	],
 
@@ -47,6 +52,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (06)."
 	],
 
@@ -55,6 +61,7 @@ $tags = [
 		"href" => "#",
 		"class" => "techno",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (07)."
 	],
 
@@ -63,6 +70,7 @@ $tags = [
 		"href" => "#",
 		"class" => "socio",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (08)."
 	],
 
@@ -71,6 +79,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio techno person",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum ",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (09)."
 	],
 
@@ -79,6 +88,7 @@ $tags = [
 		"href" => "#",
 		"class" => "person",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (10)."
 	],
 
@@ -87,6 +97,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio person",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (11)."
 	],
 
@@ -95,6 +106,7 @@ $tags = [
 		"href" => "#",
 		"class" => "bio techno person",
 		"img" => "/omega/images/icons/lift.png",
+		"tooltip_title" => "Lorem ipsum",
 		"tooltip" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (12)."
 	]
 	

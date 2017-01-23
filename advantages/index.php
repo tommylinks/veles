@@ -50,36 +50,77 @@ require_once('../header.php');
         color:#fff;
         padding: 10px;
         z-index: 2;
+        width: 139px;
+        padding: 0px;
+        overflow: visible;
+        white-space: nowrap;
       }
 
       .features path {fill:#fff;}
 
       .features figcaption {
       	font-size: 18px;
+        padding-top: 5px;
       	text-transform: uppercase;
       }
       
+      .features.two figcaption{
+        margin-left: -8px;
+      }
+      .features.three figcaption{
+        margin-left: -2px;
+      }
+      .features.four figcaption{
+        margin-left: -23px;
+      }
+
       .features.one{
-        top: 80px;
-        left: 100px;
+        top: 84px;
+        left: 120px;
       }
       
       .features.two{
-        top: 80px;
-        right: 100px;
+        top: 84px;
+        right: 121px;
       }
       
       .features.three{
-        bottom: 100px;
-        left: 100px;
+        bottom: 121px;
+        left: 120px;
       }
       
       .features.four{
-        bottom: 100px;
-        right: 100px;
+        bottom: 121px;
+        right: 121px;
       }
 
+
+    #tags ul li img{
+      display: inline-block;
+      border: 3px solid #000;
+      border-radius: 50%;
+    }
+
+    .tooltip-title{
+      display: block;
+      font-size: 18px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .tooltip-title:after {
+      display: block;
+      content: "";
+      width: 105px;
+      border-bottom: 2px solid #fff;
+      margin: 20px auto;
+    }
       
+
+    .tooltip-desc {
+      font-size: 11px;
+      line-height: 16px;
+    }
     </style>
 
 
@@ -192,7 +233,7 @@ require_once('../header.php');
       
    </div> -->
 
-    <span class="close-windowview" style="opacity: 1;"><a href="/omega/">×</a></span>
+    <span class="close-home bgvid-link-13" style="opacity: 1;">×</span>
 		
     <!-- END documents-popup  -->
 
@@ -205,36 +246,10 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
   <div id="video-popup" style="display: none;">
     <video id="video-content" width="100%" loop="loop" >
-<<<<<<< HEAD
    		 <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
         <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
     </video>
     <span class="close-video-popup">&times;</span>
-=======
-        <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-        <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
-    </video>
-    <span class="close-video-popup">&times;</span>
-  </div>
-<!-- END footer video-popup   -->  
-
-   <!-- main menu -->
-  <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
->>>>>>> origin/gh-pages
   </div>
 <!-- END footer video-popup   -->  
 
@@ -501,7 +516,7 @@ $('#bgvid-link-night').click(function(){
       theme: 'tooltipster-borderless',
       trigger: 'click',
       interactive: true,
-      maxWidth: '300',
+      maxWidth: '350',
       side: ['bottom' , 'top']
     });
 
@@ -521,7 +536,7 @@ $('#bgvid-link-night').click(function(){
       theme: 'tooltipster-punk',
       trigger: 'click',
       interactive: true,
-      maxWidth: '300',
+      maxWidth: '350',
       //timer: 10000,
       side: ['bottom']
     });
@@ -529,18 +544,6 @@ $('#bgvid-link-night').click(function(){
   </script>
    <!--END floating tooltips -->
 
-  <!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
-  <script>
-    $('.video-popup').click(function () {
-        $("#video-popup, .overlay").fadeIn();
-
-        setTimeout(function(){$("#video-content")[0].play()}, 0);
-      });
-    
-    $('.overlay, .close-video-popup').click(function () {
-      $("#video-popup, .overlay").fadeOut();
-    });
-  </script>
 
 
   <!-- появление и отключение попапа видеоролик (этот скрипт должен быть на каждой странице и в футере) -->
@@ -561,7 +564,7 @@ $('#bgvid-link-night').click(function(){
 	function canvasInit() {
 	if(!$('#myCanvas').tagcanvas({
 	  textColour: '#fff',
-	  outlineColour: '#ff00ff',
+	  outlineColour: '#ebd127',
 	  reverse: true,
 	  stretchX: 1.33,
 	  depth: 0.8,
@@ -570,6 +573,9 @@ $('#bgvid-link-night').click(function(){
 	  shuffleTags: true,
 	  clickToFront: 600,
 	  initial: [0,0.1],
+    outlineRadius: 100,
+    outlineThickness: 5,
+    outlineOffset: -5,
 	  dragControl: "true"
 	},'tags')) {
 	  // something went wrong, hide the canvas container

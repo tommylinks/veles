@@ -3,7 +3,7 @@
         <div class="left-footer-menu">
           <a href="#" class="video-popup footer-text">Видеоролик</a>
           <a href="#" class="video-popup icon-play hvr-grow"></a>
-          <a href="#" class="footer-text">Вознесенский спуск 28-30</a>
+          <a href="/omega/contacts/" class="footer-text">Вознесенский спуск 28-30</a>
         </div>
         <div class="social-icons">
           <ul>
@@ -13,33 +13,17 @@
           </ul>
         </div>
         <div class="right-footer-menu">
-          <a href="#" class="footer-text">+38 (777) 777-77-77</a>
-          <a href="#" class="icon-eye hvr-grow"></a>
-          <a href="#" class="footer-text">Виртуальный тур</a>
+          <a href="/omega/contacts/" class="footer-text">+38 (777) 777-77-77</a>
+          <a href="/omega/videotour/" class="icon-eye hvr-grow"></a>
+          <a href="/omega/videotour/" class="footer-text">Виртуальный тур</a>
         </div>
       </div>
     </footer>
-<<<<<<< HEAD
 
-  <audio id="music">
-    <source src="/omega/media/sound/1.mp3" >
-    Тег audio не поддерживается вашим браузером. 
-  </audio>
+
 
  </div><!--END wrapper -->  
 
-=======
-
-  <audio id="music">
-    <source src="/omega/media/sound/1.mp3" autoplay>
-    Тег audio не поддерживается вашим браузером. 
-  </audio>
-    <script type="text/javascript">
-      document.getElementById('music').play();
-    </script>
-
- </div><!--END wrapper -->  
->>>>>>> origin/gh-pages
 
 
   <!-- Scrolling events + Pjax -->
@@ -72,7 +56,13 @@
     var linkNav09 = '/omega/progress/';
     var linkNav10 = '/omega/documents/';
     var linkNav11 = '/omega/events/';
-      
+    var linkNav12 = '/omega/specifications/';
+    var linkNav13 = '/omega/online/';
+    var linkNav14 = '/omega/blog/';
+    var linkNav15 = '/omega/participants/';
+    var linkNav16 = '/omega/company/';
+    
+
 
     //main pjax function
   
@@ -142,6 +132,61 @@
          
       
     } 
+
+
+
+    //main pjax function
+  
+    function pjaxContent (linkBgvid, linkNav, linkBgimg, linkBgNight) {          
+
+        //preloader
+        addProgressBar();
+        
+        
+
+        $('#bgvid-wrapper').css('z-index', 101);
+        $('#bgvid-wrapper').animate({opacity: 1,}, 1000);
+        $('#bgvid').attr('src', linkBgvid);
+        
+
+        setTimeout (function () { 
+            $('#bgimg').attr('src', linkBgimg);
+            $('#bgimg-back').attr('src', linkBgNight);
+           }, 0); 
+           
+           
+           setTimeout (function () { 
+         
+
+
+            
+            setTimeout (function () { 
+              $('#bgvid-wrapper').css('opacity', 0);
+            }, 100);
+              
+              setTimeout (function () { 
+
+              $.pjax({
+                type       : 'POST',
+                url        : linkNav,
+                container  : '#pjax-global',
+                fragment   : '#pjax-global',
+                data       : {},
+                push       : true,
+                replace    : true,
+                "scrollTo" : false
+                 });
+              
+              $('#bgimg').attr('src', linkBgimg);
+              $('#bgimg-back').attr('src', linkBgNight);
+              $('#bgvid-wrapper').animate({opacity: 0}, 0); 
+              
+             } , 100);
+         
+         }, 100);
+         
+      
+    } 
     </script>
   
 
@@ -162,7 +207,6 @@
 
     <!-- Click events + Pjax  --> 
      <script>
-<<<<<<< HEAD
 // функция анимации при нажатии на ссылки типа .bgvid-link-01 и т.д.
 var menuAnimation = function () {
       $(".main-menu").animate({
@@ -178,23 +222,6 @@ var menuAnimation = function () {
     $(".documents-popup, .secondary-logo, .main-menu-btn, .sound-btn").animate({
       opacity: 0
     }, 300);
-=======
-// функция анимации при нажатии на ссылки .bgvid-link-01 и т.д.
-var menuAnimation = function () {
-    $(".main-menu").animate({
-      opacity: 0,
-      left: "-100",
-    }, 500);
-    $(".main-menu, .overlay").fadeOut(500);
-    $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
-    $(".main-icons-kit").fadeIn(500);
-/*    $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
-    $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
-    $(".snt-start").addClass('hide-main-icon-top');        
-    $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
-      opacity: 0
-    }, 300);*/
->>>>>>> origin/gh-pages
 };
 
       $('#pjax-global').on('click', '.bgvid-link-01', function () {
@@ -274,35 +301,79 @@ var menuAnimation = function () {
         setTimeout(function() { pjaxVideoContent(linkBgvid10, linkNav11, linkBgimg11, pathImgNight11); }, 500); 
       });
 
+// without video specification
+      $('#pjax-global').on('click', '.bgvid-link-12', function () {
+    var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
+    var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid01, linkNav12, linkBgimg02, pathImgNight02); }, 0); 
+      });
+// without video about
+      $('#pjax-global').on('click', '.bgvid-link-13', function () {
+    var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
+    var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid01, linkNav02, linkBgimg02, pathImgNight02); }, 0); 
+      });
+
+
+ // without video online
+      $('#pjax-global').on('click', '.bgvid-link-14', function () {
+    var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
+    var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid08, linkNav13, linkBgimg09, pathImgNight09); }, 0); 
+      });
+
+   // without video progress
+      $('#pjax-global').on('click', '.bgvid-link-15', function () {
+    var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
+    var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid08, linkNav09, linkBgimg09, pathImgNight09); }, 0); 
+      });    
+
+    // without video blog
+      $('#pjax-global').on('click', '.bgvid-link-16', function () {
+    var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
+    var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid08, linkNav14, linkBgimg09, pathImgNight09); }, 0); 
+      });
+
+    // without video documents
+     $('#pjax-global').on('click', '.bgvid-link-17', function () {
+        var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
+        var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid09, linkNav10, linkBgimg10, pathImgNight10); }, 0); 
+      });
+
+     // without video participants
+     $('#pjax-global').on('click', '.bgvid-link-18', function () {
+        var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
+        var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid09, linkNav15, linkBgimg10, pathImgNight10); }, 0); 
+      });
+
+     // without video certificate
+     $('#pjax-global').on('click', '.bgvid-link-19', function () {
+        var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
+        var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
+        menuAnimation ();
+        setTimeout(function() { pjaxContent(linkBgvid09, linkNav16, linkBgimg10, pathImgNight10); }, 0); 
+      });
+
 
 
     </script>
 
-<<<<<<< HEAD
-<!-- popup videoperehod -->
-
-<!-- add to local storage state of music button -->
-<script>
-  if(localStorage.getItem('music') == 'off') {
-    document.getElementById('music').pause();
-    $('.sound-btn').width(8);
-    $('.sound-btn').addClass('pause');
-  } else {
-    localStorage.setItem('music', 'on');
-    $('.sound-btn').removeClass('pause');
-    $('.sound-btn').width('25');
-    document.getElementById('music').play();
-  }
-
-
-
-</script>
-=======
-
 
 
 <!-- popup videoperehod -->
->>>>>>> origin/gh-pages
+
+
 
 
 </body>

@@ -56,7 +56,7 @@ require_once('../../header.php');
     </header>
 
 <!--  dermo START -->
-      <svg class="mouse-move" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="60px" height="100%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+      <svg class="mouse-move" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30px" height="100%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 2627 5993"
          xmlns:xlink="http://www.w3.org/1999/xlink">
          <defs>
@@ -68,26 +68,26 @@ require_once('../../header.php');
             .fil1 {fill:#fff}
 
 
-        @keyframes arrow-top {
+       @keyframes arrow-top {
             0%   {transform: translateY(0px)}
-            50%  {transform: translateY(100px)}
+            50%  {transform: translateY(600px)}
             100% {transform: translateY(0px);}
         }
 
         @keyframes arrow-bottom {
             0%   {transform: translateY(0px)}
-            50%  {transform: translateY(-100px)}
+            50%  {transform: translateY(-600px)}
             100% {transform: translateY(0px);}
         }
 
 
         #arrow-top-move{
-          animation: arrow-top 1s infinite;
+          animation: arrow-top 1.5s infinite;
         }
 
 
         #arrow-bottom-move{
-          animation: arrow-bottom 1s infinite;
+          animation: arrow-bottom 1.5s infinite;
         }
 
            ]]>

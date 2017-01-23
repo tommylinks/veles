@@ -26,8 +26,8 @@ require_once('../header.php');
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 500px;
-        height: 500px;
+        width: 550px;
+        height: 550px;
         z-index: 10;
         background: #fff;
         border-radius: 50%;
@@ -37,7 +37,7 @@ require_once('../header.php');
       }
 
       .contacts-circle .contacts-wrap {
-        width: 75%;
+        width: 72%;
         margin: 0 auto;
       }
 
@@ -78,11 +78,16 @@ require_once('../header.php');
 
       .close-contacts {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -30px;
+        right: -30px;
         font-size: 68px;
         color: #fff;
         text-shadow: 0px 0px 8px rgba(48, 48, 48, 1);
+        cursor: pointer;
+      }
+
+      .contacts-phones {
+            margin: 30px 0;
       }
 
     </style>
@@ -124,7 +129,9 @@ require_once('../header.php');
       
     <!-- START map-wrapper  -->           
     <div class="map-wrapper">
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 1;">
+      <a href="/omega/">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 1;">
+      </a>
 
       <div class="contacts-circle">
         <div class="contacts-wrap">
@@ -156,11 +163,14 @@ require_once('../header.php');
           </div>
         </div>
         
-        <span class="close-contacts"><a href="/omega/">&times;</a></span>
+        <span class="close-contacts">&times;</span>
       </div>
     </div>
     <!-- END map-wrapper   -->
 
+    <div class="icon-phone secondary-p" style="opacity: 1;">
+        <div class="icon-phone-animation"></div>
+      </div>
     </header>
 
 
@@ -183,9 +193,94 @@ function initMap() {
    disableDefaultUI: true
   });
 
+    setMarkers(map);
+
+}
+
+var places = [
+  ['bar','Bondi Beach', 50.461978, 30.505778, 2,'img/1.png'],
+  ['bar','Coogee Beach', 50.461281, 30.505778, 5,'img/1.png'],
+  ['bar','Cronulla Beach', 50.461281, 30.504278, 3,'img/1.png'],
+  ['restaurants','shop 1', 50.460181, 30.504278, 4,'img/2.png'],
+  ['restaurants','shop 2', 50.463181, 30.504278, 5,'img/3.png'],
+
+];
+
+var markers = [];
+
+function setMarkers(map) {
+  // Adds markers to the map.
+
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+
+
+  markers = places.map(function(place){
+    var marker = new google.maps.Marker({
+      position: {lat: place[2], lng: place[3]},
+      map: map,
+      title: place[1],
+      zIndex: place[4],
+      category: place[0],
+      icon: place[5],
+    });
+
+
+
+    var infowindow = new google.maps.InfoWindow({
+      content: place[1]
+    });
+
+  
+
+    marker.addListener('mouseover', function() {
+      infowindow.open(map,marker);
+    });
+
+    marker.addListener('mouseout', function() {
+      infowindow.close();
+    });
+
+
+    // marker.addListener('click', function() {
+    //   infowindow.open(map,marker);
+    // });
+
+    return marker;
+  });
+
+
+
+
+// marker.addListener('click', function() {
+//   infowindow.open(map, marker);
+// });
+
 }
 
 
+
+function showBars() {
+  markers.forEach(function(marker){
+
+    if (marker.category === 'bar') {
+      marker.setMap(map);
+    } else {
+      marker.setMap(null);
+    }
+  });
+}
+
+function showRestaurants() {
+  markers.forEach(function(marker){
+
+    if (marker.category === 'restaurants') {
+      marker.setMap(map);
+    } else {
+      marker.setMap(null);
+    }
+  });
+}
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOl3h2KvfOakBeR7hhgvmbe8mijujIyM&callback=initMap"
@@ -353,6 +448,13 @@ $('#bgvid-link-night').click(function(){
     
     $('.overlay, .close-video-popup').click(function () {
       $("#video-popup, .overlay").fadeOut();
+    });
+  </script>
+
+    <!-- close contacts popup -->
+  <script type="text/javascript">
+    $('.close-contacts').click(function(){
+      $('.contacts-circle, .overlay-open').fadeOut();
     });
   </script>
 

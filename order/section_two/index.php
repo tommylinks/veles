@@ -29,7 +29,9 @@ require_once('../../header.php');
     </div>
 
     <header>
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+     <a href="/omega/">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </a>  
       <button class="main-menu-btn secondary-p menu-buy-p hvr-grow" style="opacity: 0;">Меню</button>
 
 
@@ -37,9 +39,10 @@ require_once('../../header.php');
     <!-- START documents-popup   -->  
     <div class="buy-sections section-two" style="opacity: 0;">
 
-    <h1 class="section-title">
-      Секция 2
-    </h1>
+    <div class="section-title">
+      <h1>Секция 2</h1>
+      <a href="/omega/order/section_one/">Секция 1</a>
+    </div>
 
       <table class="buy-table">
         <tbody>
@@ -98,7 +101,7 @@ require_once('../../header.php');
     </div>
     <!-- END documents-popup   -->  
 
-      <button class="sound-btn secondary-p"></button>
+      <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
       <div class="icon-phone secondary-p">
         <div class="icon-phone-animation"></div>
       </div>
@@ -118,19 +121,16 @@ require_once('../../header.php');
 <!-- END footer video-popup   --> 
 
    <!-- main menu -->
+   <!-- main menu -->
   <div class="main-menu">
     <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
+      <li><div class="snt-link"><a href="/omega/about/">О комплексе</a></div></li>
+      <li><div class="snt-link"><a href="/omega/location/">Расположение</a></div></li>
+      <li><div class="snt-link"><a href="/omega/progress/">Ход строительства</a></div></li>
+      <li><div class="snt-link"><a href="/omega/order/">Купить</a></div></li>     
+      <li><div class="snt-link"><a href="/omega/documents/">Документы</a></div></li>
+      <li><div class="snt-link"><a href="/omega/events/">События</a></div></li>
+      <li><div class="snt-link"><a href="/omega/contacts/">Контакты</a></div></li>
     </ul>
     <span class="close-main-menu">  &times;</span>
   </div>
@@ -294,7 +294,11 @@ $('#bgvid-link-night').click(function(){
     setTimeout ( funcIconAnimationIn, 700 );
 </script>
 
-
+<!-- init music -->
+  <script type="text/javascript">
+    playMusic();
+  </script>
+  <!--END init music -->
 	
 </div> <!--END pjax-global -->    
   

@@ -55,12 +55,9 @@ $template_path = "/omega/";?>
   <!-- Preloader -->
   <script src="<?php echo $template_path; ?>js/preloader.js"></script>
 
-<<<<<<< HEAD
   <!-- tagcanvas -->
   <script src="<?php echo $template_path; ?>js/jquery.tagcanvas.min.js"></script>
 
-=======
->>>>>>> origin/gh-pages
 
 
  
@@ -105,6 +102,10 @@ $template_path = "/omega/";?>
       -webkit-object-fit: cover;
       object-fit: cover;
     }
+
+    .doc-popup-wrap .doc-popup-left,.doc-popup-wrap .doc-popup-content{margin: 10px 0;}
+
+    .doc-popup-wrap.certificates img {margin: 10px 0;}
 
 
     /*preloader*/
@@ -224,18 +225,19 @@ $template_path = "/omega/";?>
     animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
  }
 
- .close-home a{
+ .close-home {
+    font-family: Sherif;
     position: absolute;
-    top: 0px;
-    right: 30px;
+    top: 7px;
+    right: 42px;
     color: #fff;
-    font-size: 21px;
-    font-size: 66px;
+    font-size: 80px;
+    font-weight: 600;
     cursor: pointer;
     z-index: 2;
-    text-shadow: 0 0 13px rgba(1, 1, 1, 0.7);
+    text-shadow: 0 0 17px rgba(1, 1, 1, 1);
  }
-  .close-windowview a:hover{
+  .close-home:hover{
     text-decoration: none;
  }
 
@@ -268,7 +270,7 @@ $template_path = "/omega/";?>
     top: 30px;
     z-index: 1;
     color: #c7c7c7;
-    padding: 10px 15px;
+    padding: 15px 15px 23px;
     text-align: center;
     background: rgba(0,0,0, 0.3);
     border-radius: 10px;
@@ -279,22 +281,68 @@ $template_path = "/omega/";?>
     padding: 5px 0;
     text-transform: uppercase;
     background: rgba(204, 204, 204, 0.34);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 17px;
   } 
 
   .veles-widget td {
-    padding: 10px;
+    padding: 7px 10px;
     min-width: 100px;
+    font-size: 14px;
   }
 
 
   .veles-widget .border-b {
-    border-bottom: 1px solid #c7c7c7;
+    border-bottom: 2px solid #c7c7c7;
   }
 
   .veles-widget .border-r {
-    border-right: 1px solid #c7c7c7;
+    border-right: 2px solid #c7c7c7;
+  }
+
+/* circle progress bar /progress/ */
+  #svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #666;
+  stroke-width: 1em;
+  }
+  #svg #bar {
+    stroke: #FF9F1E;
+  }
+  #cont {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 8.5em auto;
+    box-shadow: 0 0 1em black;
+    border-radius: 100%;
+    position: relative;
+    text-align: center;
+    transform: scale(1.5);
+  }
+  #cont:after {
+    position: absolute;
+    display: block;
+    height: 160px;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+    box-shadow: inset 0 0 1em black;
+    content: attr(data-pct)"%";
+    margin-top: -80px;
+    margin-left: -80px;
+    border-radius: 100%;
+    line-height: 160px;
+    font-size: 2em;
+    text-shadow: 0 0 0.5em black;
   }
 
 </style>
+
 </head>
+
+<audio id="music">
+  <source src="/omega/media/sound/1.mp3" >
+  Тег audio не поддерживается вашим браузером. 
+</audio>

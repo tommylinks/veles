@@ -27,7 +27,9 @@ require_once('../header.php');
     </div>
 
 <header>
+  <a href="/omega/">
     <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+  </a>  
     <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
@@ -35,64 +37,48 @@ require_once('../header.php');
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-02 snt-link">О компании</span>
+                <span class="hover">Разреш. документация</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Участники проекта</span>
+                <span class="bgvid-link-18">Участники проекта</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Разреш. документация</span>
+                <span class="bgvid-link-19">О компании</span>
               </div>
             </div>
           </div>
 
-          <div class="doc-popup-wrap">
+          <div class="doc-popup-wrap certificates">
             <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="doc-popup-left">
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                  <br>
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                  <br>
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                  <br>
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                  <br>
-                </div>
-              </div> 
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="doc-popup-content">
-                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
-                  <div>Sapiente eaque aliquam, tenetur, modi suscipit totam excepturi eum quia nostrum asperiores voluptates, beatae temporibus, vel enim deserunt quo? Ea quis, nemo sequi numquam unde accusamus delectus. Culpa, voluptatum. Fuga!</div>
-                  <div>Odio laudantium sed iure debitis, pariatur ullam officia explicabo ad, mollitia, eveniet perspiciatis minima deleniti alias voluptatum ut quae sint nihil! Minus recusandae veritatis vel quia, commodi quas aliquid, minima!</div>
-                  <div>Ab consequuntur qui, blanditiis placeat libero, repellendus molestias dolore voluptatibus doloribus dignissimos facilis repellat incidunt necessitatibus fugit ratione provident illum temporibus atque. Dolore ipsam enim quasi debitis maxime doloribus, quisquam.</div>
-                  <div>Ex error, eligendi, rerum minima sed fugit, reiciendis repudiandae molestiae labore adipisci deserunt quis. Cumque minus, atque laborum voluptate accusamus. Veniam culpa debitis, illum ex explicabo eum quod minus officiis.</div>
-                  <div>Nulla, ipsam voluptatibus, eligendi voluptatem placeat deserunt! Sequi blanditiis, expedita rem nesciunt cupiditate iure magnam debitis inventore et. Corporis odio, impedit voluptatum magni at sequi? Quaerat sapiente in magnam accusamus.</div>
-                  <div>Quam totam iusto cumque nesciunt vero laborum odio, commodi facilis veniam nisi animi quae, perferendis accusamus asperiores excepturi id impedit suscipit earum explicabo quis nemo delectus, atque eveniet. Corrupti, sint.</div>
-                  <div>Maxime, labore, temporibus. Enim sed at a iusto, perferendis ducimus beatae dolores consectetur deserunt officiis modi culpa fugiat cupiditate sit sapiente amet commodi architecto debitis rem quasi laborum perspiciatis provident!</div>
-                  <div>Officiis, temporibus error nemo nam commodi totam illum libero quos autem, voluptatum quasi tempore distinctio numquam quod mollitia eum consectetur quibusdam doloribus modi neque nostrum aliquam, eaque quidem sequi laboriosam.</div>
-                  <div>Nobis error sed ipsam unde voluptatum accusantium, et, tempora iusto itaque tempore nesciunt ut. Mollitia qui, dolorem rerum et voluptate nostrum omnis pariatur voluptas vitae, exercitationem officia recusandae amet inventore.</div>
-                  <div>Eos omnis aspernatur saepe impedit, iusto voluptatem reiciendis dolore ipsam labore beatae, soluta facere. Dolores, debitis, blanditiis. Suscipit et voluptas, velit quidem sint libero, eligendi, enim, earum facere quisquam molestias.</div>
-                  <div>Id delectus cupiditate repellendus iste, soluta voluptas totam expedita laborum blanditiis ut repudiandae tempore quisquam beatae corrupti ratione quis distinctio quia quae reprehenderit corporis. Numquam magnam ut amet sint fuga.</div>
-                  <div>Consectetur ab est harum labore sint provident, perspiciatis sapiente voluptatum unde suscipit vitae, nam ipsum, eum assumenda corporis minus. Dignissimos et veritatis iure ratione perferendis excepturi repellat, inventore placeat nihil.</div>
-                  <div>Doloremque tenetur quasi nam vero officiis mollitia, voluptatum fuga voluptas temporibus, ducimus reprehenderit nihil voluptate, sit. Harum, perspiciatis laudantium dolores necessitatibus sint ut itaque, fugiat libero, optio natus cumque ab?</div>
-                  <div>In dolor, illum quis repudiandae blanditiis rerum quia accusantium! Repellendus, quidem alias. Nemo odit voluptates laudantium sed adipisci ratione nulla asperiores, quis similique magni doloremque quasi alias iste earum? Praesentium.</div>
-                  <div>Odit veniam at ea dolorem voluptatum fugit qui, repellendus eos, omnis nesciunt iste velit nam dolor similique ducimus tempora labore deserunt illum repellat! Sapiente nobis adipisci obcaecati. Atque, earum, dolores.</div>
-                  <div>Voluptatem suscipit rerum maxime sapiente eaque ipsam maiores, officia odit cupiditate, tenetur totam laboriosam aliquid dolorem veritatis expedita amet blanditiis nihil voluptates qui in soluta. Voluptatem sint neque nam architecto.</div>
-                  <div>Voluptate officia unde fuga quaerat, temporibus alias ipsum. Eos harum provident facilis rem iure, sapiente dolorum nulla, quod optio a omnis quo fugiat nemo dolores et atque nisi nesciunt. Ab?</div>
-                  <div>Inventore ullam porro tempora minus assumenda molestias illo, rerum quasi dolore! Deserunt beatae dolorem maxime amet dolorum eum quia facilis provident aut quisquam odit incidunt expedita atque repellat blanditiis, eligendi.</div>
-                  <div>Labore nesciunt nisi suscipit dolor laborum laudantium accusamus atque, numquam officiis eaque odio qui cum architecto aut incidunt hic optio error. Exercitationem tenetur temporibus aut magni ducimus, nihil minima explicabo!</div>
-                </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <img class="img-responsive" src="/omega/images/other/dniprobud.png">
               </div>
+
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+              </div> 
+
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+              </div> 
+
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+              </div> 
+
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+              </div> 
+
             </div>
           </div>
 
-          <span class="close-documents-popup"><a href='/omega/'>&times;</a></span>
+          <span class="close-documents-popup bgvid-link-17"><a href='#'>&times;</a></span>
         </div>
 
         <!-- END documents-popup   -->  
 
-      <button class="sound-btn secondary-p"></button>
+      <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
       <!-- overlay -->
@@ -101,34 +87,19 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
     <div id="video-popup" style="display: none;">
       <video id="video-content" width="100%" loop="loop" >
-<<<<<<< HEAD
           <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
           <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-=======
-          <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-          <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
->>>>>>> origin/gh-pages
       </video>
       <span class="close-video-popup">&times;</span>
     </div>
 <!-- END footer video-popup   -->  
 
    <!-- main menu -->
+   <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
+
+    <? include '../include/menu.php'; ?>
+
   </div>
 
   <div class="main-icon daynight secondary-p">
@@ -285,10 +256,10 @@ $('#bgvid-link-night').click(function(){
 <!-- CustomScrollbar init -->
 <script>
   (function(){
-          $(".doc-popup-wrap").mCustomScrollbar({
-            theme:"rounded-dark"
-          });
-      })();
+    $(".doc-popup-wrap").mCustomScrollbar({
+        theme:"rounded-dark"
+      });
+    })();
 </script>
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
@@ -314,6 +285,14 @@ $('#bgvid-link-night').click(function(){
     $("#video-popup, .overlay").fadeOut();
   });
 </script>
+
+
+  <!-- init music -->
+<script type="text/javascript">
+  playMusic();
+</script>
+<!--END init music -->
+
 
 </div> <!--END pjax-global -->    
 

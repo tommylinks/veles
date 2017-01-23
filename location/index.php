@@ -27,7 +27,9 @@ require_once('../header.php');
     </div>
 
     <header>
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      <a href="/omega/">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      </a>  
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
       
         <!-- START documents-popup   -->           
@@ -35,10 +37,10 @@ require_once('../header.php');
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>История места</span>
+                <span class="hover">История места</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <a href="infrastructure"><span>Инфраструктура</span></a>
+                <a href="/omega/infrastructure/"><span>Инфраструктура</span></a>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-05 snt-link">Виды из окон</span> 
@@ -92,7 +94,7 @@ require_once('../header.php');
 
         <!-- END documents-popup   -->
 
-      <button class="sound-btn secondary-p"></button>
+       <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
       <!-- overlay -->
@@ -101,34 +103,18 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
   <div id="video-popup" style="display: none;">
     <video id="video-content" width="100%" loop="loop" >
-<<<<<<< HEAD
         <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
         <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-=======
-        <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-        <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
->>>>>>> origin/gh-pages
     </video>
     <span class="close-video-popup">&times;</span>
   </div>
 <!-- END footer video-popup   -->  
 
-   <!-- main menu -->
+  <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
+
+    <? include '../include/menu.php'; ?>
+
   </div>
 
   <div class="main-icon daynight secondary-p">
@@ -336,6 +322,22 @@ $('#bgvid-link-night').click(function(){
     $('.overlay, .close-video-popup').click(function () {
       $("#video-popup, .overlay").fadeOut();
     });
+  </script>
+
+    <!-- init music -->
+  <script type="text/javascript">
+    playMusic();
+  </script>
+  <!--END init music -->
+
+  <script type="text/javascript">
+    /*Меню*/
+$(function() {
+     var url=document.location.href;
+     $.each($('.doc-popup-header span'),function(){
+     if(this.href==url){$(this).parent('li').addClass('active');};
+     });     
+});
   </script>
 
 </div> <!--END pjax-global -->    

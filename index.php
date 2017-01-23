@@ -34,7 +34,7 @@ require_once('header.php');
 
       <div class="veles-widget" style="opacity: 0;">
         <table>
-          <caption>Уникален в</caption>
+          <caption>Уникален в:</caption>
           <tbody>
             <tr>
               <td>&nbsp;</td>
@@ -47,9 +47,19 @@ require_once('header.php');
               <td>25 С</td>
             </tr>
             <tr>
+              <td class="text-right"></td>
+              <td class="border-r"></td>
+              <td></td>
+            </tr>
+            <tr>
               <td class="text-right">уровень смога:</td>
               <td class="border-r">есть</td>
               <td>нет</td>
+            </tr>
+            <tr>
+              <td class="text-right"></td>
+              <td class="border-r"></td>
+              <td></td>
             </tr>
             <tr>
               <td class="text-right">туманность:</td>
@@ -65,7 +75,9 @@ require_once('header.php');
 
       <div class="main-icons-kit">
         <div class="main-icon main-logo" style="opacity: 0;">
-          <img class="hvr-grow" src="/omega/images/icons/logo.png" alt="logo Velec Place" />
+          <a href="/omega/">
+            <img class="hvr-grow" src="/omega/images/icons/logo.png" alt="logo Velec Place" />
+          </a>
         </div>
         
         <!-- tooltip for bio -->
@@ -137,13 +149,8 @@ require_once('header.php');
 <!-- START footer video-popup   -->
       <div id="video-popup" style="display: none;">
         <video id="video-content" width="100%" loop="loop" >
-<<<<<<< HEAD
             <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
             <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-=======
-            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
->>>>>>> origin/gh-pages
         </video>
         <span class="close-video-popup">&times;</span>
       </div>
@@ -151,21 +158,9 @@ require_once('header.php');
 
    <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-      <li><div class="snt-link"><a href="/omega/contacts/">Контакты</a></div></li>
-    </ul>
-    <span class="close-main-menu hvr-grow">  &times;</span>
+
+   <? include 'include/menu.php'; ?>
+
   </div>
 
   <div class="main-icon daynight hide-main-icon-left">
@@ -176,7 +171,7 @@ require_once('header.php');
 
   <!-- new navigation -->
     <div class="snt-prev snt-link bgvid-link-01 hvr-grow" style="display: none; opacity: 0;"></div>
-    <div class="snt-start snt-link bgvid-link-02 hvr-grow tooltip-nav" title="О комплексе" style="opacity: 0;"></div>
+    <div class="snt-start snt-link bgvid-link-02 hvr-grow tooltip-nav" title="О Комплексе" style="opacity: 0;"></div>
     <div class="snt-next snt-link bgvid-link-03 hvr-grow" style="display: none; opacity: 0;"></div>
 
 
@@ -369,9 +364,6 @@ $('#bgvid-link-night').click(function(){
   playMusic();
 </script>
 <!--END init music -->
-
-
-
 
 
 </div> <!--END pjax-global -->   

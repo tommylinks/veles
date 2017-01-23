@@ -28,7 +28,9 @@ require_once('../header.php');
     </div>
 
     <header>
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      <a href="/omega/">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </a>
       <button class="main-menu-btn secondary-p hvr-grow" style="opacity: 0;">Меню</button>
 
     
@@ -44,7 +46,7 @@ require_once('../header.php');
                 <span class="bgvid-link-03 snt-link">Преимущества</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Тех.Характеристики</span>
+                <span class="bgvid-link-12">Тех.Характеристики</span>
               </div>
             </div>
           </div>
@@ -95,7 +97,8 @@ require_once('../header.php');
 
         <!-- END documents-popup   -->  
 
-      <button class="sound-btn secondary-p"></button>
+      <!-- <button class="sound-btn secondary-p"></button> -->
+      <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
       <!-- overlay -->
@@ -104,13 +107,8 @@ require_once('../header.php');
   <!-- START footer video-popup   -->
       <div id="video-popup" style="display: none;">
         <video id="video-content" width="100%" loop="loop" >
-<<<<<<< HEAD
             <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
             <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-=======
-            <source src="/omega/media/tour/vo.mp4" type="video/mp4"></source>
-            <source src="/omega/media/tour/vo.webm" type="video/webm"></source>
->>>>>>> origin/gh-pages
         </video>
         <span class="close-video-popup">&times;</span>
       </div>
@@ -118,20 +116,9 @@ require_once('../header.php');
 
    <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
+
+    <? include '../include/menu.php'; ?>
+
   </div>
 
   <div class="main-icon daynight secondary-p">

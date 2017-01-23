@@ -31,12 +31,14 @@ require_once('../header.php');
     </div>
 
     <header>
-      <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      <a href="/omega/">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
+      </a>  
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
       
         <!-- START CONTENT   -->   
 
-        <span  class="close-home"><a href='/omega/'>&times;</a></span>
+        <span  class="close-home"><a href='/omega/location/'>&times;</a></span>
 
         <div class="toggle-controls">
           <button id ="top" class="toggle-controls-top"></button>
@@ -53,11 +55,11 @@ require_once('../header.php');
 
         <!-- END CONTENT   -->
 
-      <button class="sound-btn secondary-p"></button>
+      <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
     </header>
 
-<!--  dermo START -->
-      <svg class="mouse-move" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="60px" height="100%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+
+      <svg class="mouse-move" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30px" height="100%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 2627 5993"
          xmlns:xlink="http://www.w3.org/1999/xlink">
          <defs>
@@ -71,24 +73,24 @@ require_once('../header.php');
 
         @keyframes arrow-top {
             0%   {transform: translateY(0px)}
-            50%  {transform: translateY(100px)}
+            50%  {transform: translateY(600px)}
             100% {transform: translateY(0px);}
         }
 
         @keyframes arrow-bottom {
             0%   {transform: translateY(0px)}
-            50%  {transform: translateY(-100px)}
+            50%  {transform: translateY(-600px)}
             100% {transform: translateY(0px);}
         }
 
 
         #arrow-top-move{
-          animation: arrow-top 1s infinite;
+          animation: arrow-top 1.5s infinite;
         }
 
 
         #arrow-bottom-move{
-          animation: arrow-bottom 1s infinite;
+          animation: arrow-bottom 1.5s infinite;
         }
 
            ]]>
@@ -122,21 +124,11 @@ require_once('../header.php');
 <!-- END footer video-popup   --> 
 
    <!-- main menu -->
+   <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="bgvid-link-01 snt-link">Главная</div></li>
-      <li><div class="bgvid-link-02 snt-link">О комплексе</div></li>
-      <li><div class="bgvid-link-03 snt-link">Преимущества</div></li>
-      <li><div class="bgvid-link-04 snt-link">Расположение</div></li>
-      <li><div class="bgvid-link-05 snt-link">Вид из окон</div></li>     
-      <li><div class="bgvid-link-06 snt-link">Купить</div></li>
-      <li><div class="bgvid-link-07 snt-link">Аппартаменты</div></li>
-      <li><div class="bgvid-link-08 snt-link">Коммерческая недвижимость</div></li>
-      <li><div class="bgvid-link-09 snt-link">Ход строительства</div></li>
-      <li><div class="bgvid-link-10 snt-link">Документы</div></li>
-      <li><div class="bgvid-link-11 snt-link">События</div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
+
+    <? include '../include/menu.php'; ?>
+
   </div>
 
   <div class="main-icon daynight secondary-p">
@@ -1198,9 +1190,13 @@ if(window.applicationCache.status === window.applicationCache.UPDATEREADY) {
   onUpdateReady();
 } 
 
-  </script> 
+</script> 
 
-
+    <!-- init music -->
+<script type="text/javascript">
+  playMusic();
+</script>
+<!--END init music -->
 
 
 

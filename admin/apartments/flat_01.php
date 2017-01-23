@@ -48,7 +48,7 @@
               <td>итоговая: <? echo $flat_01["detail"]["features"]["flat_area"]["summary"]; ?> м2</td>
             </tr>
             <tr>
-              <td>Цена за 1м2:</td>
+              <td>Цена за 1м<sup><small>2</small></sup>:</td>
               <td>
                 $<? echo $flat_01["detail"]["features"]["price_meter"]; ?>
                 <span class="i-icon tooltip-i" data-tooltip-content="#tooltip_i_icon"></span>
@@ -65,7 +65,7 @@
         </table>
 
         <!-- tooltip_i_icon block -->
-        <div class="tooltip_templates">
+        <div class="tooltip_templates opacity">
           <span id="tooltip_i_icon">
             Подробнее о ценообразовании Вы
             можете узнать у нас в офисе продаж
@@ -169,8 +169,26 @@
 
 </script>
 
+  <script type="text/javascript">
+        // for cloud tags
+      $('.tooltip-i').tooltipster({
+      theme: 'Default',
+      trigger: 'click',
+      //timer: 10000,
+      side: ['bottom']
+    });
+  </script>
+
 <!--  tooltips -->
-<script>
-  tooltipLeftSlide();
-</script>
+
  <!--END floating tooltips -->
+
+
+  <!-- callack popup  при нажатии на иконку "callback"  INIT -->
+   <script type="text/javascript">
+    callBackPopup();
+  </script>
+  <!-- END callack popup  при нажатии на иконку "callback" INIT -->
+
+
+<script src="/omega/callback/feedback-form.js"></script>
