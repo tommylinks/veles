@@ -30,20 +30,20 @@ require_once('../header.php');
     </div>
 
     <header>
-      <a href="/omega/">
-        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
-      </a>  
+      <span class="bgvid-link-01">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </span>
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
-        <div class="documents-popup" style="opacity: 0;">
+        <div class="documents-popup">
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-15">Готовность комплексa</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="hover">Строительство Online</span>
+                  <span class="hover">Строительство <b>Online</b></span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-16">Дневник строительства</span>
@@ -51,8 +51,8 @@ require_once('../header.php');
             </div>
           </div>
           <div  class="doc-popup-wrap">
-
-            <iframe width="100%" height="482px" src="https://www.youtube.com/embed/3he1OpsBRRg?rel=0&autoplay=1&loop=1&playlist=3he1OpsBRRg&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+              <br><br>
+            <iframe width="100%" height="574px" src="https://www.youtube.com/embed/3he1OpsBRRg?rel=0&autoplay=1&loop=1&playlist=3he1OpsBRRg&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 
           </div>
 
@@ -236,14 +236,7 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
-<!-- CustomScrollbar init -->
-<script>
-  (function(){
-          $(".doc-popup-wrap").mCustomScrollbar({
-            theme:"rounded-dark"
-          });
-      })();
-</script>
+
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>
@@ -271,7 +264,7 @@ $('#bgvid-link-night').click(function(){
 
 <script type="text/javascript">
 
-var buildProgress = "<? echo $build_progress ?>";
+var buildProgress = "<? echo $build_progress; ?>";
 
 
 (function(){

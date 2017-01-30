@@ -340,6 +340,7 @@ $('#bgvid-link-night').click(function(){
     // for navigation icons
     $('.tooltip-nav').tooltipster({
       theme: 'tooltipster-borderless',
+        delay: 0
     });
   </script>
    <!--END floating tooltips -->

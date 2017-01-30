@@ -28,30 +28,35 @@ require_once('../header.php');
     </div>
 
     <header>
-      <a href="/omega/">
+      <span class="bgvid-link-01">
         <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
-      </a>
+      </span>
       <button class="main-menu-btn secondary-p hvr-grow" style="opacity: 0;">Меню</button>
 
     
     <!-- START documents-popup   -->  
-        <div class="documents-popup" style="opacity: 0;">
+        <div class="documents-popup">
 
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span>Концепция</span>
+                <span class="hover">Концепция</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-03 snt-link">Преимущества</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-12">Тех.Характеристики</span>
+                <span class="bgvid-link-12">Тех. Характеристики</span>
               </div>
             </div>
           </div>
 
+            <div class="popup-divider"></div>
+
           <div class="doc-popup-wrap">
+
+          <div class="doc-popup-title">Заголовок</div>
+
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="doc-popup-left">
@@ -99,6 +104,9 @@ require_once('../header.php');
 
       <!-- <button class="sound-btn secondary-p"></button> -->
       <button class="sound-btn secondary-p hvr-grow hide-main-icon-left" style="opacity: 0"></button>
+    <div class="icon-phone secondary-p" style="opacity: 1;">
+        <div class="icon-phone-animation"></div>
+    </div>
     </header>
 
       <!-- overlay -->
@@ -313,12 +321,14 @@ $('#bgvid-link-night').click(function(){
     // for navigation icons
     $('.tooltip-nav').tooltipster({
       theme: 'tooltipster-borderless',
-      side: 'bottom'
+      side: 'bottom',
+        delay: 0
     });
 
     $('.tooltip-nav-lr').tooltipster({
       theme: 'tooltipster-borderless',
-      side: ['left', 'right']
+      side: ['left', 'right'],
+        delay: 0
     });
   </script>
    <!--END floating tooltips -->

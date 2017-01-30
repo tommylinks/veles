@@ -32,27 +32,27 @@ $build_progress = "25"; // для изменения значения progress b
     </div>
 
     <header>
-      <a href="/omega/">
-        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
-      </a>
+      <span class="bgvid-link-01">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </span>
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
-        <div class="documents-popup" style="opacity: 0;">
+        <div class="documents-popup">
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="hover">Готовность комплексa</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-14">Строительство Online</span>
+                <span class="bgvid-link-14">Строительство <b>Online</b></span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-16">Дневник строительства</span>
               </div>
             </div>
           </div>
-          <div  class="doc-popup-wrap">
+          <div  class="doc-popup-wrap" style="overflow: hidden;">
             <div id="cont" data-pct="100">
             <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
@@ -241,14 +241,7 @@ $('#bgvid-link-night').click(function(){
   var linkBgimg11 = sessionStorage.getItem('linkBgimg11');
 </script>
 
-<!-- CustomScrollbar init -->
-<script>
-  (function(){
-          $(".doc-popup-wrap").mCustomScrollbar({
-            theme:"rounded-dark"
-          });
-      })();
-</script>
+
 
 <!-- Чтобы при переходе на следующую страницу не появлялся контент из предыдущей, необходимо в функцию funcIconAnimationOut, funcIconAnimationIn добавить эффекты появления и исчезания данного контента -->
 <script>

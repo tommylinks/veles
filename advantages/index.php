@@ -523,12 +523,14 @@ $('#bgvid-link-night').click(function(){
     // for navigation icons
     $('.tooltip-nav').tooltipster({
       theme: 'tooltipster-borderless',
-      side: 'bottom'
+      side: 'bottom',
+        delay: 0
     });
 
     $('.tooltip-nav-lr').tooltipster({
       theme: 'tooltipster-borderless',
-      side: ['left', 'right']
+      side: ['left', 'right'],
+        delay: 0
     });
 
     // for cloud tags

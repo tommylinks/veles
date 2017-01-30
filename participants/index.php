@@ -27,28 +27,33 @@ require_once('../header.php');
     </div>
 
 <header>
-  <a href="/omega/">
-    <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
-  </a>  
+  <span class="bgvid-link-01">
+    <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+  </span>
     <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
-        <div class="documents-popup" style="opacity: 0;">
+        <div class="documents-popup">
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-17">О компании</span>
+                  <span class="bgvid-link-17">Разреш. документация</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="hover">Участники проекта</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-19">Разреш. документация</span>
+                  <span class="bgvid-link-19">О компании</span>
               </div>
             </div>
           </div>
 
+            <div class="popup-divider"></div>
+
           <div class="doc-popup-wrap">
+
+              <div class="doc-popup-title">Заголовок</div>
+
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="doc-popup-left">

@@ -3,7 +3,7 @@ var funcIconAnimationIn = function () {
     $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").removeClass('hide-main-icon-left');
     $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").removeClass('hide-main-icon-right');
     $(".snt-start").removeClass('hide-main-icon-top');
-    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper, #containerCanvas, #myCanvasContainer").animate({
+    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper, #containerCanvas, #myCanvasContainer, .one, .two, #videotour").animate({
       opacity: 1
     }, 300);
 	}
@@ -12,7 +12,7 @@ var funcIconAnimationOut = function () {
     $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
     $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
     $(".snt-start").addClass('hide-main-icon-top');
-    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper, #containerCanvas, #myCanvasContainer").animate({
+    $(".main-logo, .sound-btn, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .snt-prev, .snt-start, .snt-next, .choose-section-wrapper, #containerCanvas, #myCanvasContainer, .one, .two, #videotour").animate({
       opacity: 0
     }, 300);
 }
@@ -28,9 +28,9 @@ var funcAnimMenuIn = function () {
         $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").addClass('hide-main-icon-left');
         $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").addClass('hide-main-icon-right');
         $(".snt-start").addClass('hide-main-icon-top');
-        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper, .one, .two").animate({
           opacity: 0
-        }, 300);
+        }, 300); 
 }
  	  
 var funcAnimMenuOut = function () {
@@ -43,7 +43,7 @@ var funcAnimMenuOut = function () {
         $(".icon-bio, .icon-techno, .daynight, .sound-btn, .snt-prev, .one").removeClass('hide-main-icon-left');
         $(".icon-socio, .icon-person, .icon-phone, .snt-next, .two").removeClass('hide-main-icon-right');
         $(".snt-start").removeClass('hide-main-icon-top');        
-        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper").animate({
+        $(".main-logo, .documents-popup, .main-menu-btn, .secondary-logo, .mouse-move, .toggle-controls, .close-windowview, .buy-sections, .veles-widget, .icon-socio, .icon-person, .icon-phone, .choose-section-wrapper, .one, .two").animate({
           opacity: 1
         }, 300);
 }

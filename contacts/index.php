@@ -1,7 +1,7 @@
 <?php 
 
 // meta tags
-$title = "infrastructure"; ///---
+$title = "contacts"; ///---
 $description = "DESCRIPTION";
 $manifest = "main.manifest";
 
@@ -47,6 +47,7 @@ require_once('../header.php');
         margin: 100px 0 10px 0;
         text-transform: uppercase;
         width: 100%;
+        font-family: Tahoma;
       }
 
       .contacts-circle .left-title {
@@ -101,7 +102,7 @@ require_once('../header.php');
  
 
 
-
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div id="map"></div>
   <div id = "pjax-global" style = "opacity: 0;">  
 <!--     <img id="bgimg" class="img-bg" src="" style = "">
@@ -129,9 +130,9 @@ require_once('../header.php');
       
     <!-- START map-wrapper  -->           
     <div class="map-wrapper">
-      <a href="/omega/">
-        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 1;">
-      </a>
+
+
+
 
       <div class="contacts-circle">
         <div class="contacts-wrap">
@@ -174,7 +175,7 @@ require_once('../header.php');
     </header>
 
 
-    <script>
+   <!--  <script>
 
 // The following example creates complex markers to indicate beaches near
 // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
@@ -185,15 +186,91 @@ var map;
 function initMap() {
    map = new google.maps.Map(document.getElementById('map'), {
     zoom:17,
-    minZoom: 16,
-    maxZoom: 17,
     center: {lat: 50.461977, lng: 30.505771},
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    // draggable: false,
-   disableDefaultUI: true
+   disableDefaultUI: true,
+
+   zoomControl: true,
+   zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_CENTER
+    },
+
+   scaleControl: true,
+   streetViewControl: true,
+   streetViewControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_TOP
+    }
+
   });
 
-    setMarkers(map);
+ // Create the search box and link it to the UI element.
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+   	// Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  var markers = [];
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+
+
+
+    //setMarkers(map);
 
 }
 
@@ -282,9 +359,167 @@ function showRestaurants() {
   });
 }
 
+    </script> -->
+
+<style type="text/css">
+	
+	#map {
+        height: 100%;
+      }
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+  color: #000;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+</style>
+
+
+<script>
+// This example adds a search box to a map, using the Google Place Autocomplete
+// feature. People can enter geographical searches. The search box will return a
+// pick list containing a mix of places and predicted search terms.
+
+function initAutocomplete() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom:17,
+    center: {lat: 50.461977, lng: 30.505771},
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+
+
+   scaleControl: true,
+   streetViewControl: true,
+   streetViewControlOptions: {
+        position: google.maps.ControlPosition.LEFT_CENTER
+    },
+   zoomControl: true,
+   zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_CENTER
+    },
+  });
+
+  var icon = {
+        url: 'img/logo.png',
+        scaledSize: new google.maps.Size(225, 225)
+      };
+
+
+  var marker = new google.maps.Marker({
+    position: {lat: 50.461977, lng: 30.505771},
+    map: map,
+    icon: icon
+  });
+
+  marker.addListener('mouseover', function() {
+    $('.contacts-circle').fadeIn();
+    $('.overlay-open').fadeIn();
+
+  });
+
+
+
+
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  var markers = [];
+  // [START region_getplaces]
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+  // [END region_getplaces]
+}
+
+
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOl3h2KvfOakBeR7hhgvmbe8mijujIyM&callback=initMap"
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOl3h2KvfOakBeR7hhgvmbe8mijujIyM&libraries=places&callback=initAutocomplete"
         async defer></script>
+
 
 <script>
 
@@ -457,6 +692,8 @@ $('#bgvid-link-night').click(function(){
       $('.contacts-circle, .overlay-open').fadeOut();
     });
   </script>
+
+
 
 
 </div> <!--END pjax-global -->    

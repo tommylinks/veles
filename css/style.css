@@ -287,6 +287,56 @@ a, a:hover,a:focus {
 
 .tooltipster-base.Default  .tooltipster-arrow-border {border-bottom-color: rgba(0, 0, 0, 0.4);}
 
+
+/*-------------blog-page------------------*/
+
+.blog-post {
+  position: relative;
+    border-top: 3px dotted #ccc;
+    padding: 5px 0;
+}
+
+
+.blog-post-date .icon-clock {
+      width: 15px;
+    height: 15px;
+    background: url(../images/icons/clock.jpg) no-repeat;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.blog-post-date span {
+  font-size:12px;
+  color:#acb2b8;
+}
+
+ .blog-post-more {
+  position:absolute;
+  bottom:20px;
+  right: 10px;
+  background: #000;
+  color:#fff;
+  border-color:#000;
+  padding: 5px;
+  outline: none;
+}
+
+
+.blog-post-more span {
+    padding: 7px 56px;
+    border: 2px solid #fff;
+    display: inline-block;
+    font-size: 18px;
+  }  
+
+  .blog-post .doc-popup-content {
+    padding-bottom: 72px;
+  }
+
+
+/*------------END-blog-page------------------*/
+
 /*-----------Documents page-------------*/
 
 .documents-popup {
@@ -297,8 +347,10 @@ a, a:hover,a:focus {
   transform: translateY(-50%);
   min-width: 890px;
   min-height: 465px;
-  width: 70vw;
-  height: 610px;
+  /*width: 70vw;*/
+  width: 1204px;
+  /*height: 610px;*/
+  height: 707px;
   background: #fff;
   margin: 0 auto;
   color: #000;
@@ -308,15 +360,15 @@ a, a:hover,a:focus {
 }
 
 .doc-popup-wrap {
-  height: 490px;
+  /*height: 490px;*/
+  height: 555px;
 }
 
 .doc-popup-header {
   margin: 10px 0;
   text-align: center;
-  font-size: 22px;
+  font-size: 21px;
   text-transform: uppercase;
-  padding-bottom: 20px;
 }
 
 .doc-popup-header span:hover {
@@ -333,6 +385,24 @@ a, a:hover,a:focus {
   border-radius: 5px;
   cursor: pointer;
   transition: .1s;
+}
+
+.popup-divider {
+  border-bottom: 3px solid #000;
+  width: 255px;
+  margin: 30px auto;
+}
+
+.doc-popup-content {
+  color: #878787;
+  font-size: 17px;
+}
+
+.doc-popup-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-left: 33px;
 }
 
 /* footer video-popup */
@@ -385,33 +455,33 @@ a, a:hover,a:focus {
   top: 50%;
   margin-top: -35px;
   left: 15px;
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   background: url('../images/arrows/prev.png') no-repeat;
   transition: .5s linear;
-  background-size: cover;
+  background-size: contain;
 }
 
 .snt-start {
   top: 25px;
   margin-left: -42px;
   left: 50%;
-  width: 85px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: url('../images/arrows/start.png') no-repeat;
   transition: .5s linear;
-  background-size: cover;
+  background-size: contain;
 }
 
 .snt-next {
   top: 50%;
   margin-top: -35px;
   right: 15px;
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   background: url('../images/arrows/next.png') no-repeat;
   transition: .5s linear;
-  background-size: cover;
+  background-size: contain;
 }
 
 
@@ -428,6 +498,7 @@ a, a:hover,a:focus {
   -ms-user-select: none;
   user-select: none;
   z-index: 10;
+  cursor:pointer;
 }
 
 .main-menu-btn.secondary-p {
@@ -463,7 +534,7 @@ a, a:hover,a:focus {
     position: absolute;
     margin-top: 0;
     top: 40px;
-    right: 40%;
+    right: 38%;
   }
 
   .section-title h1 {
@@ -538,7 +609,7 @@ a, a:hover,a:focus {
 
   .section-two .buy-table {
     position: absolute;
-    top: 20%;
+    top: 14%;
     left: 15%;
     color:#fff;
   }
@@ -548,8 +619,12 @@ a, a:hover,a:focus {
   }
 
   .buy-table td {
-    padding: 10px 5px;
+    padding: 3px 5px;
   }
+
+.section-one .buy-table td {
+  padding: 7px 5px;
+}
 
   .buy-table-title {
     font-size: 18px;
@@ -567,6 +642,7 @@ a, a:hover,a:focus {
     border: 5px solid transparent;
     display: inline-block;
     cursor: pointer;
+    font-size: 16px;
   }
 
   .floor-num:hover {
@@ -606,20 +682,20 @@ a, a:hover,a:focus {
 
   }
 
-  #svg-wrapper svg polygon {
+  #svg-wrapper svg .fil0 {
     fill:transparent;
     pointer-events: all;
   }
 
-  #svg-wrapper svg polygon.free:hover  {
+  #svg-wrapper svg .fil0.free:hover  {
     fill: aqua;
   }
 
-  #svg-wrapper svg polygon.reserved:hover  {
+  #svg-wrapper svg .fil0.reserved:hover  {
     fill: #ccc;
   }
 
-  #svg-wrapper svg polygon.bought:hover  {
+  #svg-wrapper svg .fil0.bought:hover  {
     fill: grey;
   }
 

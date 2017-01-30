@@ -104,7 +104,15 @@
 
             //play video
             $('#bgvid')[0].play();
-            
+
+            // START for order section only
+             setTimeout (function () { 
+                 $("#svg-wrapper, .buy-table, .section-title, .icon-phone, #videotour").animate({
+                    opacity: 0
+                  }, 100);
+               }, 500);
+             // END for order section only
+
             setTimeout (function () { 
               $('#bgvid-wrapper').css('opacity', 0);
             }, durationVideomsLong);
@@ -142,7 +150,7 @@
         //preloader
         addProgressBar();
         
-        
+        $(".documents-popup").css('opacity', 1);
 
         $('#bgvid-wrapper').css('z-index', 101);
         $('#bgvid-wrapper').animate({opacity: 1,}, 1000);
@@ -207,7 +215,7 @@
 
     <!-- Click events + Pjax  --> 
      <script>
-// функция анимации при нажатии на ссылки типа .bgvid-link-01 и т.д.
+// функция анимации при нажатии на ссылки типа .bgvid-link-01 и т.д. c видеопереходом
 var menuAnimation = function () {
       $(".main-menu").animate({
       opacity: 0,
@@ -223,6 +231,27 @@ var menuAnimation = function () {
       opacity: 0
     }, 300);
 };
+
+// функция анимации при нажатии на ссылки перехода по табам
+var menuAnimationTabs = function () {
+      $(".main-menu").animate({
+      opacity: 0,
+      left: "-10%"
+    }, 300);
+    $(".main-menu, .overlay").fadeOut(500);
+    $(".footer-bg ").css('background','rgba(0,0,0,0.2)');
+    $(".main-icons-kit").fadeIn(500);
+    $(".daynight, .sound-btn, .snt-prev").addClass('hide-main-icon-left');
+    $(".snt-next").addClass('hide-main-icon-right');
+    $(".snt-start").addClass('hide-main-icon-top');        
+    $(".secondary-logo, .main-menu-btn, .sound-btn").animate({
+      opacity: 0
+    }, 300);
+    $(".documents-popup").animate({
+      opacity: 1
+    }, 0);
+};
+
 
       $('#pjax-global').on('click', '.bgvid-link-01', function () {
     var linkBgvid11 = sessionStorage.getItem('linkBgvid11');
@@ -305,74 +334,69 @@ var menuAnimation = function () {
       $('#pjax-global').on('click', '.bgvid-link-12', function () {
     var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
     var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid01, linkNav12, linkBgimg02, pathImgNight02); }, 0); 
       });
 // without video about
       $('#pjax-global').on('click', '.bgvid-link-13', function () {
     var linkBgvid01 = sessionStorage.getItem('linkBgvid01');
     var linkBgimg02 = sessionStorage.getItem('linkBgimg02');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid01, linkNav02, linkBgimg02, pathImgNight02); }, 0); 
       });
 
 
- // without video online
+// without video online
       $('#pjax-global').on('click', '.bgvid-link-14', function () {
     var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
     var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid08, linkNav13, linkBgimg09, pathImgNight09); }, 0); 
       });
 
-   // without video progress
+// without video progress
       $('#pjax-global').on('click', '.bgvid-link-15', function () {
     var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
     var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid08, linkNav09, linkBgimg09, pathImgNight09); }, 0); 
       });    
 
-    // without video blog
+// without video blog
       $('#pjax-global').on('click', '.bgvid-link-16', function () {
     var linkBgvid08 = sessionStorage.getItem('linkBgvid08');
     var linkBgimg09 = sessionStorage.getItem('linkBgimg09');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid08, linkNav14, linkBgimg09, pathImgNight09); }, 0); 
       });
 
-    // without video documents
+// without video documents
      $('#pjax-global').on('click', '.bgvid-link-17', function () {
         var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
         var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid09, linkNav10, linkBgimg10, pathImgNight10); }, 0); 
       });
 
-     // without video participants
+// without video participants
      $('#pjax-global').on('click', '.bgvid-link-18', function () {
         var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
         var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-        menuAnimation ();
+        menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid09, linkNav15, linkBgimg10, pathImgNight10); }, 0); 
       });
 
-     // without video certificate
+// without video certificate
      $('#pjax-global').on('click', '.bgvid-link-19', function () {
         var linkBgvid09 = sessionStorage.getItem('linkBgvid09');
         var linkBgimg10 = sessionStorage.getItem('linkBgimg10');
-        menuAnimation ();
+       menuAnimationTabs ();
         setTimeout(function() { pjaxContent(linkBgvid09, linkNav16, linkBgimg10, pathImgNight10); }, 0); 
       });
 
 
 
     </script>
-
-
-
-<!-- popup videoperehod -->
-
 
 
 

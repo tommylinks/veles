@@ -11,45 +11,7 @@ $build_progress = "25"; // для изменения значения progress b
 
 ?> 
 
-<style type="text/css">
-  #svg circle {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s linear;
-  stroke: #666;
-  stroke-width: 1em;
-  }
-  #svg #bar {
-    stroke: #FF9F1E;
-  }
-  #cont {
-    display: block;
-    height: 200px;
-    width: 200px;
-    margin: 8em auto;
-    box-shadow: 0 0 1em black;
-    border-radius: 100%;
-    position: relative;
-    text-align: center;
-    transform: scale(1.5);
-  }
-  #cont:after {
-    position: absolute;
-    display: block;
-    height: 160px;
-    width: 160px;
-    left: 50%;
-    top: 50%;
-    box-shadow: inset 0 0 1em black;
-    content: attr(data-pct)"%";
-    margin-top: -80px;
-    margin-left: -80px;
-    border-radius: 100%;
-    line-height: 160px;
-    font-size: 2em;
-    text-shadow: 0 0 0.5em black;
-  }
 
-</style>
 
 
 
@@ -57,7 +19,7 @@ $build_progress = "25"; // для изменения значения progress b
 <div class="wrapper">
 <!-- preloader  -->
 <script>
-	preloader(true, 'white', 'red');	
+  preloader(true, 'white', 'red');  
 </script><!--END preloader  -->
   <div id = "pjax-global" style = "opacity: 0;"> 
     <img id="bgimg" class="img-bg" src="" style = "">
@@ -71,73 +33,110 @@ $build_progress = "25"; // для изменения значения progress b
     </div>
 
     <header>
-      <a href="/omega/">
-        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
-      </a>  
+      <span class="bgvid-link-01">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </span>
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
-        <div class="documents-popup" style="opacity: 0;">
+        <div class="documents-popup">
           <div class="doc-popup-header">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="bgvid-link-15">Готовность комплексa</span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <span class="bgvid-link-14">Строительство Online</span>
+                <span class="bgvid-link-14">Строительство <b>Online</b></span>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="hover">Дневник строительства</span>
               </div>
             </div>
           </div>
+
+            <div class="popup-divider"></div>
+
           <div  class="doc-popup-wrap">
-            <div class="row">
-              <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="doc-popup-left">
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                </div>
-              </div> 
-              <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="doc-popup-content">
-                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
-                  <div>Sapiente eaque aliquam, tenetur, modi suscipit totam excepturi eum quia nostrum asperiores voluptates, beatae temporibus, vel enim deserunt quo? Ea quis, nemo sequi numquam unde accusamus delectus. Culpa, voluptatum. Fuga!</div>
-                  <div>Odio laudantium sed iure debitis, pariatur ullam officia explicabo ad, mollitia, eveniet perspiciatis minima deleniti alias voluptatum ut quae sint nihil! Minus recusandae veritatis vel quia, commodi quas aliquid, minima!</div>
-                  
+
+              <div class="doc-popup-title">Заголовок</div>
+
+            <div class="blog-post">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <div class="doc-popup-left">
+                    <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  </div>
+                </div> 
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <h2 class="blog-post-title">Lorem ipsum dolor sit amet, consectetur</h2>
+                  <div class="blog-post-date">
+                    <i class="icon-clock"></i>
+                    <span>
+                      14.11.2016
+                    </span>
+                  </div>
+                  <div class="doc-popup-content">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>         
+                  </div>
                 </div>
               </div>
+              <button class="blog-post-more">
+                <span>подробнее</span>
+              </button>
+            </div> 
+
+            <div class="blog-post">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <div class="doc-popup-left">
+                    <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  </div>
+                </div> 
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                <h2 class="blog-post-title">Lorem ipsum dolor sit amet, consectetur</h2>
+                <div class="blog-post-date">
+                    <i class="icon-clock"></i>
+                    <span>
+                      14.11.2016
+                    </span>
+                  </div>
+                  <div class="doc-popup-content">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+              <button class="blog-post-more">
+                <span>подробнее</span>
+              </button>
             </div>
 
-            <div class="row">
-              <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="doc-popup-left">
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                </div>
-              </div> 
-              <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="doc-popup-content">
-                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
-                  <div>Sapiente eaque aliquam, tenetur, modi suscipit totam excepturi eum quia nostrum asperiores voluptates, beatae temporibus, vel enim deserunt quo? Ea quis, nemo sequi numquam unde accusamus delectus. Culpa, voluptatum. Fuga!</div>
-                  <div>Odio laudantium sed iure debitis, pariatur ullam officia explicabo ad, mollitia, eveniet perspiciatis minima deleniti alias voluptatum ut quae sint nihil! Minus recusandae veritatis vel quia, commodi quas aliquid, minima!</div>
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="doc-popup-left">
-                  <img class="img-responsive" src="/omega/images/other/dniprobud.png">
-                </div>
-              </div> 
-              <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="doc-popup-content">
-                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
-                  <div>Sapiente eaque aliquam, tenetur, modi suscipit totam excepturi eum quia nostrum asperiores voluptates, beatae temporibus, vel enim deserunt quo? Ea quis, nemo sequi numquam unde accusamus delectus. Culpa, voluptatum. Fuga!</div>
-                  <div>Odio laudantium sed iure debitis, pariatur ullam officia explicabo ad, mollitia, eveniet perspiciatis minima deleniti alias voluptatum ut quae sint nihil! Minus recusandae veritatis vel quia, commodi quas aliquid, minima!</div>
-                  
+            <div class="blog-post">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <div class="doc-popup-left">
+                    <img class="img-responsive" src="/omega/images/other/dniprobud.png">
+                  </div>
+                </div> 
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                <h2 class="blog-post-title">Lorem ipsum dolor sit amet, consectetur</h2>
+                <div class="blog-post-date">
+                    <i class="icon-clock"></i>
+                    <span>
+                      14.11.2016
+                    </span>
+                  </div>
+                  <div class="doc-popup-content">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil facere minima doloribus placeat vitae dolor praesentium, rerum aperiam saepe? Culpa fugit doloribus cum dolorum officia voluptatem, hic harum ut.</div>
+                   
+                    
+                  </div>
                 </div>
               </div>
+              <button class="blog-post-more">
+                <span>подробнее</span>
+              </button>
             </div>
           </div><!-- END doc-popup-wrap -->
 
@@ -162,7 +161,6 @@ $build_progress = "25"; // для изменения значения progress b
       </div>
 <!-- END footer video-popup   --> 
 
-   <!-- main menu -->
    <!-- main menu -->
   <div class="main-menu">
 

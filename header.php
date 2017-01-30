@@ -228,26 +228,40 @@ $template_path = "/omega/";?>
  .close-home {
     font-family: Sherif;
     position: absolute;
-    top: 7px;
+    top: 30px;
     right: 42px;
     color: #fff;
     font-size: 80px;
     font-weight: 600;
     cursor: pointer;
-    z-index: 2;
+    z-index: 5;
+     width: 65px;
+     height:65px;
     text-shadow: 0 0 17px rgba(1, 1, 1, 1);
  }
+
+
   .close-home:hover{
     text-decoration: none;
  }
 
-.mouse-move {
+  .close-home a {
+      display: block;
+      width: 65px;
+      height:65px;
+      background: url('../images/icons/close-p.png') no-repeat;
+      background-size:cover;
+  }
+
+svg.mouse-move {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: 0 auto;
+  overflow: visible;
+  z-index: 50;
 }
 
 /* windowview END*/
@@ -302,41 +316,48 @@ $template_path = "/omega/";?>
 
 /* circle progress bar /progress/ */
   #svg circle {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s linear;
-  stroke: #666;
-  stroke-width: 1em;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear;
+      stroke: #666;
+      stroke-width: 1em;
   }
   #svg #bar {
-    stroke: #FF9F1E;
+      stroke: #fbd34b;
   }
   #cont {
-    display: block;
-    height: 200px;
-    width: 200px;
-    margin: 8.5em auto;
-    box-shadow: 0 0 1em black;
-    border-radius: 100%;
-    position: relative;
-    text-align: center;
-    transform: scale(1.5);
+      display: block;
+      height: 200px;
+      width: 200px;
+      /*box-shadow: 0 0 1em black;*/
+      margin: 195px auto;
+      border-radius: 100%;
+      position: relative;
+      text-align: center;
+      transform: scale(2.0);
+      font-family: Tahoma;
   }
   #cont:after {
-    position: absolute;
-    display: block;
-    height: 160px;
-    width: 160px;
-    left: 50%;
-    top: 50%;
-    box-shadow: inset 0 0 1em black;
-    content: attr(data-pct)"%";
-    margin-top: -80px;
-    margin-left: -80px;
-    border-radius: 100%;
-    line-height: 160px;
-    font-size: 2em;
-    text-shadow: 0 0 0.5em black;
+      position: absolute;
+      display: block;
+      height: 160px;
+      width: 160px;
+      left: 50%;
+      top: 50%;
+      /*box-shadow: inset 0 0 1em black;*/
+      content: attr(data-pct)"%";
+      margin-top: -80px;
+      margin-left: -80px;
+      border-radius: 100%;
+      line-height: 160px;
+      font-size: 2em;
+      /*text-shadow: 0 0 0.5em black;*/
+      color:black;
   }
+
+  input {
+      color: #fbd34b;
+  }
+
 
 </style>
 

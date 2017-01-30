@@ -29,9 +29,9 @@ require_once('../header.php');
     </div>
 
     <header>
-      <a href="/omega/">
+      <span class="bgvid-link-01">
         <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
-      </a>  
+      </span>
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
 
@@ -39,17 +39,14 @@ require_once('../header.php');
     <!-- START documents-popup   -->  
     <div class="choose-section-wrapper" style="opacity: 0;">
 
-	    <h1 class="section-title">
-	      Жилая недвижимость
-	    </h1>
 
 		<a href="/omega/order/section_one/">
-			<div class="circle one">
+			<div class="circle one hvr-bob" style="opacity: 0;">
 				<span>1 секция</span>
 			</div>
 		</a>
 		<a href="/omega/order/section_two/">
-			<div class="circle two">
+			<div class="circle two hvr-bob" style="opacity: 0;">
 				<span>2 секция</span>
 			</div>
       	</a>
@@ -75,7 +72,6 @@ require_once('../header.php');
       </div>
 <!-- END footer video-popup   -->  
 
-   <!-- main menu -->
    <!-- main menu -->
   <div class="main-menu">
 

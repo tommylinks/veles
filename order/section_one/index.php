@@ -45,7 +45,7 @@ header('Content-type: application/xhtml+xml');
     padding: 5px 0;
   }
 
-  .carousel-inner img {max-height: 435px;}
+  .carousel-inner img {max-height: 410px;}
 
 
   svg:hover + .flat-info > .flat-desc {
@@ -418,21 +418,7 @@ header('Content-type: application/xhtml+xml');
 
 
 <body>
-<?
-/* 
 
-* [brief] - выводит информацию на основной странице
-* [brief][status] - может быть только трех типов: свободна, в резерве, куплена.
-
-*/
-
-/*$flat_01 = [
-  "brief" => [
-    "area" => "72", 
-    "status" => "Свободна",
-  ],
-];*/
-?>
 <div class="wrapper">
 
 <!-- preloader  -->
@@ -443,13 +429,24 @@ header('Content-type: application/xhtml+xml');
 
 
   <div id = "pjax-global" style = "opacity: 0;"> 
+
+    <img id="bgimg" class="img-bg" src="" style = "">
+    <img id="bgimg-back" class="img-bg" src="" style = "opacity: 1;">
+
+  <div id="bgvid-wrapper" style ="position: absolute; ">
+      <video id="bgvid" preload="auto">
+        <source type="video/webm">
+        <source type="video/mp4">
+      </video>
+    </div>
+
     <header>
-      <a href="/omega/">
+      <span class="bgvid-link-01">
         <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
-      </a>  
+      </span>
       <button class="main-menu-btn secondary-p menu-buy-p hvr-grow" style="opacity: 0;">Меню</button>
       
-      <div id="svg-wrapper"> 
+<div id="svg-wrapper"> 
 
 	<div class="hide-bug-svg"></div>
      
@@ -1320,37 +1317,37 @@ header('Content-type: application/xhtml+xml');
         <tr class="buy-table-divider">
           <td class="buy-table-title">Жилая недвижимость</td>
           <td><span id="fl042" class="floor-num floor-active">04</span></td>
-          <td>3-х ярусная</td>
+          <td>3-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl041" class="floor-num">04</span></td>
-          <td>2-х ярусная</td>
+          <td>2-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl032" class="floor-num">03</span></td>
-          <td>3-х ярусная</td>
+          <td>3-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl031" class="floor-num">03</span></td>
-          <td>2-х ярусная</td>
+          <td>2-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl022" class="floor-num">02</span></td>
-          <td>3-х ярусная</td>
+          <td>3-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl021" class="floor-num">02</span></td>
-          <td>2-х ярусная</td>
+          <td>2-х ярусные</td>
         </tr>
         <tr>
           <td></td>
           <td><span id="fl012" class="floor-num">01</span></td>
-          <td>3-х ярусная</td>
+          <td>3-х ярусные</td>
         </tr>
         <tr class="buy-table-divider">
           <td class="buy-table-title">Коммерческая недвижимость</td>
@@ -1388,18 +1385,10 @@ header('Content-type: application/xhtml+xml');
 
    <!-- main menu -->
   <div class="main-menu">
-    <ul>
-      <li><div class="snt-link"><a href="/omega/about/">О комплексе</a></div></li>
-      <li><div class="snt-link"><a href="/omega/location/">Расположение</a></div></li>
-      <li><div class="snt-link"><a href="/omega/progress/">Ход строительства</a></div></li>
-      <li><div class="snt-link"><a href="/omega/order/">Купить</a></div></li>     
-      <li><div class="snt-link"><a href="/omega/documents/">Документы</a></div></li>
-      <li><div class="snt-link"><a href="/omega/events/">События</a></div></li>
-      <li><div class="snt-link"><a href="/omega/contacts/">Контакты</a></div></li>
-    </ul>
-    <span class="close-main-menu">  &times;</span>
-  </div>
 
+    <? include '../../include/menu.php'; ?>
+
+  </div>
 
 
 
@@ -1446,7 +1435,7 @@ header('Content-type: application/xhtml+xml');
 
   .table-flat-info td {
     padding: 0 5px;
-    font-size: 14px;
+    font-size: 12px;
     color: #6d6d6d;
   }
 
@@ -1456,8 +1445,10 @@ header('Content-type: application/xhtml+xml');
 
   .col-title {
   	position: relative;
-    margin: 65px 0 30px 0;
+    margin: 35px 0 30px 0;
   }
+
+  .col-sheme img {height: 190px;}
 
   .col-title h3 {
   	position: absolute;
@@ -1510,11 +1501,12 @@ header('Content-type: application/xhtml+xml');
 
 .table-flat-info .i-icon {
 	display: inline-block;
-	margin: 0 5px;
+	margin-bottom: -1px;
 	width: 12px;
 	height: 12px;
 	background: url('../../images/icons/i-icon.png') no-repeat;
 	cursor: pointer;
+    background-size: cover;
 }
       
 </style>
@@ -1635,13 +1627,13 @@ var svgArr = $( "#svg-wrapper" ).find( ".status" );
 
 for (var i = 0; i < svgArr.length; i++) {
   if (svgArr[i].textContent == "Свободна") {
-    $( svgArr[i] ).parent().parent().parent().find('polygon').addClass("free");
+    $( svgArr[i] ).parent().parent().parent().find('.fil0').addClass("free");
   } else if (svgArr[i].textContent == "В резерве") {
-    $( svgArr[i] ).parent().parent().parent().find('polygon').addClass("reserved");
+    $( svgArr[i] ).parent().parent().parent().find('.fil0').addClass("reserved");
   } else if (svgArr[i].textContent == "Куплена") {
-    $( svgArr[i] ).parent().parent().parent().find('polygon').addClass("bought");
+    $( svgArr[i] ).parent().parent().parent().find('.fil0').addClass("bought");
   } else {
-    $( svgArr[i] ).parent().parent().parent().find('polygon').addClass("free");
+    $( svgArr[i] ).parent().parent().parent().find('.fil0').addClass("free");
   }
 }
 </script>

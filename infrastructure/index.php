@@ -28,14 +28,15 @@ require_once('../header.php');
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         transform: translateY(-50%);
+          color: #565656;
       }
 
       .toogle-panel input{
         margin: 5px;
         display: block;
-        width: 50px;
+        width: 350px;
         height: 50px;
-        border-radius: 50%;
+        border-radius: 25px;
         background: #ffd139;
         border: 3px solid #fff;
         padding: 3px;
@@ -43,6 +44,8 @@ require_once('../header.php');
         cursor: pointer;
 
       }
+
+
 
     </style>
 
@@ -56,9 +59,9 @@ require_once('../header.php');
 
 
 <div class="toogle-panel">
-              <input onclick="showBars();" type=button value="B">
-              <input onclick="showRestaurants();" type=button value="R">
-              <input onclick="showAll();" type=button value="A">
+              <input onclick="showBars();" type=button value="Инфрастуктура мегаполиса">
+              <input onclick="showRestaurants();" type=button value="Инфраструктура достопримечательностей">
+              <input onclick="showAll();" type=button value="Инфрастуктура комплекса">
             </div>
   <div id="map"></div>
   <div id = "pjax-global" style = "opacity: 0;">  
@@ -76,7 +79,7 @@ require_once('../header.php');
     <!-- overlay -->
     <div class="overlay"></div>
 
-    <span  class="close-home"><a href='/omega/location/'>&times;</a></span>
+    <span  class="close-home"><a href='/omega/location/'></a></span>
 
     <!-- START footer video-popup   -->
       <div id="video-popup" style="display: none;">
@@ -91,8 +94,8 @@ require_once('../header.php');
         <!-- START map-wrapper  -->           
         <div class="map-wrapper">
           <a href="/omega/">
-            <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
-          </a>  
+            <img src="/omega/infrastructure/img/logo-inf.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+          </a>
             
             
 
@@ -394,6 +397,13 @@ $('#bgvid-link-night').click(function(){
     });
   </script>
 
+      <script>
+
+
+              $('.gm-style-iw').css('background', '#000');
+
+
+      </script>
 
 
 </div> <!--END pjax-global -->    

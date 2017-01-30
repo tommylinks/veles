@@ -27,9 +27,9 @@ require_once('../header.php');
     </div>
 
     <header>
-      <a href="/omega/">
-        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style = "opacity: 0;">
-      </a> 
+      <span class="bgvid-link-01">
+        <img src="/omega/images/icons/logo.png" alt="logo" class="secondary-logo" style="opacity: 0;">
+      </span>
       <button class="main-menu-btn secondary-p" style = "opacity: 0;">Меню</button>
 
       <!-- START documents-popup   -->           
@@ -42,7 +42,12 @@ require_once('../header.php');
             </div>
           </div>
 
+            <div class="popup-divider"></div>
+
           <div class="doc-popup-wrap">
+
+              <div class="doc-popup-title">Заголовок</div>
+
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="doc-popup-left">
